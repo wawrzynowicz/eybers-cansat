@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 
 export default function FeaturedProject() {
   return (
-    <section className="relative py-24 md:py-32 px-4 overflow-hidden">
+    <section className="relative py-24 md:py-32 px-4 overflow-hidden" id="project">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

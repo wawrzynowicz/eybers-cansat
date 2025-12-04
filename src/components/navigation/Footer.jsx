@@ -25,14 +25,20 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Navigation</h4>
             <div className="flex flex-col gap-3">
-              {['Home', 'Team', 'Projects', 'Updates', 'Contact'].map(page => (
-                <Link 
-                  key={page}
-                  to={createPageUrl(page)}
+              {[
+                { name: 'Home', href: '#' },
+                { name: 'Mission', href: '#mission' },
+                { name: 'Project', href: '#project' },
+                { name: 'Team', href: '#team' },
+                { name: 'Contact', href: '#contact' }
+              ].map(link => (
+                <a 
+                  key={link.name}
+                  href={link.href}
                   className="text-indigo-200/60 hover:text-white transition-colors"
                 >
-                  {page}
-                </Link>
+                  {link.name}
+                </a>
               ))}
             </div>
           </div>

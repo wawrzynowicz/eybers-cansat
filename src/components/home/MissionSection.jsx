@@ -26,7 +26,7 @@ const cards = [
 
 export default function MissionSection() {
   return (
-    <section className="relative py-24 md:py-32 px-4">
+    <section className="relative py-24 md:py-32 px-4" id="mission">
       <div className="max-w-6xl mx-auto">
         <SectionTitle 
           title="Reaching for the Stars"

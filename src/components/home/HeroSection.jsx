@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
+
 import { ChevronDown, Rocket, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import GlowingOrb from '../shared/GlowingOrb';
@@ -56,17 +55,17 @@ export default function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to={createPageUrl('Projects')}>
+            <a href="#project">
               <Button size="lg" className="bg-white text-slate-900 hover:bg-indigo-100 rounded-full px-8 h-14 text-lg font-medium shadow-2xl shadow-white/20 transition-all hover:scale-105">
                 <Rocket className="w-5 h-5 mr-2" />
                 Explore Our Mission
               </Button>
-            </Link>
-            <Link to={createPageUrl('Team')}>
+            </a>
+            <a href="#team">
               <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-full px-8 h-14 text-lg font-medium backdrop-blur-sm">
                 Meet the Team
               </Button>
-            </Link>
+            </a>
           </div>
         </motion.div>
 
