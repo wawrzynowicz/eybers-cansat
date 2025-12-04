@@ -5,14 +5,17 @@ import StarField from '@/components/shared/StarField';
 
 export default function Layout({ children }) {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-950">
+    <div className="min-h-screen bg-black">
       <style>{`
         :root {
-          --background: 222 47% 5%;
-          --foreground: 213 31% 91%;
+          --background: 0 0% 0%;
+          --foreground: 0 0% 100%;
         }
         body {
-          background: linear-gradient(to bottom, #020617, #1e1b4b, #020617);
+          background: #000;
+        }
+        html {
+          scroll-behavior: smooth;
         }
       `}</style>
       <StarField />

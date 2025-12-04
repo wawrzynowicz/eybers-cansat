@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Rocket } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const navLinks = [
@@ -23,37 +23,49 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled 
-            ? 'bg-slate-900/80 backdrop-blur-xl border-b border-white/10' 
+            ? 'bg-black/70 backdrop-blur-xl border-b border-white/5' 
             : 'bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Link to={createPageUrl('Home')} className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/30">
-                <Rocket className="w-5 h-5 text-white" />
+            <a href="#" className="flex items-center gap-3 group">
+              <div className="relative">
+                <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center">
+                  <span className="text-black font-bold text-lg">E</span>
+                </div>
+                <div className="absolute inset-0 rounded-lg bg-white/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <span className="text-xl font-bold text-white tracking-tight">EYBERS</span>
-            </Link>
+              <span className="text-xl font-semibold text-white tracking-wide">EYBERS</span>
+            </a>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-1">
-              {navLinks.map(link => (
-                <a 
+            <div className="hidden md:flex items-center gap-8">
+              {navLinks.map((link, index) => (
+                <motion.a 
                   key={link.name} 
                   href={link.href}
-                  className="px-4 py-2 rounded-full text-sm font-medium transition-all text-indigo-200/70 hover:text-white hover:bg-white/5"
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="relative text-sm font-medium text-white/60 hover:text-white transition-colors duration-300 py-2 group"
                 >
                   {link.name}
-                </a>
+                  <span className="absolute bottom-0 left-0 w-0 h-px bg-white group-hover:w-full transition-all duration-300" />
+                </motion.a>
               ))}
             </div>
 
@@ -61,10 +73,10 @@ export default function Navbar() {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden text-white hover:bg-white/10"
+              className="md:hidden text-white hover:bg-white/10 rounded-lg"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
           </div>
         </div>
@@ -74,26 +86,25 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-slate-900/95 backdrop-blur-xl pt-20 md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl pt-20 md:hidden"
           >
-            <div className="flex flex-col items-center gap-4 p-8">
+            <div className="flex flex-col items-center gap-6 p-8">
               {navLinks.map((link, index) => (
-                <motion.div
+                <motion.a
                   key={link.name}
-                  initial={{ opacity: 0, y: 20 }}
+                  href={link.href}
+                  onClick={handleNavClick}
+                  initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  exit={{ opacity: 0, y: 30 }}
+                  transition={{ delay: index * 0.05 }}
+                  className="text-2xl font-light text-white/80 hover:text-white transition-colors"
                 >
-                  <a 
-                    href={link.href}
-                    className="text-2xl font-medium text-white hover:text-indigo-300 transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                </motion.div>
+                  {link.name}
+                </motion.a>
               ))}
             </div>
           </motion.div>

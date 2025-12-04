@@ -2,19 +2,16 @@ import React, { useState } from 'react';
 import { base44 } from '@/api/base44Client';
 import { useMutation } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
-import { Send, Mail, MessageSquare, User, CheckCircle, Loader2, Twitter, Instagram, Github } from 'lucide-react';
+import { Send, Mail, CheckCircle, Loader2, Twitter, Instagram, Github, ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import SectionTitle from '../shared/SectionTitle';
 import { toast } from 'sonner';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
@@ -23,11 +20,11 @@ export default function ContactSection() {
     mutationFn: (data) => base44.entities.ContactMessage.create(data),
     onSuccess: () => {
       setSubmitted(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      toast.success('Message sent successfully!');
+      setFormData({ name: '', email: '', message: '' });
+      toast.success('Message sent');
     },
     onError: () => {
-      toast.error('Failed to send message. Please try again.');
+      toast.error('Failed to send');
     }
   });
 
@@ -41,120 +38,93 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="relative py-24 md:py-32 px-4" id="contact">
+    <section className="relative py-32 px-4" id="contact">
       <div className="max-w-5xl mx-auto">
-        <SectionTitle 
-          title="Get in Touch"
-          subtitle="Have questions about our mission? Want to collaborate or support our project? We'd love to hear from you."
-          light
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">Get in Touch</p>
+          <h2 className="text-4xl md:text-5xl font-light text-white">
+            Let's <span className="font-semibold">Connect</span>
+          </h2>
+        </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-8 md:gap-12">
-          {/* Contact Form */}
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Form */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-3"
           >
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8">
+            <div className="border border-white/[0.05] bg-white/[0.01] p-8 md:p-10">
               {submitted ? (
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-12"
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-green-500/20 flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-8 h-8 text-green-400" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-2">Message Sent!</h3>
-                  <p className="text-indigo-200/70 mb-6">We'll get back to you as soon as possible.</p>
-                  <Button 
+                  <CheckCircle className="w-12 h-12 text-white/40 mx-auto mb-4" strokeWidth={1} />
+                  <h3 className="text-xl text-white mb-2">Message Sent</h3>
+                  <p className="text-white/40 mb-6">We'll be in touch soon.</p>
+                  <button 
                     onClick={() => setSubmitted(false)}
-                    variant="outline"
-                    className="border-white/20 text-white hover:bg-white/10 rounded-full"
+                    className="text-white/40 hover:text-white text-sm underline underline-offset-4"
                   >
-                    Send Another Message
-                  </Button>
+                    Send another
+                  </button>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="name" className="text-indigo-200">Your Name</Label>
-                      <div className="relative">
-                        <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-indigo-300/50" />
-                        <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          required
-                          placeholder="John Doe"
-                          className="pl-12 h-12 bg-white/5 border-white/10 text-white placeholder:text-indigo-300/40 rounded-xl focus:border-indigo-500/50 focus:ring-indigo-500/20"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="email" className="text-indigo-200">Email Address</Label>
-                      <div className="relative">
-                        <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-indigo-300/50" />
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          required
-                          placeholder="john@example.com"
-                          className="pl-12 h-12 bg-white/5 border-white/10 text-white placeholder:text-indigo-300/40 rounded-xl focus:border-indigo-500/50 focus:ring-indigo-500/20"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="subject" className="text-indigo-200">Subject</Label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      placeholder="What's this about?"
-                      className="h-12 bg-white/5 border-white/10 text-white placeholder:text-indigo-300/40 rounded-xl focus:border-indigo-500/50 focus:ring-indigo-500/20"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message" className="text-indigo-200">Your Message</Label>
-                    <div className="relative">
-                      <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-indigo-300/50" />
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
+                    <div>
+                      <Input
+                        name="name"
+                        value={formData.name}
                         onChange={handleChange}
                         required
-                        placeholder="Tell us about your inquiry..."
-                        rows={5}
-                        className="pl-12 pt-3 bg-white/5 border-white/10 text-white placeholder:text-indigo-300/40 rounded-xl focus:border-indigo-500/50 focus:ring-indigo-500/20 resize-none"
+                        placeholder="Name"
+                        className="h-12 bg-transparent border-white/10 text-white placeholder:text-white/20 rounded-none focus:border-white/30 focus:ring-0"
+                      />
+                    </div>
+                    <div>
+                      <Input
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        placeholder="Email"
+                        className="h-12 bg-transparent border-white/10 text-white placeholder:text-white/20 rounded-none focus:border-white/30 focus:ring-0"
                       />
                     </div>
                   </div>
 
+                  <Textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    placeholder="Your message..."
+                    rows={5}
+                    className="bg-transparent border-white/10 text-white placeholder:text-white/20 rounded-none focus:border-white/30 focus:ring-0 resize-none"
+                  />
+
                   <Button
                     type="submit"
                     disabled={mutation.isPending}
-                    className="w-full h-12 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-xl font-medium shadow-lg shadow-indigo-500/20"
+                    className="w-full h-12 bg-white text-black hover:bg-white/90 rounded-none font-medium tracking-wide"
                   >
                     {mutation.isPending ? (
-                      <Loader2 className="w-5 h-5 animate-spin" />
+                      <Loader2 className="w-4 h-4 animate-spin" />
                     ) : (
                       <>
-                        <Send className="w-5 h-5 mr-2" />
-                        Send Message
+                        SEND MESSAGE
+                        <Send className="w-4 h-4 ml-2" />
                       </>
                     )}
                   </Button>
@@ -163,53 +133,51 @@ export default function ContactSection() {
             </div>
           </motion.div>
 
-          {/* Contact Info */}
+          {/* Info */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-2 space-y-6"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="space-y-8"
           >
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8">
-              <h3 className="text-xl font-bold text-white mb-6">Connect With Us</h3>
-              
-              <a href="mailto:team@eybers.space" className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 hover:border-indigo-500/30 transition-all group">
-                <div className="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-indigo-400" />
-                </div>
-                <div>
-                  <p className="text-white font-medium group-hover:text-indigo-200 transition-colors">Email Us</p>
-                  <p className="text-indigo-300/60 text-sm">team@eybers.space</p>
-                </div>
+            <div className="border border-white/[0.05] bg-white/[0.01] p-8">
+              <h3 className="text-white text-lg mb-4">Email</h3>
+              <a 
+                href="mailto:team@eybers.space" 
+                className="flex items-center gap-2 text-white/40 hover:text-white transition-colors group"
+              >
+                <Mail className="w-4 h-4" />
+                team@eybers.space
+                <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8">
-              <h3 className="text-xl font-bold text-white mb-6">Follow Our Journey</h3>
-              
-              <div className="flex gap-3">
+            <div className="border border-white/[0.05] bg-white/[0.01] p-8">
+              <h3 className="text-white text-lg mb-4">Follow Us</h3>
+              <div className="flex gap-4">
                 {[
                   { icon: Twitter, href: '#', label: 'Twitter' },
                   { icon: Instagram, href: '#', label: 'Instagram' },
                   { icon: Github, href: '#', label: 'GitHub' }
                 ].map((social) => (
-                  <a
+                  <motion.a
                     key={social.label}
                     href={social.href}
-                    className="flex-1 aspect-square rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-indigo-300/60 hover:text-white hover:bg-white/10 hover:border-indigo-500/30 transition-all"
-                    aria-label={social.label}
+                    className="w-12 h-12 border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 transition-all"
+                    whileHover={{ y: -2 }}
+                    transition={{ duration: 0.2 }}
                   >
-                    <social.icon className="w-6 h-6" />
-                  </a>
+                    <social.icon className="w-5 h-5" />
+                  </motion.a>
                 ))}
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-indigo-600/20 to-purple-600/20 backdrop-blur-xl border border-indigo-500/20 rounded-3xl p-6 md:p-8">
-              <h3 className="text-xl font-bold text-white mb-3">Want to Support Us?</h3>
-              <p className="text-indigo-200/70 text-sm leading-relaxed">
-                Whether through sponsorship, mentorship, or resources, your support helps young scientists reach for the stars.
+            <div className="border border-white/[0.05] bg-white/[0.02] p-8">
+              <h3 className="text-white text-lg mb-3">Support Our Mission</h3>
+              <p className="text-white/30 text-sm leading-relaxed">
+                Interested in sponsorship, mentorship, or collaboration? We'd love to hear from you.
               </p>
             </div>
           </motion.div>
