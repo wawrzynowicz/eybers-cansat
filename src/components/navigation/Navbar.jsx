@@ -1,32 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Rocket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const navLinks = [
-  { name: 'Home', page: 'Home' },
-  { name: 'Team', page: 'Team' },
-  { name: 'Projects', page: 'Projects' },
-  { name: 'Updates', page: 'Updates' },
-  { name: 'Contact', page: 'Contact' }
+  { name: 'Home', href: '#' },
+  { name: 'Mission', href: '#mission' },
+  { name: 'Project', href: '#project' },
+  { name: 'Team', href: '#team' },
+  { name: 'Contact', href: '#contact' }
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
 
   return (
     <>
@@ -52,18 +47,13 @@ export default function Navbar() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-1">
               {navLinks.map(link => (
-                <Link 
-                  key={link.page} 
-                  to={createPageUrl(link.page)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                    location.pathname.includes(link.page.toLowerCase()) || 
-                    (link.page === 'Home' && location.pathname === '/')
-                      ? 'text-white bg-white/10'
-                      : 'text-indigo-200/70 hover:text-white hover:bg-white/5'
-                  }`}
+                <a 
+                  key={link.name} 
+                  href={link.href}
+                  className="px-4 py-2 rounded-full text-sm font-medium transition-all text-indigo-200/70 hover:text-white hover:bg-white/5"
                 >
                   {link.name}
-                </Link>
+                </a>
               ))}
             </div>
 
@@ -92,17 +82,17 @@ export default function Navbar() {
             <div className="flex flex-col items-center gap-4 p-8">
               {navLinks.map((link, index) => (
                 <motion.div
-                  key={link.page}
+                  key={link.name}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Link 
-                    to={createPageUrl(link.page)}
+                  <a 
+                    href={link.href}
                     className="text-2xl font-medium text-white hover:text-indigo-300 transition-colors"
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 </motion.div>
               ))}
             </div>
