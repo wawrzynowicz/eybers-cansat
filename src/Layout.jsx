@@ -2,9 +2,11 @@ import React from 'react';
 import Navbar from '@/components/navigation/Navbar';
 import Footer from '@/components/navigation/Footer';
 import StarField from '@/components/shared/StarField';
+import { LanguageProvider } from '@/components/shared/LanguageContext';
 
 export default function Layout({ children }) {
   return (
+    <LanguageProvider>
     <div className="min-h-screen bg-black">
       <style>{`
         :root {
@@ -25,5 +27,6 @@ export default function Layout({ children }) {
       </main>
       <Footer />
     </div>
+    </LanguageProvider>
   );
 }

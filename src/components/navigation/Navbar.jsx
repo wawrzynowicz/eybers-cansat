@@ -14,8 +14,16 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const { language, setLanguage, t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const navLinks = [
+    { name: t.nav.mission, href: '#mission' },
+    { name: t.nav.project, href: '#project' },
+    { name: t.nav.team, href: '#team' },
+    { name: t.nav.contact, href: '#contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
