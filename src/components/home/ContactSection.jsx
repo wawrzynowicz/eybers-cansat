@@ -158,7 +158,7 @@ export default function ContactSection() {
               <div className="flex gap-4">
                 {[
                   { icon: Twitter, href: '#', label: 'Twitter' },
-                  { icon: Instagram, href: '#', label: 'Instagram' },
+                  { icon: Instagram, href: 'https://www.instagram.com/eybers.cansat/', label: 'Instagram' },
                   { icon: Github, href: '#', label: 'GitHub' }
                 ].map((social) => (
                   <motion.a
