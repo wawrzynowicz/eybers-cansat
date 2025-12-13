@@ -2,16 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-const navLinks = [
-  { name: 'Home', href: '#' },
-  { name: 'Mission', href: '#mission' },
-  { name: 'Project', href: '#project' },
-  { name: 'Team', href: '#team' },
-  { name: 'Contact', href: '#contact' }
-];
+import { useLanguage } from '@/components/shared/LanguageContext';
 
 export default function Navbar() {
   const { language, setLanguage, t } = useLanguage();
@@ -75,6 +68,15 @@ export default function Navbar() {
                   <span className="absolute bottom-0 left-0 w-0 h-px bg-white group-hover:w-full transition-all duration-300" />
                 </motion.a>
               ))}
+              
+              {/* Language switcher */}
+              <button
+                onClick={() => setLanguage(language === 'en' ? 'pl' : 'en')}
+                className="flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm"
+              >
+                <Globe className="w-4 h-4" />
+                {language === 'en' ? 'PL' : 'EN'}
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -114,6 +116,18 @@ export default function Navbar() {
                   {link.name}
                 </motion.a>
               ))}
+              
+              {/* Mobile language switcher */}
+              <button
+                onClick={() => {
+                  setLanguage(language === 'en' ? 'pl' : 'en');
+                  setIsOpen(false);
+                }}
+                className="flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm mt-6"
+              >
+                <Globe className="w-4 h-4" />
+                {language === 'en' ? 'Polski' : 'English'}
+              </button>
             </div>
           </motion.div>
         )}
