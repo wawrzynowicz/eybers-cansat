@@ -58,7 +58,7 @@ function TeamMemberCard({ member, index }) {
               <h3 className="text-xl font-medium text-white mb-2">{member.name}</h3>
               {member.bio && (
                 <motion.p 
-                  className="text-white/30 text-sm leading-relaxed overflow-hidden"
+                  className="text-white/70 text-sm leading-relaxed overflow-hidden mt-2 bg-black/30 backdrop-blur-sm p-3 rounded"
                   animate={isHovered ? { opacity: 1, maxHeight: 200 } : { opacity: 0, maxHeight: 0 }}
                   transition={{ duration: 0.4 }}
                 >
