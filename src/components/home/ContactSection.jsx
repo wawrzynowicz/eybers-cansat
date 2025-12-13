@@ -144,11 +144,11 @@ export default function ContactSection() {
             <div className="border border-white/[0.05] bg-white/[0.01] p-8">
               <h3 className="text-white text-lg mb-4">Email</h3>
               <a 
-                href="mailto:team@eybers.space" 
+                href="mailto:eybers.cansat@gmail.com" 
                 className="flex items-center gap-2 text-white/40 hover:text-white transition-colors group"
               >
                 <Mail className="w-4 h-4" />
-                team@eybers.space
+                eybers.cansat@gmail.com
                 <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
             </div>
