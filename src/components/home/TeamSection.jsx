@@ -51,7 +51,18 @@ function TeamMemberCard({ member, index }) {
               transition={{ delay: 0.2 + index * 0.1 }}
             >
               <p className="text-white/40 text-xs uppercase tracking-wider mb-1">{member.role}</p>
-              <h3 className="text-xl font-medium text-white">{member.name}</h3>
+              <h3 className="text-xl font-medium text-white mb-2">{member.name}</h3>
+              {member.bio && (
+                <motion.p 
+                  className="text-white/30 text-sm leading-relaxed"
+                  initial={{ opacity: 0, height: 0 }}
+                  whileInView={{ opacity: 1, height: 'auto' }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
+                >
+                  {member.bio}
+                </motion.p>
+              )}
             </motion.div>
           </div>
         </div>
