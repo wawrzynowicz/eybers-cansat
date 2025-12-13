@@ -1,14 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
-const stats = [
-  { value: "6", label: "Team Members" },
-  { value: "1", label: "Active Project" },
-  { value: "∞", label: "Curiosity" },
-  { value: "2025", label: "Launch Target" }
-];
+import { useLanguage } from '@/components/shared/LanguageContext';
 
 export default function StatsSection() {
+  const { t } = useLanguage();
+  
+  const stats = [
+    { value: "6", label: t.stats.teamMembers },
+    { value: "1", label: t.stats.activeProject },
+    { value: "∞", label: t.stats.curiosity },
+    { value: "2025", label: t.stats.launchTarget }
+  ];
+  
   return (
     <section className="relative py-20 px-4 border-y border-white/[0.03]">
       <div className="max-w-5xl mx-auto">

@@ -1,26 +1,29 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Target, Eye, Sparkles } from 'lucide-react';
-
-const cards = [
-  {
-    icon: Target,
-    title: "Mission",
-    description: "To design and build a mini-satellite capable of detecting cosmic muons, contributing to scientific research while inspiring the next generation."
-  },
-  {
-    icon: Eye,
-    title: "Vision",
-    description: "A world where high school students actively participate in cutting-edge space science, proving that age is no barrier to discovery."
-  },
-  {
-    icon: Sparkles,
-    title: "Impact",
-    description: "By sharing our journey and findings, we spark curiosity and demonstrate that the cosmos is accessible to all who reach for the stars."
-  }
-];
+import { useLanguage } from '@/components/shared/LanguageContext';
 
 export default function MissionSection() {
+  const { t } = useLanguage();
+  
+  const cards = [
+    {
+      icon: Target,
+      title: t.mission.cards.mission.title,
+      description: t.mission.cards.mission.description
+    },
+    {
+      icon: Eye,
+      title: t.mission.cards.vision.title,
+      description: t.mission.cards.vision.description
+    },
+    {
+      icon: Sparkles,
+      title: t.mission.cards.impact.title,
+      description: t.mission.cards.impact.description
+    }
+  ];
+  
   return (
     <section className="relative py-32 px-4" id="mission">
       {/* Subtle grid background */}
@@ -37,9 +40,9 @@ export default function MissionSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">Our Purpose</p>
+          <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">{t.mission.sectionTitle}</p>
           <h2 className="text-4xl md:text-5xl font-light text-white">
-            Reaching for the <span className="font-semibold">Stars</span>
+            {t.mission.heading} <span className="font-semibold">{t.mission.headingBold}</span>
           </h2>
         </motion.div>
 

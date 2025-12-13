@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Satellite } from 'lucide-react';
+import { useLanguage } from '@/components/shared/LanguageContext';
 
 export default function FeaturedProject() {
+  const { t } = useLanguage();
+  
   return (
     <section className="relative py-32 px-4 overflow-hidden" id="project">
       <div className="max-w-6xl mx-auto">
@@ -32,9 +35,9 @@ export default function FeaturedProject() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
                 >
-                  Flagship Project
+                  {t.project.tagline}
                 </motion.p>
-                
+
                 <motion.h3 
                   className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6"
                   initial={{ opacity: 0, y: 20 }}
@@ -42,11 +45,11 @@ export default function FeaturedProject() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
                 >
-                  Muon Detection
+                  {t.project.title}
                   <br />
-                  <span className="font-semibold">Mini-Satellite</span>
+                  <span className="font-semibold">{t.project.titleBold}</span>
                 </motion.h3>
-                
+
                 <motion.p 
                   className="text-white/40 text-lg mb-10 leading-relaxed"
                   initial={{ opacity: 0, y: 20 }}
@@ -54,7 +57,7 @@ export default function FeaturedProject() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 }}
                 >
-                  A compact CubeSat designed to detect cosmic muons from space. By measuring these high-energy particles, we contribute to our understanding of cosmic rays and their origins.
+                  {t.project.description}
                 </motion.p>
 
                 {/* Stats */}
@@ -66,10 +69,10 @@ export default function FeaturedProject() {
                   transition={{ delay: 0.5 }}
                 >
                   {[
-                    { label: "Detection", value: "Real-time" },
-                    { label: "Data Link", value: "Ground Station" },
-                    { label: "Status", value: "In Progress" },
-                    { label: "Target", value: "2025 Launch" }
+                    t.project.stats.detection,
+                    t.project.stats.dataLink,
+                    t.project.stats.status,
+                    t.project.stats.target
                   ].map((stat, i) => (
                     <div key={stat.label} className="border-l border-white/10 pl-4">
                       <p className="text-white/30 text-xs uppercase tracking-wider mb-1">{stat.label}</p>
