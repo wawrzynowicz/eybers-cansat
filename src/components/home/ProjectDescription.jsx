@@ -2,42 +2,20 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Atom, Waves, Cpu, Radio, BarChart3, Compass } from 'lucide-react';
-
-const features = [
-  {
-    icon: Atom,
-    title: "Muon Detection",
-    description: "Advanced scintillator arrays capture cosmic muons passing through our satellite, measuring their energy and trajectory."
-  },
-  {
-    icon: Waves,
-    title: "Signal Processing",
-    description: "Real-time onboard processing filters noise and identifies particle signatures with high precision."
-  },
-  {
-    icon: Cpu,
-    title: "Data Collection",
-    description: "Continuous sampling during orbital passes creates comprehensive maps of cosmic ray distribution."
-  },
-  {
-    icon: Radio,
-    title: "Transmission",
-    description: "UHF downlink sends compressed data packets to our ground station during each pass."
-  },
-  {
-    icon: BarChart3,
-    title: "Analysis",
-    description: "Machine learning algorithms process the data to identify patterns in cosmic ray activity."
-  },
-  {
-    icon: Compass,
-    title: "Discovery",
-    description: "Contributing to global research on cosmic radiation and its effects on Earth's atmosphere."
-  }
-];
+import { useLanguage } from '@/components/shared/LanguageContext';
 
 export default function ProjectDescription() {
+  const { t } = useLanguage();
   const containerRef = useRef(null);
+  
+  const features = [
+    { icon: Atom, title: t.projectDesc.features.detection.title, description: t.projectDesc.features.detection.description },
+    { icon: Waves, title: t.projectDesc.features.processing.title, description: t.projectDesc.features.processing.description },
+    { icon: Cpu, title: t.projectDesc.features.collection.title, description: t.projectDesc.features.collection.description },
+    { icon: Radio, title: t.projectDesc.features.transmission.title, description: t.projectDesc.features.transmission.description },
+    { icon: BarChart3, title: t.projectDesc.features.analysis.title, description: t.projectDesc.features.analysis.description },
+    { icon: Compass, title: t.projectDesc.features.discovery.title, description: t.projectDesc.features.discovery.description }
+  ];
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
@@ -86,15 +64,13 @@ export default function ProjectDescription() {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
-            How It Works
+            {t.projectDesc.sectionTitle}
           </motion.p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6">
-            The Science Behind
-            <br />
-            <span className="font-semibold">EYBERS-1</span>
+            {t.projectDesc.heading}
           </h2>
           <p className="text-white/50 max-w-2xl mx-auto text-lg leading-relaxed">
-            Our mini-satellite combines cutting-edge particle physics with compact spacecraft engineering to detect and analyze cosmic muons from low Earth orbit.
+            {t.projectDesc.description}
           </p>
         </motion.div>
 
@@ -152,13 +128,15 @@ export default function ProjectDescription() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+          className="mt-20"
         >
+          <h3 className="text-2xl font-light text-white text-center mb-10">{t.projectDesc.specs.title}</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { value: "1U", label: "CubeSat Size" },
-            { value: "400km", label: "Orbital Altitude" },
-            { value: "437MHz", label: "Downlink Freq" },
-            { value: "10⁴", label: "Daily Detections" }
+            t.projectDesc.specs.items.dimensions,
+            t.projectDesc.specs.items.mass,
+            t.projectDesc.specs.items.power,
+            t.projectDesc.specs.items.comms
           ].map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -177,6 +155,7 @@ export default function ProjectDescription() {
               <p className="text-white/30 text-xs uppercase tracking-wider">{stat.label}</p>
             </motion.div>
           ))}
+          </div>
         </motion.div>
       </div>
     </section>

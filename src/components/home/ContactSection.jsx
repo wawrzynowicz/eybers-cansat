@@ -7,8 +7,10 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
+import { useLanguage } from '@/components/shared/LanguageContext';
 
 export default function ContactSection() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -47,9 +49,9 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">Get in Touch</p>
+          <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">{t.contact.sectionTitle}</p>
           <h2 className="text-4xl md:text-5xl font-light text-white">
-            Let's <span className="font-semibold">Connect</span>
+            {t.contact.heading}
           </h2>
         </motion.div>
 
@@ -69,13 +71,13 @@ export default function ContactSection() {
                   className="text-center py-12"
                 >
                   <CheckCircle className="w-12 h-12 text-white/40 mx-auto mb-4" strokeWidth={1} />
-                  <h3 className="text-xl text-white mb-2">Message Sent</h3>
-                  <p className="text-white/40 mb-6">We'll be in touch soon.</p>
+                  <h3 className="text-xl text-white mb-2">{t.contact.form.successTitle}</h3>
+                  <p className="text-white/40 mb-6">{t.contact.form.successMessage}</p>
                   <button 
                     onClick={() => setSubmitted(false)}
                     className="text-white/40 hover:text-white text-sm underline underline-offset-4"
                   >
-                    Send another
+                    {t.contact.form.send}
                   </button>
                 </motion.div>
               ) : (
@@ -87,7 +89,7 @@ export default function ContactSection() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        placeholder="Name"
+                        placeholder={t.contact.form.name}
                         className="h-12 bg-transparent border-white/10 text-white placeholder:text-white/20 rounded-none focus:border-white/30 focus:ring-0"
                       />
                     </div>
@@ -98,7 +100,7 @@ export default function ContactSection() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        placeholder="Email"
+                        placeholder={t.contact.form.email}
                         className="h-12 bg-transparent border-white/10 text-white placeholder:text-white/20 rounded-none focus:border-white/30 focus:ring-0"
                       />
                     </div>
@@ -109,7 +111,7 @@ export default function ContactSection() {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    placeholder="Your message..."
+                    placeholder={t.contact.form.message}
                     rows={5}
                     className="bg-transparent border-white/10 text-white placeholder:text-white/20 rounded-none focus:border-white/30 focus:ring-0 resize-none"
                   />
@@ -123,7 +125,7 @@ export default function ContactSection() {
                       <Loader2 className="w-4 h-4 animate-spin" />
                     ) : (
                       <>
-                        SEND MESSAGE
+                        {t.contact.form.send.toUpperCase()}
                         <Send className="w-4 h-4 ml-2" />
                       </>
                     )}
@@ -142,7 +144,7 @@ export default function ContactSection() {
             className="space-y-8"
           >
             <div className="border border-white/[0.05] bg-white/[0.01] p-8">
-              <h3 className="text-white text-lg mb-4">Email</h3>
+              <h3 className="text-white text-lg mb-4">{t.contact.email}</h3>
               <a 
                 href="mailto:eybers.cansat@gmail.com" 
                 className="flex items-center gap-2 text-white/40 hover:text-white transition-colors group"
@@ -154,7 +156,7 @@ export default function ContactSection() {
             </div>
 
             <div className="border border-white/[0.05] bg-white/[0.01] p-8">
-              <h3 className="text-white text-lg mb-4">Follow Us</h3>
+              <h3 className="text-white text-lg mb-4">{t.contact.connect}</h3>
               <div className="flex gap-4">
                 {[
                   { icon: Twitter, href: '#', label: 'Twitter' },
@@ -175,9 +177,9 @@ export default function ContactSection() {
             </div>
 
             <div className="border border-white/[0.05] bg-white/[0.02] p-8">
-              <h3 className="text-white text-lg mb-3">Support Our Mission</h3>
+              <h3 className="text-white text-lg mb-3">{t.contact.sponsorTitle}</h3>
               <p className="text-white/30 text-sm leading-relaxed">
-                Interested in sponsorship, mentorship, or collaboration? We'd love to hear from you.
+                {t.contact.sponsorMessage}
               </p>
             </div>
           </motion.div>

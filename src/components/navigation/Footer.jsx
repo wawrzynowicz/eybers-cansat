@@ -1,7 +1,10 @@
 import React from 'react';
 import { Mail, Twitter, Instagram, Github } from 'lucide-react';
+import { useLanguage } from '@/components/shared/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
+  
   return (
     <footer className="relative border-t border-white/[0.05] bg-black">
       <div className="max-w-6xl mx-auto px-4 py-16">
@@ -15,7 +18,7 @@ export default function Footer() {
               <span className="text-lg font-medium text-white">EYBERS</span>
             </a>
             <p className="text-white/30 text-sm leading-relaxed max-w-xs">
-              Six high school students exploring the cosmos through innovative satellite technology.
+              {t.footer.tagline}
             </p>
           </div>
 
@@ -24,11 +27,10 @@ export default function Footer() {
             <h4 className="text-white/50 uppercase tracking-wider text-xs mb-6">Navigation</h4>
             <div className="flex flex-col gap-3">
               {[
-                { name: 'Home', href: '#' },
-                { name: 'Mission', href: '#mission' },
-                { name: 'Project', href: '#project' },
-                { name: 'Team', href: '#team' },
-                { name: 'Contact', href: '#contact' }
+                { name: t.nav.mission, href: '#mission' },
+                { name: t.nav.project, href: '#project' },
+                { name: t.nav.team, href: '#team' },
+                { name: t.nav.contact, href: '#contact' }
               ].map(link => (
                 <a 
                   key={link.name}
@@ -43,7 +45,7 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h4 className="text-white/50 uppercase tracking-wider text-xs mb-6">Connect</h4>
+            <h4 className="text-white/50 uppercase tracking-wider text-xs mb-6">{t.contact.connect}</h4>
             <div className="flex gap-3">
               {[
                 { icon: Twitter, href: '#' },
@@ -65,7 +67,7 @@ export default function Footer() {
 
         <div className="border-t border-white/[0.05] mt-12 pt-8 text-center">
           <p className="text-white/20 text-xs tracking-wider">
-            © {new Date().getFullYear()} EYBERS TEAM
+            © {new Date().getFullYear()} EYBERS TEAM. {t.footer.rights}
           </p>
         </div>
       </div>

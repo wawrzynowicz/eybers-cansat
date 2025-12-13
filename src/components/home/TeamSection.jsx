@@ -3,6 +3,7 @@ import { base44 } from '@/api/base44Client';
 import { useQuery } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { Loader2, User } from 'lucide-react';
+import { useLanguage } from '@/components/shared/LanguageContext';
 
 const defaultMembers = [
   { id: 1, name: "Alex Chen", role: "Project Lead", bio: "Passionate about aerospace engineering.", image_url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop", order: 1 },
@@ -79,6 +80,7 @@ function TeamMemberCard({ member, index }) {
 }
 
 export default function TeamSection() {
+  const { t } = useLanguage();
   const { data: members = [], isLoading } = useQuery({
     queryKey: ['teamMembers'],
     queryFn: () => base44.entities.TeamMember.list('order'),
@@ -96,9 +98,9 @@ export default function TeamSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">The Crew</p>
+          <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">{t.team.sectionTitle}</p>
           <h2 className="text-4xl md:text-5xl font-light text-white">
-            Meet Our <span className="font-semibold">Team</span>
+            {t.team.heading} <span className="font-semibold">{t.team.headingBold}</span>
           </h2>
         </motion.div>
 
@@ -130,9 +132,8 @@ export default function TeamSection() {
             transition={{ delay: 0.3 }}
           />
           <blockquote className="text-xl md:text-2xl text-white/60 font-light italic leading-relaxed">
-            "Together, we're proving that the future of space exploration starts in classrooms today."
+            "{t.team.quote}"
           </blockquote>
-          <p className="mt-6 text-white/20 text-sm uppercase tracking-wider">— The EYBERS Team</p>
         </motion.div>
       </div>
     </section>
