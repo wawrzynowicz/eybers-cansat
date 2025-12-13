@@ -14,6 +14,8 @@ const defaultMembers = [
 ];
 
 function TeamMemberCard({ member, index }) {
+  const [isHovered, setIsHovered] = React.useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -21,6 +23,8 @@ function TeamMemberCard({ member, index }) {
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <div className="relative overflow-hidden">
         {/* Image */}
