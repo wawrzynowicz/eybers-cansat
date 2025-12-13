@@ -2,8 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/components/shared/LanguageContext';
 
 export default function HeroSection() {
+  const { t } = useLanguage();
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
       {/* Animated gradient orbs */}
@@ -68,7 +71,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            High School Science Project
+            {t.hero.tagline}
           </motion.p>
 
           {/* Main title */}
@@ -78,7 +81,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            EYBERS
+            {t.hero.title}
           </motion.h1>
 
           {/* Animated line */}
@@ -88,17 +91,15 @@ export default function HeroSection() {
             animate={{ scaleX: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
           />
-          
+
           {/* Description */}
           <motion.p 
-            className="text-lg md:text-xl text-white/40 mb-12 max-w-2xl mx-auto leading-relaxed font-light"
+            className="text-lg md:text-xl text-white/40 mb-12 max-w-2xl mx-auto leading-relaxed font-light whitespace-pre-line"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            Six students building a mini-satellite to detect cosmic muons
-            <br className="hidden md:block" />
-            and unlock the mysteries of the universe.
+            {t.hero.description}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -113,7 +114,7 @@ export default function HeroSection() {
                 size="lg" 
                 className="bg-white text-black hover:bg-white/90 rounded-none px-8 h-12 text-sm font-medium tracking-wide transition-all duration-300 hover:tracking-wider"
               >
-                EXPLORE PROJECT
+                {t.hero.exploreProject}
               </Button>
             </a>
             <a href="#team">
@@ -122,7 +123,7 @@ export default function HeroSection() {
                 variant="outline" 
                 className="border-white/20 text-white hover:bg-white/5 hover:border-white/40 rounded-none px-8 h-12 text-sm font-medium tracking-wide transition-all duration-300"
               >
-                MEET THE TEAM
+                {t.hero.meetTeam}
               </Button>
             </a>
           </motion.div>
