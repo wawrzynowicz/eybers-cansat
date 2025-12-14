@@ -78,7 +78,7 @@ const translations = {
       sectionTitle: "The Crew",
       heading: "Meet Our",
       headingBold: "Team",
-      quote: "Six minds, one mission: reaching for the stars together."
+      quote: "Ad aspera per astra — through hardship to the stars."
     },
     contact: {
       sectionTitle: "Get In Touch",
@@ -181,7 +181,7 @@ const translations = {
       sectionTitle: "Załoga",
       heading: "Poznaj Nasz",
       headingBold: "Zespół",
-      quote: "Sześć umysłów, jedna misja: razem sięgamy po gwiazdy."
+      quote: "Ad aspera per astra — przez trudy do gwiazd."
     },
     contact: {
       sectionTitle: "Skontaktuj się",
