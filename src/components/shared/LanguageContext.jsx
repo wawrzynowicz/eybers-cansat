@@ -78,7 +78,8 @@ const translations = {
       sectionTitle: "The Crew",
       heading: "Meet Our",
       headingBold: "Team",
-      quote: "Ad aspera per astra — through hardship to the stars."
+      quote: "Ad aspera per astra",
+      quoteTranslation: "Through hardship to the stars"
     },
     contact: {
       sectionTitle: "Get In Touch",
@@ -181,7 +182,8 @@ const translations = {
       sectionTitle: "Załoga",
       heading: "Poznaj Nasz",
       headingBold: "Zespół",
-      quote: "Ad aspera per astra — przez trudy do gwiazd."
+      quote: "Ad aspera per astra",
+      quoteTranslation: "Przez trudy do gwiazd"
     },
     contact: {
       sectionTitle: "Skontaktuj się",

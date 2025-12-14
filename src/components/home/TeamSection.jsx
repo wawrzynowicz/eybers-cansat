@@ -131,8 +131,13 @@ export default function TeamSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           />
-          <blockquote className="text-xl md:text-2xl text-white/80 font-light italic leading-relaxed">
-            "{t.team.quote}"
+          <blockquote className="text-center">
+            <p className="text-2xl md:text-3xl text-white font-light italic mb-3">
+              {t.team.quote}
+            </p>
+            <p className="text-base md:text-lg text-white/70 font-light">
+              {t.team.quoteTranslation}
+            </p>
           </blockquote>
         </motion.div>
       </div>
