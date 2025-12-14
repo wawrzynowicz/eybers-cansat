@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { base44 } from '@/api/base44Client';
 import { useMutation } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
-import { Send, Mail, CheckCircle, Loader2, Twitter, Instagram, Github, ArrowUpRight } from 'lucide-react';
+import { Send, Mail, CheckCircle, Loader2, Facebook, Linkedin, Instagram, Github, ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -159,9 +159,10 @@ export default function ContactSection() {
               <h3 className="text-white text-lg mb-4">{t.contact.connect}</h3>
               <div className="flex gap-4">
                 {[
-                  { icon: Twitter, href: '#', label: 'Twitter' },
+                  { icon: Facebook, href: 'https://www.facebook.com/eybers.cansat/', label: 'Facebook' },
+                  { icon: Linkedin, href: 'https://www.linkedin.com/in/eybers-undefined-7680a1396/', label: 'LinkedIn' },
                   { icon: Instagram, href: 'https://www.instagram.com/eybers.cansat/', label: 'Instagram' },
-                  { icon: Github, href: '#', label: 'GitHub' }
+                  { icon: Github, href: 'https://github.com/users/eyberscansat/projects/1', label: 'GitHub' }
                 ].map((social) => (
                   <motion.a
                     key={social.label}
