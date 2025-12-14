@@ -100,7 +100,8 @@ const translations = {
     },
     footer: {
       tagline: "Exploring the cosmos, one muon at a time.",
-      rights: "All rights reserved."
+      rights: "All rights reserved.",
+      navigation: "Navigation"
     }
   },
   pl: {
@@ -202,7 +203,8 @@ const translations = {
     },
     footer: {
       tagline: "Odkrywając kosmos, jeden mion na raz.",
-      rights: "Wszelkie prawa zastrzeżone."
+      rights: "Wszelkie prawa zastrzeżone.",
+      navigation: "Nawigacja"
     }
   }
 };

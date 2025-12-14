@@ -5,14 +5,14 @@ import { motion } from 'framer-motion';
 import { Loader2, User } from 'lucide-react';
 import { useLanguage } from '@/components/shared/LanguageContext';
 
-const defaultMembers = [
-  { id: 1, name: "Alex Chen", role: "Project Lead", bio: "Passionate about aerospace engineering.", image_url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop", order: 1 },
-  { id: 2, name: "Maya Rodriguez", role: "Electronics Engineer", bio: "Designing detection circuits.", image_url: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop", order: 2 },
-  { id: 3, name: "James Park", role: "Software Developer", bio: "Building data systems.", image_url: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop", order: 3 },
-  { id: 4, name: "Sarah Williams", role: "Physics Researcher", bio: "Understanding cosmic radiation.", image_url: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop", order: 4 },
-  { id: 5, name: "Omar Hassan", role: "Communications Lead", bio: "Sharing our mission.", image_url: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop", order: 5 },
-  { id: 6, name: "Emma Thompson", role: "Data Analyst", bio: "Transforming data into discoveries.", image_url: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=500&fit=crop", order: 6 }
-];
+const defaultMembers = (language) => [
+    { id: 1, name: "Alex Chen", role: language === 'pl' ? "Lider Projektu" : "Project Lead", bio: language === 'pl' ? "Pasjonat inżynierii kosmicznej." : "Passionate about aerospace engineering.", image_url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop", order: 1 },
+    { id: 2, name: "Maya Rodriguez", role: language === 'pl' ? "Inżynier Elektronik" : "Electronics Engineer", bio: language === 'pl' ? "Projektowanie układów detekcji." : "Designing detection circuits.", image_url: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop", order: 2 },
+    { id: 3, name: "James Park", role: language === 'pl' ? "Programista" : "Software Developer", bio: language === 'pl' ? "Budowanie systemów danych." : "Building data systems.", image_url: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop", order: 3 },
+    { id: 4, name: "Sarah Williams", role: language === 'pl' ? "Badaczka Fizyki" : "Physics Researcher", bio: language === 'pl' ? "Zrozumienie promieniowania kosmicznego." : "Understanding cosmic radiation.", image_url: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop", order: 4 },
+    { id: 5, name: "Omar Hassan", role: language === 'pl' ? "Lider Komunikacji" : "Communications Lead", bio: language === 'pl' ? "Dzielenie się naszą misją." : "Sharing our mission.", image_url: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop", order: 5 },
+    { id: 6, name: "Emma Thompson", role: language === 'pl' ? "Analityk Danych" : "Data Analyst", bio: language === 'pl' ? "Przekształcanie danych w odkrycia." : "Transforming data into discoveries.", image_url: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=500&fit=crop", order: 6 }
+  ];
 
 function TeamMemberCard({ member, index }) {
   const [isHovered, setIsHovered] = React.useState(false);
@@ -80,13 +80,13 @@ function TeamMemberCard({ member, index }) {
 }
 
 export default function TeamSection() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { data: members = [], isLoading } = useQuery({
     queryKey: ['teamMembers'],
     queryFn: () => base44.entities.TeamMember.list('order'),
   });
 
-  const displayMembers = members.length > 0 ? members : defaultMembers;
+  const displayMembers = members.length > 0 ? members : defaultMembers(language);
 
   return (
     <section className="relative py-32 px-4" id="team">

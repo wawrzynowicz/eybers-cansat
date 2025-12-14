@@ -26,7 +26,7 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="text-white/70 uppercase tracking-wider text-xs mb-6">Navigation</h4>
+            <h4 className="text-white/70 uppercase tracking-wider text-xs mb-6">{t.footer.navigation}</h4>
             <div className="flex flex-col gap-3">
               {[
                 { name: t.nav.mission, href: '#mission' },
