@@ -86,7 +86,10 @@ export default function TeamSection() {
     queryFn: () => base44.entities.TeamMember.list('order'),
   });
 
-  const displayMembers = members.length > 0 ? members : defaultMembers(language);
+  const displayMembers = React.useMemo(() => 
+    members.length > 0 ? members : defaultMembers(language),
+    [members, language]
+  );
 
   return (
     <section className="relative py-32 px-4" id="team">
