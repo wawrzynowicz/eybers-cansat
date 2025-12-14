@@ -70,9 +70,9 @@ export default function ContactSection() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-12"
                 >
-                  <CheckCircle className="w-12 h-12 text-white/40 mx-auto mb-4" strokeWidth={1} />
+                  <CheckCircle className="w-12 h-12 text-white/60 mx-auto mb-4" strokeWidth={1} />
                   <h3 className="text-xl text-white mb-2">{t.contact.form.successTitle}</h3>
-                  <p className="text-white/40 mb-6">{t.contact.form.successMessage}</p>
+                  <p className="text-white/70 mb-6">{t.contact.form.successMessage}</p>
                   <button 
                     onClick={() => setSubmitted(false)}
                     className="text-white/40 hover:text-white text-sm underline underline-offset-4"
@@ -178,7 +178,7 @@ export default function ContactSection() {
 
             <div className="border border-white/[0.05] bg-white/[0.02] p-8">
               <h3 className="text-white text-lg mb-3">{t.contact.sponsorTitle}</h3>
-              <p className="text-white/30 text-sm leading-relaxed">
+              <p className="text-white/60 text-sm leading-relaxed">
                 {t.contact.sponsorMessage}
               </p>
             </div>

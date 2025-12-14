@@ -55,11 +55,11 @@ function TeamMemberCard({ member, index }) {
               viewport={{ once: true }}
               transition={{ delay: 0.2 + index * 0.1 }}
             >
-              <p className="text-white/40 text-xs uppercase tracking-wider mb-1">{member.role}</p>
+              <p className="text-white/60 text-xs uppercase tracking-wider mb-1">{member.role}</p>
               <h3 className="text-xl font-medium text-white mb-2">{member.name}</h3>
               {member.bio && (
                 <motion.p 
-                  className="text-white/70 text-sm leading-relaxed overflow-hidden mt-2 bg-black/30 backdrop-blur-sm p-3 rounded"
+                  className="text-white/90 text-sm leading-relaxed overflow-hidden mt-2 bg-black/40 backdrop-blur-sm p-3 rounded"
                   animate={isHovered ? { opacity: 1, maxHeight: 200 } : { opacity: 0, maxHeight: 0 }}
                   transition={{ duration: 0.4 }}
                 >
@@ -131,7 +131,7 @@ export default function TeamSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           />
-          <blockquote className="text-xl md:text-2xl text-white/60 font-light italic leading-relaxed">
+          <blockquote className="text-xl md:text-2xl text-white/80 font-light italic leading-relaxed">
             "{t.team.quote}"
           </blockquote>
         </motion.div>

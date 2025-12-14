@@ -69,7 +69,7 @@ export default function ProjectDescription() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6">
             {t.projectDesc.heading}
           </h2>
-          <p className="text-white/50 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="text-white/70 max-w-2xl mx-auto text-lg leading-relaxed">
             {t.projectDesc.description}
           </p>
         </motion.div>
@@ -109,7 +109,7 @@ export default function ProjectDescription() {
                 </motion.div>
 
                 <h3 className="text-lg font-medium text-white mb-3">{feature.title}</h3>
-                <p className="text-white/40 text-sm leading-relaxed">{feature.description}</p>
+                <p className="text-white/70 text-sm leading-relaxed">{feature.description}</p>
 
                 {/* Animated dot */}
                 <motion.div

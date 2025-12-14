@@ -51,7 +51,7 @@ export default function FeaturedProject() {
                 </motion.h3>
 
                 <motion.p 
-                  className="text-white/40 text-lg mb-10 leading-relaxed"
+                  className="text-white/70 text-lg mb-10 leading-relaxed"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}

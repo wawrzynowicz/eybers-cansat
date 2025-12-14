@@ -72,7 +72,7 @@ export default function MissionSection() {
                 <card.icon className="w-6 h-6 text-white/40 mb-8" strokeWidth={1} />
                 
                 <h3 className="text-xl font-medium text-white mb-4">{card.title}</h3>
-                <p className="text-white/40 leading-relaxed text-sm">{card.description}</p>
+                <p className="text-white/70 leading-relaxed text-sm">{card.description}</p>
 
                 {/* Hover line */}
                 <motion.div 

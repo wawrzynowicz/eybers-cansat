@@ -94,7 +94,7 @@ export default function HeroSection() {
 
           {/* Description */}
           <motion.p 
-            className="text-lg md:text-xl text-white/40 mb-12 max-w-2xl mx-auto leading-relaxed font-light whitespace-pre-line"
+            className="text-lg md:text-xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed font-light whitespace-pre-line"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
