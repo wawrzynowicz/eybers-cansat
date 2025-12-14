@@ -15,7 +15,10 @@ const defaultMembers = (language) => [
   ];
 
 function TeamMemberCard({ member, index }) {
+  const { language } = useLanguage();
   const [isHovered, setIsHovered] = React.useState(false);
+  
+  const bio = language === 'pl' && member.bio_pl ? member.bio_pl : member.bio;
 
   return (
     <motion.div
@@ -57,13 +60,13 @@ function TeamMemberCard({ member, index }) {
             >
               <p className="text-white/60 text-xs uppercase tracking-wider mb-1">{member.role}</p>
               <h3 className="text-xl font-medium text-white mb-2">{member.name}</h3>
-              {member.bio && (
+              {bio && (
                 <motion.p 
                   className="text-white/90 text-sm leading-relaxed overflow-hidden mt-2 bg-black/40 backdrop-blur-sm p-3 rounded"
                   animate={isHovered ? { opacity: 1, maxHeight: 200 } : { opacity: 0, maxHeight: 0 }}
                   transition={{ duration: 0.4 }}
                 >
-                  {member.bio}
+                  {bio}
                 </motion.p>
               )}
             </motion.div>
