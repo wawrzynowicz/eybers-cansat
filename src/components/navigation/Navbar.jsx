@@ -45,10 +45,12 @@ export default function Navbar() {
             {/* Logo */}
             <a href="#" className="flex items-center gap-3 group">
               <div className="relative">
-                <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center">
-                  <span className="text-black font-bold text-lg">E</span>
-                </div>
-                <div className="absolute inset-0 rounded-lg bg-white/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <img 
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6931f02077d600a24db95382/bca3a73ca_552650322_1319197539651737_3123669821236239099_n.jpg"
+                  alt="EYBERS Logo"
+                  className="w-10 h-10 rounded-full object-cover"
+                />
+                <div className="absolute inset-0 rounded-full bg-white/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <span className="text-xl font-semibold text-white tracking-wide">EYBERS</span>
             </a>

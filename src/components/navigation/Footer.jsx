@@ -12,9 +12,11 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <a href="#" className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 rounded bg-white flex items-center justify-center">
-                <span className="text-black font-bold text-sm">E</span>
-              </div>
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6931f02077d600a24db95382/bca3a73ca_552650322_1319197539651737_3123669821236239099_n.jpg"
+                alt="EYBERS Logo"
+                className="w-8 h-8 rounded-full object-cover"
+              />
               <span className="text-lg font-medium text-white">EYBERS</span>
             </a>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
