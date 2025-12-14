@@ -19,14 +19,14 @@ export default function Footer() {
               />
               <span className="text-lg font-medium text-white">EYBERS</span>
             </a>
-            <p className="text-white/60 text-sm leading-relaxed max-w-xs">
+            <p className="text-white/80 text-sm leading-relaxed max-w-xs">
               {t.footer.tagline}
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <h4 className="text-white/50 uppercase tracking-wider text-xs mb-6">Navigation</h4>
+            <h4 className="text-white/70 uppercase tracking-wider text-xs mb-6">Navigation</h4>
             <div className="flex flex-col gap-3">
               {[
                 { name: t.nav.mission, href: '#mission' },
@@ -37,7 +37,7 @@ export default function Footer() {
                 <a 
                   key={link.name}
                   href={link.href}
-                  className="text-white/40 hover:text-white transition-colors text-sm"
+                  className="text-white/70 hover:text-white transition-colors text-sm"
                 >
                   {link.name}
                 </a>
@@ -47,7 +47,7 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h4 className="text-white/50 uppercase tracking-wider text-xs mb-6">{t.contact.connect}</h4>
+            <h4 className="text-white/70 uppercase tracking-wider text-xs mb-6">{t.contact.connect}</h4>
             <div className="flex gap-3">
               {[
                 { icon: Facebook, href: 'https://www.facebook.com/eybers.cansat/' },
@@ -59,7 +59,7 @@ export default function Footer() {
                 <a
                   key={index}
                   href={social.href}
-                  className="w-10 h-10 border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 transition-all"
+                  className="w-10 h-10 border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-all"
                 >
                   <social.icon className="w-4 h-4" />
                 </a>
@@ -69,7 +69,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/[0.05] mt-12 pt-8 text-center">
-          <p className="text-white/20 text-xs tracking-wider">
+          <p className="text-white/50 text-xs tracking-wider">
             © {new Date().getFullYear()} EYBERS TEAM. {t.footer.rights}
           </p>
         </div>
