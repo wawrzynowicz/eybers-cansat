@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Twitter, Instagram, Github } from 'lucide-react';
+import { Mail, Instagram, Github, Facebook, Linkedin } from 'lucide-react';
 import { useLanguage } from '@/components/shared/LanguageContext';
 
 export default function Footer() {
@@ -50,7 +50,8 @@ export default function Footer() {
             <h4 className="text-white/50 uppercase tracking-wider text-xs mb-6">{t.contact.connect}</h4>
             <div className="flex gap-3">
               {[
-                { icon: Twitter, href: '#' },
+                { icon: Facebook, href: 'https://www.facebook.com/eybers.cansat/' },
+                { icon: Linkedin, href: 'https://www.linkedin.com/in/eybers-undefined-7680a1396/' },
                 { icon: Instagram, href: '#' },
                 { icon: Github, href: '#' },
                 { icon: Mail, href: '#' }
