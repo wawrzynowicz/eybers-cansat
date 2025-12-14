@@ -5,6 +5,7 @@ import StatsSection from '@/components/home/StatsSection';
 import FeaturedProject from '@/components/home/FeaturedProject';
 import ProjectDescription from '@/components/home/ProjectDescription';
 import TeamSection from '@/components/home/TeamSection';
+import SponsorsSection from '@/components/home/SponsorsSection';
 import ContactSection from '@/components/home/ContactSection';
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <FeaturedProject />
       <ProjectDescription />
       <TeamSection />
+      <SponsorsSection />
       <ContactSection />
     </div>
   );
