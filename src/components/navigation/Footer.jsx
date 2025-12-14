@@ -52,9 +52,9 @@ export default function Footer() {
               {[
                 { icon: Facebook, href: 'https://www.facebook.com/eybers.cansat/' },
                 { icon: Linkedin, href: 'https://www.linkedin.com/in/eybers-undefined-7680a1396/' },
-                { icon: Instagram, href: '#' },
-                { icon: Github, href: '#' },
-                { icon: Mail, href: '#' }
+                { icon: Instagram, href: 'https://www.instagram.com/eybers.cansat/' },
+                { icon: Github, href: 'https://github.com/users/eyberscansat/projects/1' },
+                { icon: Mail, href: 'mailto:contact@eybers.com' }
               ].map((social, index) => (
                 <a
                   key={index}
