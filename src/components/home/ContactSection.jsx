@@ -70,12 +70,12 @@ export default function ContactSection() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-12"
                 >
-                  <CheckCircle className="w-12 h-12 text-white/60 mx-auto mb-4" strokeWidth={1} />
+                  <CheckCircle className="w-12 h-12 text-white/80 mx-auto mb-4" strokeWidth={1} />
                   <h3 className="text-xl text-white mb-2">{t.contact.form.successTitle}</h3>
-                  <p className="text-white/70 mb-6">{t.contact.form.successMessage}</p>
+                  <p className="text-white/90 mb-6">{t.contact.form.successMessage}</p>
                   <button 
                     onClick={() => setSubmitted(false)}
-                    className="text-white/40 hover:text-white text-sm underline underline-offset-4"
+                    className="text-white/70 hover:text-white text-sm underline underline-offset-4"
                   >
                     {t.contact.form.send}
                   </button>
@@ -147,7 +147,7 @@ export default function ContactSection() {
               <h3 className="text-white text-lg mb-4">{t.contact.email}</h3>
               <a 
                 href="mailto:eybers.cansat@gmail.com" 
-                className="flex items-center gap-2 text-white/40 hover:text-white transition-colors group"
+                className="flex items-center gap-2 text-white/80 hover:text-white transition-colors group"
               >
                 <Mail className="w-4 h-4" />
                 eybers.cansat@gmail.com
@@ -166,7 +166,7 @@ export default function ContactSection() {
                   <motion.a
                     key={social.label}
                     href={social.href}
-                    className="w-12 h-12 border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 transition-all"
+                    className="w-12 h-12 border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:border-white/30 transition-all"
                     whileHover={{ y: -2 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -178,7 +178,7 @@ export default function ContactSection() {
 
             <div className="border border-white/[0.05] bg-white/[0.02] p-8">
               <h3 className="text-white text-lg mb-3">{t.contact.sponsorTitle}</h3>
-              <p className="text-white/60 text-sm leading-relaxed">
+              <p className="text-white/80 text-sm leading-relaxed">
                 {t.contact.sponsorMessage}
               </p>
             </div>
