@@ -49,7 +49,7 @@ const translations = {
         detection: { label: "Detection", value: "Real-time" },
         dataLink: { label: "Data Link", value: "Ground Station" },
         status: { label: "Status", value: "In Progress" },
-        target: { label: "Target", value: "2025 Launch" }
+        target: { label: "Target", value: "Apr 2026" }
       }
     },
     projectDesc: {
@@ -153,7 +153,7 @@ const translations = {
         detection: { label: "Wykrywanie", value: "W czasie rzeczywistym" },
         dataLink: { label: "Łącze Danych", value: "Stacja Naziemna" },
         status: { label: "Status", value: "W Trakcie" },
-        target: { label: "Cel", value: "Start 2025" }
+        target: { label: "Cel", value: "Kwi 2026" }
       }
     },
     projectDesc: {

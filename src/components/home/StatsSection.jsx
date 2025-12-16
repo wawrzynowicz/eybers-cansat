@@ -9,7 +9,7 @@ export default function StatsSection() {
     { value: "6", label: t.stats.teamMembers },
     { value: "1", label: t.stats.activeProject },
     { value: "∞", label: t.stats.curiosity },
-    { value: "18-19 Apr 2026", label: t.stats.launchTarget }
+    { value: "Apr 2026", label: t.stats.launchTarget }
   ];
   
   return (
