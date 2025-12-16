@@ -17,7 +17,7 @@ const translations = {
     },
     aboutUs: {
       sectionTitle: "About Us",
-      heading: "Who We Are",
+      heading: "Reaching for the Stars",
       cards: {
         who: {
           title: "Who are we",
@@ -25,7 +25,11 @@ const translations = {
         },
         mission: {
           title: "Mission",
-          description: "We design, build, and operate miniature satellite called CanSat, running experiments and collecting data for both primary and secondary missions. We compete in the European Space Agency (ESA) CanSat competition 2025/2026, testing our designs and gaining hands-on aerospace experience."
+          description: "We design, build, and operate miniature satellite called CanSat, running experiments and collecting data for both primary and secondary missions."
+        },
+        competition: {
+          title: "Competition",
+          description: "We compete in the European Space Agency (ESA) CanSat competition 2025/2026, testing our designs and gaining hands-on aerospace experience."
         },
         goals: {
           title: "Our goals",
@@ -120,7 +124,7 @@ const translations = {
     },
     aboutUs: {
       sectionTitle: "O Nas",
-      heading: "Kim Jesteśmy",
+      heading: "Sięgając Gwiazd",
       cards: {
         who: {
           title: "Kim jesteśmy",
@@ -128,7 +132,11 @@ const translations = {
         },
         mission: {
           title: "Misja",
-          description: "Projektujemy, budujemy i obsługujemy miniaturowy satelitę o nazwie CanSat, przeprowadzając eksperymenty i zbierając dane dla misji podstawowych i dodatkowych. Konkurujemy w konkursie CanSat Europejskiej Agencji Kosmicznej (ESA) 2025/2026, testując nasze projekty i zdobywając praktyczne doświadczenie w dziedzinie lotnictwa."
+          description: "Projektujemy, budujemy i obsługujemy miniaturowy satelitę o nazwie CanSat, przeprowadzając eksperymenty i zbierając dane dla misji podstawowych i dodatkowych."
+        },
+        competition: {
+          title: "Konkurs",
+          description: "Konkurujemy w konkursie CanSat Europejskiej Agencji Kosmicznej (ESA) 2025/2026, testując nasze projekty i zdobywając praktyczne doświadczenie w dziedzinie lotnictwa."
         },
         goals: {
           title: "Nasze cele",

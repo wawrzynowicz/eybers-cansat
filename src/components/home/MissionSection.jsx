@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Target, TrendingUp } from 'lucide-react';
+import { Users, Target, Trophy, TrendingUp } from 'lucide-react';
 import { useLanguage } from '@/components/shared/LanguageContext';
 
 export default function MissionSection() {
@@ -16,6 +16,11 @@ export default function MissionSection() {
       icon: Target,
       title: t.aboutUs.cards.mission.title,
       description: t.aboutUs.cards.mission.description
+    },
+    {
+      icon: Trophy,
+      title: t.aboutUs.cards.competition.title,
+      description: t.aboutUs.cards.competition.description
     },
     {
       icon: TrendingUp,
@@ -46,7 +51,7 @@ export default function MissionSection() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {cards.map((card, index) => (
             <motion.div
               key={card.title}
