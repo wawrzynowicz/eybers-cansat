@@ -22,11 +22,11 @@ export default function HeroSection() {
   const backgroundY = useTransform(scrollY, [0, 1000], [0, 300]);
   const backgroundOpacity = useTransform(scrollY, [0, 600], [1, 0]);
   
-  // Word reveal first (0-700px scroll) - words reveal while letters stay horizontal
-  const wordProgress = useTransform(scrollY, [0, 700], [0, 1]);
+  // Transition from horizontal to vertical (0-500px scroll)
+  const layoutProgress = useTransform(scrollY, [0, 500], [0, 1]);
   
-  // Transition from horizontal to vertical (800-1300px scroll) - starts after words are revealed
-  const layoutProgress = useTransform(scrollY, [800, 1300], [0, 1]);
+  // Word reveal (600-1300px scroll) - starts after vertical positioning is complete
+  const wordProgress = useTransform(scrollY, [600, 1300], [0, 1]);
 
   // Fixed content appears after full reveal (with longer pause)
   const contentOpacity = useTransform(scrollY, [1500, 1600], [0, 1]);
