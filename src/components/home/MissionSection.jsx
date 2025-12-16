@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, Eye, Sparkles } from 'lucide-react';
+import { Users, Target, TrendingUp } from 'lucide-react';
 import { useLanguage } from '@/components/shared/LanguageContext';
 
 export default function MissionSection() {
@@ -8,19 +8,19 @@ export default function MissionSection() {
   
   const cards = [
     {
+      icon: Users,
+      title: t.aboutUs.cards.who.title,
+      description: t.aboutUs.cards.who.description
+    },
+    {
       icon: Target,
-      title: t.mission.cards.mission.title,
-      description: t.mission.cards.mission.description
+      title: t.aboutUs.cards.mission.title,
+      description: t.aboutUs.cards.mission.description
     },
     {
-      icon: Eye,
-      title: t.mission.cards.vision.title,
-      description: t.mission.cards.vision.description
-    },
-    {
-      icon: Sparkles,
-      title: t.mission.cards.impact.title,
-      description: t.mission.cards.impact.description
+      icon: TrendingUp,
+      title: t.aboutUs.cards.goals.title,
+      description: t.aboutUs.cards.goals.description
     }
   ];
   
@@ -40,9 +40,9 @@ export default function MissionSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">{t.mission.sectionTitle}</p>
+          <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">{t.aboutUs.sectionTitle}</p>
           <h2 className="text-4xl md:text-5xl font-light text-white">
-            {t.mission.heading} <span className="font-semibold">{t.mission.headingBold}</span>
+            {t.aboutUs.heading}
           </h2>
         </motion.div>
 

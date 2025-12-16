@@ -15,22 +15,21 @@ const translations = {
       exploreProject: "EXPLORE PROJECT",
       meetTeam: "MEET THE TEAM"
     },
-    mission: {
-      sectionTitle: "Our Purpose",
-      heading: "Reaching for the",
-      headingBold: "Stars",
+    aboutUs: {
+      sectionTitle: "About Us",
+      heading: "Who We Are",
       cards: {
+        who: {
+          title: "Who are we",
+          description: "We are EYBERS, a team of six motivated students and young engineers exploring aerospace technology and turning ideas into real projects."
+        },
         mission: {
           title: "Mission",
-          description: "To design and build a mini-satellite capable of detecting cosmic muons, contributing to scientific research while inspiring the next generation."
+          description: "We design, build, and operate miniature satellite called CanSat, running experiments and collecting data for both primary and secondary missions. We compete in the European Space Agency (ESA) CanSat competition 2025/2026, testing our designs and gaining hands-on aerospace experience."
         },
-        vision: {
-          title: "Vision",
-          description: "A world where high school students actively participate in cutting-edge space science, proving that age is no barrier to discovery."
-        },
-        impact: {
-          title: "Impact",
-          description: "By sharing our journey and findings, we spark curiosity and demonstrate that the cosmos is accessible to all who reach for the stars."
+        goals: {
+          title: "Our goals",
+          description: "We aim to advance our technical skills, gather meaningful scientific data, and contribute innovative solutions to future space missions."
         }
       }
     },
@@ -119,22 +118,21 @@ const translations = {
       exploreProject: "ODKRYJ PROJEKT",
       meetTeam: "POZNAJ ZESPÓŁ"
     },
-    mission: {
-      sectionTitle: "Nasz Cel",
-      heading: "Sięgając do",
-      headingBold: "Gwiazd",
+    aboutUs: {
+      sectionTitle: "O Nas",
+      heading: "Kim Jesteśmy",
       cards: {
+        who: {
+          title: "Kim jesteśmy",
+          description: "Jesteśmy EYBERS, zespołem sześciu zmotywowanych studentów i młodych inżynierów eksplorujących technologie lotnicze i zamieniających pomysły w rzeczywiste projekty."
+        },
         mission: {
           title: "Misja",
-          description: "Zaprojektowanie i zbudowanie mini-satelity zdolnego do wykrywania mionów kosmicznych, przyczyniając się do badań naukowych i inspirując kolejne pokolenia."
+          description: "Projektujemy, budujemy i obsługujemy miniaturowy satelitę o nazwie CanSat, przeprowadzając eksperymenty i zbierając dane dla misji podstawowych i dodatkowych. Konkurujemy w konkursie CanSat Europejskiej Agencji Kosmicznej (ESA) 2025/2026, testując nasze projekty i zdobywając praktyczne doświadczenie w dziedzinie lotnictwa."
         },
-        vision: {
-          title: "Wizja",
-          description: "Świat, w którym uczniowie szkół średnich aktywnie uczestniczą w najnowocześniejszej nauce kosmicznej, udowadniając, że wiek nie jest barierą dla odkryć."
-        },
-        impact: {
-          title: "Wpływ",
-          description: "Dzieląc się naszą podróżą i odkryciami, rozpalamy ciekawość i pokazujemy, że kosmos jest dostępny dla wszystkich, którzy sięgają po gwiazdy."
+        goals: {
+          title: "Nasze cele",
+          description: "Dążymy do rozwijania naszych umiejętności technicznych, zbierania wartościowych danych naukowych i wnoszenia innowacyjnych rozwiązań do przyszłych misji kosmicznych."
         }
       }
     },
