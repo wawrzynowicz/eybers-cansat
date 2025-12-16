@@ -78,19 +78,18 @@ export default function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
         >
-          {/* Tagline */}
-          <motion.p
-            className="text-white/30 uppercase tracking-[0.4em] text-xs md:text-sm mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-          >
-            {t.hero.tagline}
-          </motion.p>
-
           {/* Main title with scroll-triggered expansion */}
-          <div className="mb-6">
-            <div className="flex flex-wrap justify-center items-center gap-2 md:gap-4 text-4xl md:text-6xl lg:text-8xl font-extralight text-white">
+          <div className="mb-12">
+            <motion.div 
+              className="flex flex-col md:flex-row justify-center items-center gap-3 md:gap-6 text-3xl md:text-5xl lg:text-7xl font-extralight text-white"
+              style={{
+                flexDirection: useTransform(
+                  scrollYProgress,
+                  [0, 0.3],
+                  ['column', 'row']
+                )
+              }}
+            >
               {acronym.map((item, index) => {
                 const progress = useTransform(
                   scrollYProgress,
@@ -103,7 +102,7 @@ export default function HeroSection() {
                 return (
                   <motion.div
                     key={index}
-                    className="inline-flex items-center"
+                    className="inline-flex items-center whitespace-nowrap"
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 + index * 0.1, duration: 0.8 }}
@@ -118,26 +117,8 @@ export default function HeroSection() {
                   </motion.div>
                 );
               })}
-            </div>
+            </motion.div>
           </div>
-
-          {/* Animated line */}
-          <motion.div
-            className="w-24 h-px bg-white/20 mx-auto mb-8"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ delay: 1, duration: 0.8 }}
-          />
-
-          {/* Description */}
-          <motion.p 
-            className="text-lg md:text-xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed font-light whitespace-pre-line"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-          >
-            {t.hero.description}
-          </motion.p>
 
           {/* CTA Buttons */}
           <motion.div 
