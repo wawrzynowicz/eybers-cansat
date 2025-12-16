@@ -1,43 +1,37 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/shared/LanguageContext';
 
 export default function HeroSection() {
   const { t } = useLanguage();
-  const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end start"]
-  });
-
-  const acronym = [
-    { letter: 'E', word: 'nthusiastic' },
-    { letter: 'Y', word: 'outh' },
-    { letter: 'B', word: 'ravely' },
-    { letter: 'E', word: 'xploring' },
-    { letter: 'R', word: 'ay' },
-    { letter: 'S', word: 'econdaries' }
-  ];
-
-  // Parallax transforms
-  const orb1Y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
-  const orb2Y = useTransform(scrollYProgress, [0, 1], ['0%', '-30%']);
-  const particlesY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
-  const contentOpacity = useTransform(scrollYProgress, [0.7, 0.85], [0, 1]);
-  const contentY = useTransform(scrollYProgress, [0.7, 0.85], [50, 0]);
+  const [expandedText, setExpandedText] = useState('');
+  const fullText = 'Enthusiastic Youth Bravely Exploring Ray Secondaries';
+  
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index <= fullText.length) {
+        setExpandedText(fullText.slice(0, index));
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 80);
+    
+    return () => clearInterval(interval);
+  }, []);
   
   return (
-    <section ref={sectionRef} className="relative min-h-[150vh] flex items-center justify-center overflow-hidden px-4">
-      {/* Animated gradient orbs with parallax */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
+      {/* Animated gradient orbs */}
       <motion.div
         className="absolute w-[800px] h-[800px] rounded-full"
         style={{
           background: 'radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%)',
           top: '-20%',
           left: '-20%',
-          y: orb1Y
         }}
         animate={{
           scale: [1, 1.2, 1],
@@ -51,7 +45,6 @@ export default function HeroSection() {
           background: 'radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 70%)',
           bottom: '-10%',
           right: '-10%',
-          y: orb2Y
         }}
         animate={{
           scale: [1, 1.3, 1],
@@ -60,28 +53,26 @@ export default function HeroSection() {
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      {/* Floating particles with parallax */}
-      <motion.div style={{ y: particlesY }} className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-px h-px bg-white rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              opacity: [0, 1, 0],
-              scale: [0, 1.5, 0],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 3,
-            }}
-          />
-        ))}
-      </motion.div>
+      {/* Floating particles */}
+      {[...Array(20)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-px h-px bg-white rounded-full"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+          }}
+          animate={{
+            opacity: [0, 1, 0],
+            scale: [0, 1.5, 0],
+          }}
+          transition={{
+            duration: 3 + Math.random() * 2,
+            repeat: Infinity,
+            delay: Math.random() * 3,
+          }}
+        />
+      ))}
 
       <div className="relative z-10 text-center max-w-5xl mx-auto">
         <motion.div
@@ -89,52 +80,68 @@ export default function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
         >
-          {/* Main title with scroll-triggered expansion */}
-          <div className="mb-12">
-            <motion.div 
-              className="flex justify-center items-start gap-3 md:gap-6 text-3xl md:text-5xl lg:text-7xl font-extralight text-white"
-              style={{
-                flexDirection: useTransform(
-                  scrollYProgress,
-                  [0, 0.2],
-                  ['row', 'column']
-                )
-              }}
-            >
-              {acronym.map((item, index) => {
-                const wordProgress = useTransform(
-                  scrollYProgress,
-                  [0.2 + index * 0.1, 0.3 + index * 0.1],
-                  [0, 1]
-                );
-                const wordOpacity = useTransform(wordProgress, [0, 1], [0, 1]);
-                const wordWidth = useTransform(wordProgress, [0, 1], ['0ch', `${item.word.length}ch`]);
+          {/* Tagline */}
+          <motion.p
+            className="text-white/30 uppercase tracking-[0.4em] text-xs md:text-sm mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+          >
+            {t.hero.tagline}
+          </motion.p>
 
-                return (
-                  <motion.div
-                    key={index}
-                    className="inline-flex items-center whitespace-nowrap"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
-                  >
-                    <span className="font-semibold">{item.letter}</span>
-                    <motion.span
-                      style={{ opacity: wordOpacity, width: wordWidth }}
-                      className="overflow-hidden whitespace-nowrap"
-                    >
-                      {item.word}
-                    </motion.span>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-          </div>
+          {/* Main title */}
+          <motion.h1 
+            className="text-6xl md:text-8xl lg:text-9xl font-extralight text-white mb-6 tracking-tight"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 1 }}
+          >
+            {t.hero.title}
+          </motion.h1>
 
-          {/* CTA Buttons - only appear after abbreviation reveal */}
+          {/* Expanded text animation */}
+          <motion.p
+            className="text-xl md:text-2xl text-white/60 font-light tracking-wide min-h-[2rem] mb-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 0.5 }}
+          >
+            {expandedText}
+            {expandedText.length < fullText.length && (
+              <motion.span
+                animate={{ opacity: [1, 0, 1] }}
+                transition={{ duration: 0.8, repeat: Infinity }}
+              >
+                |
+              </motion.span>
+            )}
+          </motion.p>
+
+          {/* Animated line */}
+          <motion.div
+            className="w-24 h-px bg-white/20 mx-auto mb-8"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ delay: 1, duration: 0.8 }}
+          />
+
+          {/* Description */}
+          <motion.p 
+            className="text-lg md:text-xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed font-light whitespace-pre-line"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+          >
+            {t.hero.description}
+          </motion.p>
+
+          {/* CTA Buttons */}
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 justify-center"
-            style={{ opacity: contentOpacity, y: contentY }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.1, duration: 0.8 }}
           >
             <a href="#project">
               <Button 
