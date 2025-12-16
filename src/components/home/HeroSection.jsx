@@ -131,12 +131,10 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons - only appear after abbreviation reveal */}
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.1, duration: 0.8 }}
+            style={{ opacity: contentOpacity, y: contentY }}
           >
             <a href="#project">
               <Button 
