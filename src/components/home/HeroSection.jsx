@@ -25,12 +25,12 @@ export default function HeroSection() {
   // Transition from horizontal to vertical (0-500px scroll)
   const layoutProgress = useTransform(scrollY, [0, 500], [0, 1]);
   
-  // Word reveal (500-1200px scroll)
-  const wordProgress = useTransform(scrollY, [500, 1200], [0, 1]);
+  // Word reveal (600-1300px scroll) - starts after vertical positioning is complete
+  const wordProgress = useTransform(scrollY, [600, 1300], [0, 1]);
 
   // Fixed content appears after full reveal (with longer pause)
-  const contentOpacity = useTransform(scrollY, [1400, 1500], [0, 1]);
-  const contentY = useTransform(scrollY, [1400, 1500], [50, 0]);
+  const contentOpacity = useTransform(scrollY, [1500, 1600], [0, 1]);
+  const contentY = useTransform(scrollY, [1500, 1600], [50, 0]);
 
   useEffect(() => {
     return wordProgress.on('change', (v) => {
