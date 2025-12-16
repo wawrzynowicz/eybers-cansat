@@ -178,7 +178,7 @@ export default function HeroSection() {
 
       {/* Hero Content - Only visible after EYBERS is fully revealed */}
       <motion.section 
-        className="relative min-h-screen flex items-center justify-center px-4"
+        className="relative min-h-screen flex items-center justify-center px-4 -mb-20"
         style={{
           opacity: contentOpacity,
           y: contentY,
