@@ -81,35 +81,35 @@ export default function HeroSection() {
           {/* Main title with scroll-triggered expansion */}
           <div className="mb-12">
             <motion.div 
-              className="flex flex-col md:flex-row justify-center items-center gap-3 md:gap-6 text-3xl md:text-5xl lg:text-7xl font-extralight text-white"
+              className="flex justify-center items-center gap-3 md:gap-6 text-3xl md:text-5xl lg:text-7xl font-extralight text-white"
               style={{
                 flexDirection: useTransform(
                   scrollYProgress,
-                  [0, 0.3],
+                  [0, 0.2],
                   ['column', 'row']
                 )
               }}
             >
               {acronym.map((item, index) => {
-                const progress = useTransform(
+                const wordProgress = useTransform(
                   scrollYProgress,
-                  [index * 0.12, (index + 1) * 0.12],
+                  [0.2 + index * 0.1, 0.3 + index * 0.1],
                   [0, 1]
                 );
-                const opacity = useTransform(progress, [0, 1], [0, 1]);
-                const width = useTransform(progress, [0, 1], ['0ch', `${item.word.length}ch`]);
+                const wordOpacity = useTransform(wordProgress, [0, 1], [0, 1]);
+                const wordWidth = useTransform(wordProgress, [0, 1], ['0ch', `${item.word.length}ch`]);
 
                 return (
                   <motion.div
                     key={index}
                     className="inline-flex items-center whitespace-nowrap"
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 + index * 0.1, duration: 0.8 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
                   >
                     <span className="font-semibold">{item.letter}</span>
                     <motion.span
-                      style={{ opacity, width }}
+                      style={{ opacity: wordOpacity, width: wordWidth }}
                       className="overflow-hidden whitespace-nowrap"
                     >
                       {item.word}
