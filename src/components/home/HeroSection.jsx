@@ -81,12 +81,12 @@ export default function HeroSection() {
           {/* Main title with scroll-triggered expansion */}
           <div className="mb-12">
             <motion.div 
-              className="flex justify-center items-center gap-3 md:gap-6 text-3xl md:text-5xl lg:text-7xl font-extralight text-white"
+              className="flex justify-center items-start gap-3 md:gap-6 text-3xl md:text-5xl lg:text-7xl font-extralight text-white"
               style={{
                 flexDirection: useTransform(
                   scrollYProgress,
                   [0, 0.2],
-                  ['column', 'row']
+                  ['row', 'column']
                 )
               }}
             >
