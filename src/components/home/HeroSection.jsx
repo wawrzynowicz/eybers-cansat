@@ -4,173 +4,208 @@ import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/shared/LanguageContext';
 
-const LETTERS_DATA = [
-  { letter: 'E', word: 'Enthusiastic', color: '#FF6B6B' },
-  { letter: 'Y', word: 'Youth', color: '#4ECDC4' },
-  { letter: 'B', word: 'Bravely', color: '#45B7D1' },
-  { letter: 'E', word: 'Exploring', color: '#FFA07A' },
-  { letter: 'R', word: 'Ray', color: '#98D8C8' },
-  { letter: 'S', word: 'Secondaries', color: '#F7DC6F' }
+const acronym = [
+  { letter: 'E', word: 'nthusiastic', color: 'text-blue-400' },
+  { letter: 'Y', word: 'outh', color: 'text-purple-400' },
+  { letter: 'B', word: 'ravely', color: 'text-pink-400' },
+  { letter: 'E', word: 'xploring', color: 'text-cyan-400' },
+  { letter: 'R', word: 'ay', color: 'text-indigo-400' },
+  { letter: 'S', word: 'econdaries', color: 'text-violet-400' }
 ];
 
 export default function HeroSection() {
   const { t } = useLanguage();
-  const [scrollY, setScrollY] = useState(0);
-  
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const { scrollY } = useScroll();
+  const [isComplete, setIsComplete] = useState(false);
 
-  // Calculate animation progress
-  const rotationProgress = Math.min(scrollY / 400, 1); // 0-400px: rotation
-  const revealProgress = Math.max(0, Math.min((scrollY - 400) / 600, 1)); // 400-1000px: reveal
-  const isFullyRevealed = revealProgress >= 1;
-  
   // Parallax for background elements
-  const bgY1 = useTransform(useScroll().scrollY, [0, 500], [0, 150]);
-  const bgY2 = useTransform(useScroll().scrollY, [0, 500], [0, -100]);
+  const backgroundY = useTransform(scrollY, [0, 1000], [0, 300]);
+  const backgroundOpacity = useTransform(scrollY, [0, 600], [1, 0]);
+  
+  // Transition from horizontal to vertical (0-500px scroll)
+  const layoutProgress = useTransform(scrollY, [0, 500], [0, 1]);
+  
+  // Word reveal (500-1000px scroll)
+  const wordProgress = useTransform(scrollY, [500, 1000], [0, 1]);
+
+  // Fixed content appears after full reveal
+  const contentOpacity = useTransform(scrollY, [950, 1000], [0, 1]);
+  const contentY = useTransform(scrollY, [950, 1000], [50, 0]);
+
+  useEffect(() => {
+    return wordProgress.on('change', (v) => {
+      setIsComplete(v >= 0.95);
+    });
+  }, [wordProgress]);
   
   return (
-    <section className="relative min-h-[300vh] overflow-hidden">
-      {/* Parallax background orbs */}
-      <motion.div
-        className="fixed w-[800px] h-[800px] rounded-full pointer-events-none"
-        style={{
-          background: 'radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%)',
-          top: '-20%',
-          left: '-20%',
-          y: bgY1,
-        }}
-      />
-      <motion.div
-        className="fixed w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{
-          background: 'radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 70%)',
-          bottom: '-10%',
-          right: '-10%',
-          y: bgY2,
-        }}
-      />
-
-      {/* Floating particles */}
-      {[...Array(20)].map((_, i) => (
+    <>
+      {/* EYBERS Acronym Section - Takes 2 viewport heights */}
+      <section className="relative h-[200vh]">
+        {/* Parallax background elements */}
         <motion.div
-          key={i}
-          className="fixed w-px h-px bg-white rounded-full pointer-events-none"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            y: useTransform(useScroll().scrollY, [0, 500], [0, Math.random() * 200 - 100]),
-          }}
-          animate={{
-            opacity: [0, 1, 0],
-            scale: [0, 1.5, 0],
-          }}
-          transition={{
-            duration: 3 + Math.random() * 2,
-            repeat: Infinity,
-            delay: Math.random() * 3,
-          }}
-        />
-      ))}
-
-      {/* Main content - fixed until fully revealed */}
-      <div 
-        className="fixed inset-0 flex items-center justify-center px-4"
-        style={{
-          transform: isFullyRevealed ? `translateY(-${(scrollY - 1000) * 0.5}px)` : 'translateY(0)',
-          opacity: isFullyRevealed ? Math.max(0, 1 - (scrollY - 1000) / 300) : 1,
-        }}
-      >
-        <div className="relative z-10 text-center">
-          {/* EYBERS letters animation */}
-          <div 
-            className="flex items-center justify-center gap-2 md:gap-4"
+          className="fixed inset-0 z-0"
+          style={{ y: backgroundY, opacity: backgroundOpacity }}
+        >
+          <motion.div
+            className="absolute w-[800px] h-[800px] rounded-full"
             style={{
-              flexDirection: rotationProgress > 0.5 ? 'column' : 'row',
+              background: 'radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%)',
+              filter: 'blur(60px)',
+              top: '10%',
+              left: '20%'
             }}
-          >
-            {LETTERS_DATA.map((item, index) => {
-              const letterReveal = Math.max(0, Math.min((revealProgress - index * 0.15) * 2, 1));
-              
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.5, 0.3]
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute w-[600px] h-[600px] rounded-full"
+            style={{
+              background: 'radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%)',
+              filter: 'blur(60px)',
+              bottom: '10%',
+              right: '20%'
+            }}
+            animate={{
+              scale: [1.2, 1, 1.2],
+              opacity: [0.5, 0.3, 0.5]
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+
+          {/* Floating particles */}
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-px h-px bg-white rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                opacity: [0, 1, 0],
+                scale: [0, 1.5, 0],
+              }}
+              transition={{
+                duration: 3 + Math.random() * 2,
+                repeat: Infinity,
+                delay: Math.random() * 3,
+              }}
+            />
+          ))}
+        </motion.div>
+
+        {/* Sticky container for EYBERS animation */}
+        <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+          <div className="relative w-full h-full flex items-center justify-center">
+            {acronym.map((item, index) => {
+              // Calculate position for horizontal to vertical transition
+              const xOffset = useTransform(
+                layoutProgress,
+                [0, 1],
+                [index * 90 - 225, 0]
+              );
+              const yOffset = useTransform(
+                layoutProgress,
+                [0, 1],
+                [0, index * 90 - 225]
+              );
+
+              // Word opacity and width
+              const wordOpacity = useTransform(
+                wordProgress,
+                [0, 0.2, 1],
+                [0, 0, 1]
+              );
+
+              const wordWidth = useTransform(
+                wordProgress,
+                [0, 1],
+                ['0%', '100%']
+              );
+
               return (
                 <motion.div
                   key={index}
-                  className="relative"
+                  className="absolute flex items-center whitespace-nowrap"
                   style={{
-                    marginBottom: rotationProgress > 0.5 ? `${rotationProgress * 20}px` : 0,
+                    x: xOffset,
+                    y: yOffset,
+                    left: '50%',
+                    top: '50%'
                   }}
                 >
-                  <div className="flex items-center gap-2">
-                    {/* Letter */}
-                    <motion.span
-                      className="text-6xl md:text-8xl lg:text-9xl font-extralight text-white"
-                      style={{
-                        opacity: 1 - letterReveal * 0.3,
-                      }}
-                    >
-                      {item.letter}
-                    </motion.span>
-                    
-                    {/* Full word reveal */}
-                    <motion.span
-                      className="text-2xl md:text-4xl lg:text-5xl font-light text-white/90 whitespace-nowrap"
-                      style={{
-                        opacity: letterReveal,
-                        width: `${letterReveal * 100}%`,
-                        overflow: 'hidden',
-                        marginLeft: letterReveal > 0 ? '8px' : '0px',
-                      }}
-                    >
+                  <motion.span
+                    className={`text-6xl md:text-8xl font-bold ${item.color}`}
+                  >
+                    {item.letter}
+                  </motion.span>
+                  <motion.div
+                    className="overflow-hidden"
+                    style={{ 
+                      opacity: wordOpacity,
+                      width: wordWidth
+                    }}
+                  >
+                    <span className={`text-3xl md:text-5xl font-light ${item.color} ml-1`}>
                       {item.word}
-                    </motion.span>
-                  </div>
+                    </span>
+                  </motion.div>
                 </motion.div>
               );
             })}
           </div>
-
-          {/* CTA Buttons - appear after full reveal */}
-          {isFullyRevealed && (
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center mt-16"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <a href="#project">
-                <Button 
-                  size="lg" 
-                  className="bg-white text-black hover:bg-white/90 rounded-none px-8 h-12 text-sm font-medium tracking-wide transition-all duration-300 hover:tracking-wider"
-                >
-                  {t.hero.exploreProject}
-                </Button>
-              </a>
-              <a href="#team">
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-white/20 text-white hover:bg-white/5 hover:border-white/40 rounded-none px-8 h-12 text-sm font-medium tracking-wide transition-all duration-300"
-                >
-                  {t.hero.meetTeam}
-                </Button>
-              </a>
-            </motion.div>
-          )}
         </div>
-      </div>
+      </section>
 
-      {/* Scroll indicator */}
-      {!isFullyRevealed && (
-        <motion.div
-          className="fixed bottom-8 left-1/2 -translate-x-1/2 cursor-pointer z-20"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
+      {/* Hero Content - Only visible after EYBERS is fully revealed */}
+      <motion.section 
+        className="relative min-h-screen flex items-center justify-center px-4"
+        style={{
+          opacity: contentOpacity,
+          y: contentY,
+          pointerEvents: isComplete ? 'auto' : 'none'
+        }}
+      >
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <a href="#mission">
+              <Button 
+                size="lg" 
+                className="bg-white text-black hover:bg-white/90 rounded-none px-8 h-12 text-sm font-medium tracking-wide transition-all duration-300 hover:tracking-wider"
+              >
+                {t.hero.exploreProject}
+              </Button>
+            </a>
+            <a href="#team">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-white/20 text-white hover:bg-white/5 hover:border-white/40 rounded-none px-8 h-12 text-sm font-medium tracking-wide transition-all duration-300"
+              >
+                {t.hero.meetTeam}
+              </Button>
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Scroll indicator */}
+        <motion.a
+          href="#mission"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
         >
           <motion.div
             animate={{ y: [0, 8, 0] }}
@@ -178,8 +213,8 @@ export default function HeroSection() {
           >
             <ChevronDown className="w-6 h-6 text-white/20" />
           </motion.div>
-        </motion.div>
-      )}
-    </section>
+        </motion.a>
+      </motion.section>
+    </>
   );
 }
