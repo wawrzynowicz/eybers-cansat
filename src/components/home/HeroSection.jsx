@@ -20,16 +20,24 @@ export default function HeroSection() {
     { letter: 'R', word: 'ay' },
     { letter: 'S', word: 'econdaries' }
   ];
+
+  // Parallax transforms
+  const orb1Y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
+  const orb2Y = useTransform(scrollYProgress, [0, 1], ['0%', '-30%']);
+  const particlesY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
+  const contentOpacity = useTransform(scrollYProgress, [0.7, 0.85], [0, 1]);
+  const contentY = useTransform(scrollYProgress, [0.7, 0.85], [50, 0]);
   
   return (
     <section ref={sectionRef} className="relative min-h-[150vh] flex items-center justify-center overflow-hidden px-4">
-      {/* Animated gradient orbs */}
+      {/* Animated gradient orbs with parallax */}
       <motion.div
         className="absolute w-[800px] h-[800px] rounded-full"
         style={{
           background: 'radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%)',
           top: '-20%',
           left: '-20%',
+          y: orb1Y
         }}
         animate={{
           scale: [1, 1.2, 1],
@@ -43,6 +51,7 @@ export default function HeroSection() {
           background: 'radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 70%)',
           bottom: '-10%',
           right: '-10%',
+          y: orb2Y
         }}
         animate={{
           scale: [1, 1.3, 1],
@@ -51,26 +60,28 @@ export default function HeroSection() {
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      {/* Floating particles */}
-      {[...Array(20)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-px h-px bg-white rounded-full"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-          animate={{
-            opacity: [0, 1, 0],
-            scale: [0, 1.5, 0],
-          }}
-          transition={{
-            duration: 3 + Math.random() * 2,
-            repeat: Infinity,
-            delay: Math.random() * 3,
-          }}
-        />
-      ))}
+      {/* Floating particles with parallax */}
+      <motion.div style={{ y: particlesY }} className="absolute inset-0">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-px h-px bg-white rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              opacity: [0, 1, 0],
+              scale: [0, 1.5, 0],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 3,
+            }}
+          />
+        ))}
+      </motion.div>
 
       <div className="relative z-10 text-center max-w-5xl mx-auto">
         <motion.div
