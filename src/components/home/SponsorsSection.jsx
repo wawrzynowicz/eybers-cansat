@@ -26,7 +26,7 @@ function SponsorCard({ sponsor, index }) {
             <img 
               src={sponsor.logo_url} 
               alt={sponsor.name}
-              className="w-full h-full object-contain filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+              className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-500"
             />
           ) : (
             <div className="text-white/40 text-2xl font-light">{sponsor.name}</div>
