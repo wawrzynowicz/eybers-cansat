@@ -1,30 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/shared/LanguageContext';
 
 export default function HeroSection() {
   const { t } = useLanguage();
-  const [expandedText, setExpandedText] = useState('');
-  const fullText = 'Enthusiastic Youth Bravely Exploring Ray Secondaries';
-  
-  useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      if (index <= fullText.length) {
-        setExpandedText(fullText.slice(0, index));
-        index++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 80);
-    
-    return () => clearInterval(interval);
-  }, []);
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"]
+  });
+
+  const acronym = [
+    { letter: 'E', word: 'nthusiastic' },
+    { letter: 'Y', word: 'outh' },
+    { letter: 'B', word: 'ravely' },
+    { letter: 'E', word: 'xploring' },
+    { letter: 'R', word: 'ay' },
+    { letter: 'S', word: 'econdaries' }
+  ];
   
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
+    <section ref={sectionRef} className="relative min-h-[150vh] flex items-center justify-center overflow-hidden px-4">
       {/* Animated gradient orbs */}
       <motion.div
         className="absolute w-[800px] h-[800px] rounded-full"
@@ -90,33 +88,38 @@ export default function HeroSection() {
             {t.hero.tagline}
           </motion.p>
 
-          {/* Main title */}
-          <motion.h1 
-            className="text-6xl md:text-8xl lg:text-9xl font-extralight text-white mb-6 tracking-tight"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 1 }}
-          >
-            {t.hero.title}
-          </motion.h1>
+          {/* Main title with scroll-triggered expansion */}
+          <div className="mb-6">
+            <div className="flex flex-wrap justify-center items-center gap-2 md:gap-4 text-4xl md:text-6xl lg:text-8xl font-extralight text-white">
+              {acronym.map((item, index) => {
+                const progress = useTransform(
+                  scrollYProgress,
+                  [index * 0.12, (index + 1) * 0.12],
+                  [0, 1]
+                );
+                const opacity = useTransform(progress, [0, 1], [0, 1]);
+                const width = useTransform(progress, [0, 1], ['0ch', `${item.word.length}ch`]);
 
-          {/* Expanded text animation */}
-          <motion.p
-            className="text-xl md:text-2xl text-white/60 font-light tracking-wide min-h-[2rem] mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 0.5 }}
-          >
-            {expandedText}
-            {expandedText.length < fullText.length && (
-              <motion.span
-                animate={{ opacity: [1, 0, 1] }}
-                transition={{ duration: 0.8, repeat: Infinity }}
-              >
-                |
-              </motion.span>
-            )}
-          </motion.p>
+                return (
+                  <motion.div
+                    key={index}
+                    className="inline-flex items-center"
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 + index * 0.1, duration: 0.8 }}
+                  >
+                    <span className="font-semibold">{item.letter}</span>
+                    <motion.span
+                      style={{ opacity, width }}
+                      className="overflow-hidden whitespace-nowrap"
+                    >
+                      {item.word}
+                    </motion.span>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
 
           {/* Animated line */}
           <motion.div
