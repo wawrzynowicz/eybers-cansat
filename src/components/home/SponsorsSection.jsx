@@ -21,7 +21,7 @@ function SponsorCard({ sponsor, index }) {
     >
       <div className="relative border border-white/10 bg-white/[0.02] backdrop-blur-sm p-8 hover:border-white/20 transition-all duration-500">
         {/* Logo */}
-        <div className="aspect-[2/1] relative overflow-hidden bg-white/5 mb-6 flex items-center justify-center p-6">
+        <div className="aspect-[2/1] relative overflow-hidden bg-white mb-6 flex items-center justify-center p-6">
           {sponsor.logo_url ? (
             <img 
               src={sponsor.logo_url} 
