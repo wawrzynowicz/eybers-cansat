@@ -40,8 +40,8 @@ export default function HeroSection() {
   
   return (
     <>
-      {/* EYBERS Acronym Section - Takes 2 viewport heights */}
-      <section className="relative h-[200vh]">
+      {/* EYBERS Acronym Section - Takes 3 viewport heights */}
+      <section className="relative h-[300vh]">
         {/* Parallax background elements */}
         <motion.div
           className="fixed inset-0 z-0"
