@@ -33,7 +33,7 @@ export default function TeamMemberCard({ member, index }) {
           <p className="text-indigo-300 text-sm font-medium mb-1">{member.role}</p>
           <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
           {member.bio && (
-            <p className="text-indigo-200/60 text-sm line-clamp-2">{member.bio}</p>
+            <p className="text-indigo-200/60 text-sm leading-relaxed">{member.bio}</p>
           )}
         </div>
 
