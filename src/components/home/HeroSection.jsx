@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -6,22 +6,6 @@ import { useLanguage } from '@/components/shared/LanguageContext';
 
 export default function HeroSection() {
   const { t } = useLanguage();
-  const [expandedText, setExpandedText] = useState('');
-  const fullText = 'Enthusiastic Youth Bravely Exploring Ray Secondaries';
-  
-  useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      if (index <= fullText.length) {
-        setExpandedText(fullText.slice(0, index));
-        index++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 80);
-    
-    return () => clearInterval(interval);
-  }, []);
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
@@ -99,24 +83,6 @@ export default function HeroSection() {
           >
             {t.hero.title}
           </motion.h1>
-
-          {/* Expanded text animation */}
-          <motion.p
-            className="text-xl md:text-2xl text-white/60 font-light tracking-wide min-h-[2rem] mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 0.5 }}
-          >
-            {expandedText}
-            {expandedText.length < fullText.length && (
-              <motion.span
-                animate={{ opacity: [1, 0, 1] }}
-                transition={{ duration: 0.8, repeat: Infinity }}
-              >
-                |
-              </motion.span>
-            )}
-          </motion.p>
 
           {/* Animated line */}
           <motion.div
