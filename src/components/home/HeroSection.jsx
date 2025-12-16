@@ -135,12 +135,19 @@ export default function HeroSection() {
                 ['0%', '100%']
               );
 
+              // Calculate horizontal offset to keep text centered as word reveals
+              const centerOffset = useTransform(
+                wordProgress,
+                [0, 1],
+                [0, -100]
+              );
+
               return (
                 <motion.div
                   key={index}
                   className="absolute flex items-center whitespace-nowrap"
                   style={{
-                    x: xOffset,
+                    x: useTransform(() => xOffset.get() + centerOffset.get()),
                     y: yOffset,
                     left: '50%',
                     top: '50%'
