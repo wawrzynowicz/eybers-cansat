@@ -63,7 +63,7 @@ function TeamMemberCard({ member, index }) {
               {bio && (
                 <motion.p 
                   className="text-white/90 text-sm leading-relaxed overflow-hidden mt-2 bg-black/40 backdrop-blur-sm p-3 rounded"
-                  animate={isHovered ? { opacity: 1, maxHeight: 200 } : { opacity: 0, maxHeight: 0 }}
+                  animate={isHovered ? { opacity: 1, maxHeight: 1000 } : { opacity: 0, maxHeight: 0 }}
                   transition={{ duration: 0.4 }}
                 >
                   {bio}
