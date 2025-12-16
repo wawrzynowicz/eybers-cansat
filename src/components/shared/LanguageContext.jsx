@@ -16,8 +16,8 @@ const translations = {
       meetTeam: "MEET THE TEAM"
     },
     aboutUs: {
-      sectionTitle: "About Us",
-      heading: "Reaching for the Stars",
+      sectionTitle: "Reaching for the Stars",
+      heading: "About Us",
       cards: {
         who: {
           title: "Who are we",
@@ -123,8 +123,8 @@ const translations = {
       meetTeam: "POZNAJ ZESPÓŁ"
     },
     aboutUs: {
-      sectionTitle: "O Nas",
-      heading: "Sięgając Gwiazd",
+      sectionTitle: "Sięgając Gwiazd",
+      heading: "O Nas",
       cards: {
         who: {
           title: "Kim jesteśmy",

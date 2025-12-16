@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Target, Trophy, TrendingUp } from 'lucide-react';
+import { Users, Rocket, Trophy, Target } from 'lucide-react';
 import { useLanguage } from '@/components/shared/LanguageContext';
 
 export default function MissionSection() {
@@ -13,7 +13,7 @@ export default function MissionSection() {
       description: t.aboutUs.cards.who.description
     },
     {
-      icon: Target,
+      icon: Rocket,
       title: t.aboutUs.cards.mission.title,
       description: t.aboutUs.cards.mission.description
     },
@@ -23,7 +23,7 @@ export default function MissionSection() {
       description: t.aboutUs.cards.competition.description
     },
     {
-      icon: TrendingUp,
+      icon: Target,
       title: t.aboutUs.cards.goals.title,
       description: t.aboutUs.cards.goals.description
     }
