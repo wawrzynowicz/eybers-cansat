@@ -135,11 +135,11 @@ export default function HeroSection() {
                 ['0%', '100%']
               );
 
-              // Calculate horizontal offset to keep text centered as word reveals
+              // Calculate horizontal offset to keep text centered - only after full reveal
               const centerOffset = useTransform(
                 wordProgress,
-                [0, 1],
-                [0, -100]
+                [0, 0.95, 1],
+                [0, 0, -100]
               );
 
               return (
