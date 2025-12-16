@@ -5,12 +5,12 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/shared/LanguageContext';
 
 const acronym = [
-  { letter: 'E', word: 'nthusiastic', color: 'text-blue-400' },
-  { letter: 'Y', word: 'outh', color: 'text-purple-400' },
-  { letter: 'B', word: 'ravely', color: 'text-pink-400' },
-  { letter: 'E', word: 'xploring', color: 'text-cyan-400' },
-  { letter: 'R', word: 'ay', color: 'text-indigo-400' },
-  { letter: 'S', word: 'econdaries', color: 'text-violet-400' }
+  { letter: 'E', word: 'nthusiastic' },
+  { letter: 'Y', word: 'outh' },
+  { letter: 'B', word: 'ravely' },
+  { letter: 'E', word: 'xploring' },
+  { letter: 'R', word: 'ay' },
+  { letter: 'S', word: 'econdaries' }
 ];
 
 export default function HeroSection() {
@@ -25,12 +25,12 @@ export default function HeroSection() {
   // Transition from horizontal to vertical (0-500px scroll)
   const layoutProgress = useTransform(scrollY, [0, 500], [0, 1]);
   
-  // Word reveal (500-1000px scroll)
-  const wordProgress = useTransform(scrollY, [500, 1000], [0, 1]);
+  // Word reveal (500-1200px scroll)
+  const wordProgress = useTransform(scrollY, [500, 1200], [0, 1]);
 
-  // Fixed content appears after full reveal
-  const contentOpacity = useTransform(scrollY, [950, 1000], [0, 1]);
-  const contentY = useTransform(scrollY, [950, 1000], [50, 0]);
+  // Fixed content appears after full reveal (with longer pause)
+  const contentOpacity = useTransform(scrollY, [1400, 1500], [0, 1]);
+  const contentY = useTransform(scrollY, [1400, 1500], [50, 0]);
 
   useEffect(() => {
     return wordProgress.on('change', (v) => {
@@ -147,7 +147,7 @@ export default function HeroSection() {
                   }}
                 >
                   <motion.span
-                    className={`text-6xl md:text-8xl font-bold ${item.color}`}
+                    className="text-6xl md:text-8xl font-extralight text-white"
                   >
                     {item.letter}
                   </motion.span>
@@ -158,7 +158,7 @@ export default function HeroSection() {
                       width: wordWidth
                     }}
                   >
-                    <span className={`text-3xl md:text-5xl font-light ${item.color} ml-1`}>
+                    <span className="text-3xl md:text-5xl font-light text-white/90 ml-1">
                       {item.word}
                     </span>
                   </motion.div>
