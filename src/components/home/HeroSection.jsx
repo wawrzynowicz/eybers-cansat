@@ -22,11 +22,11 @@ export default function HeroSection() {
   const backgroundY = useTransform(scrollY, [0, 1000], [0, 300]);
   const backgroundOpacity = useTransform(scrollY, [0, 600], [1, 0]);
   
-  // Transition from horizontal to vertical (0-500px scroll)
-  const layoutProgress = useTransform(scrollY, [0, 500], [0, 1]);
+  // Word reveal first (0-700px scroll)
+  const wordProgress = useTransform(scrollY, [0, 700], [0, 1]);
   
-  // Word reveal (500-1200px scroll)
-  const wordProgress = useTransform(scrollY, [500, 1200], [0, 1]);
+  // Transition from horizontal to vertical AFTER words reveal (700-1200px scroll)
+  const layoutProgress = useTransform(scrollY, [700, 1200], [0, 1]);
 
   // Fixed content appears after full reveal (with longer pause)
   const contentOpacity = useTransform(scrollY, [1400, 1500], [0, 1]);
@@ -40,8 +40,8 @@ export default function HeroSection() {
   
   return (
     <>
-      {/* EYBERS Acronym Section - Takes 2 viewport heights */}
-      <section className="relative h-[200vh]">
+      {/* EYBERS Acronym Section - Takes 2.5 viewport heights */}
+      <section className="relative h-[250vh]">
         {/* Parallax background elements */}
         <motion.div
           className="fixed inset-0 z-0"
