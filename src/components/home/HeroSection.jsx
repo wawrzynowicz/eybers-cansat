@@ -111,10 +111,14 @@ export default function HeroSection() {
           <div className="relative w-full h-full flex items-center justify-center">
             {acronym.map((item, index) => {
               // Calculate position for horizontal to vertical transition
+              // Use smaller spacing on mobile (50px) vs desktop (90px)
+              const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+              const spacing = isMobile ? 50 : 90;
+              const offset = isMobile ? (index * spacing - 125) : (index * 90 - 225);
               const xOffset = useTransform(
                 layoutProgress,
                 [0, 1],
-                [index * 90 - 225, 0]
+                [offset, 0]
               );
               const yOffset = useTransform(
                 layoutProgress,
