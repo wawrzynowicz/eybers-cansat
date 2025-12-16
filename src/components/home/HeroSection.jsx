@@ -186,27 +186,6 @@ export default function HeroSection() {
         }}
       >
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <a href="#mission">
-              <Button 
-                size="lg" 
-                className="bg-white text-black hover:bg-white/90 rounded-none px-8 h-12 text-sm font-medium tracking-wide transition-all duration-300 hover:tracking-wider"
-              >
-                {t.hero.exploreProject}
-              </Button>
-            </a>
-            <a href="#team">
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white/20 text-white hover:bg-white/5 hover:border-white/40 rounded-none px-8 h-12 text-sm font-medium tracking-wide transition-all duration-300"
-              >
-                {t.hero.meetTeam}
-              </Button>
-            </a>
-          </motion.div>
         </div>
 
         {/* Scroll indicator */}
