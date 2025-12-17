@@ -88,10 +88,11 @@ export default function FeaturedProject() {
                 {[1, 2, 3].map((ring) => (
                   <motion.div
                     key={ring}
-                    className="absolute rounded-full border border-white/[0.05]"
+                    className="absolute rounded-full border-2 border-white/40"
                     style={{
                       width: `${ring * 80 + 80}px`,
                       height: `${ring * 80 + 80}px`,
+                      boxShadow: `0 0 20px rgba(255, 255, 255, 0.1)`
                     }}
                     animate={{ rotate: 360 }}
                     transition={{
