@@ -62,7 +62,11 @@ function TeamMemberCard({ member, index }) {
               <h3 className="text-xl font-medium text-white mb-2">{member.name}</h3>
               {bio && (
                 <motion.p 
-                  className="text-white/90 text-sm leading-relaxed overflow-hidden mt-2 bg-black/40 backdrop-blur-sm p-3 rounded"
+                  className="text-white/90 text-sm leading-relaxed overflow-hidden mt-2 bg-white/5 backdrop-blur-xl border border-white/10 p-3 rounded-lg shadow-2xl"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
+                    boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+                  }}
                   animate={isHovered ? { opacity: 1, maxHeight: 1000, y: 0 } : { opacity: 0, maxHeight: 0, y: -10 }}
                   transition={{ duration: 0.8, ease: "easeInOut" }}
                 >
