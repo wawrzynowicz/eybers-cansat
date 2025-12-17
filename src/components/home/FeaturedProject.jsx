@@ -17,7 +17,7 @@ export default function FeaturedProject() {
           className="relative"
         >
           {/* Main container */}
-          <div className="relative border border-white/[0.05] bg-black/20 overflow-hidden">
+          <div className="relative border border-white/10 bg-black/40 overflow-hidden">
             {/* Animated scan line */}
             <motion.div
               className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"

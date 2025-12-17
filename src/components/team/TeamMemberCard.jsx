@@ -11,7 +11,7 @@ export default function TeamMemberCard({ member, index }) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group"
     >
-      <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2">
+      <div className="relative bg-white/[0.08] backdrop-blur-xl border border-white/20 rounded-3xl overflow-hidden hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-2">
         {/* Image */}
         <div className="aspect-[4/5] relative overflow-hidden">
           {member.image_url ? (

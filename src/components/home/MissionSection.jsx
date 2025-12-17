@@ -63,7 +63,7 @@ export default function MissionSection() {
               transition={{ duration: 0.6, delay: index * 0.15 }}
               className="group"
             >
-              <div className="relative h-full border border-white/[0.05] bg-white/[0.01] p-10 hover:bg-white/[0.03] hover:border-white/10 transition-all duration-700">
+              <div className="relative h-full border border-white/10 bg-white/[0.03] p-10 hover:bg-white/[0.05] hover:border-white/20 transition-all duration-700">
                 {/* Animated corner */}
                 <motion.div
                   className="absolute top-0 left-0 w-8 h-8"

@@ -63,7 +63,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="border border-white/[0.05] bg-white/[0.01] p-8 md:p-10">
+            <div className="border border-white/10 bg-white/[0.03] p-8 md:p-10">
               {submitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -113,7 +113,7 @@ export default function ContactSection() {
                     required
                     placeholder={t.contact.form.message}
                     rows={5}
-                    className="bg-white/5 border-white/20 text-white placeholder:text-white/50 rounded-none focus:border-white/40 focus:ring-0 resize-none"
+                    className="bg-white/[0.08] border-white/30 text-white placeholder:text-white/50 rounded-none focus:border-white/50 focus:ring-0 resize-none"
                   />
 
                   <Button
@@ -143,7 +143,7 @@ export default function ContactSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="space-y-8"
           >
-            <div className="border border-white/[0.05] bg-white/[0.01] p-8">
+            <div className="border border-white/10 bg-white/[0.03] p-8">
               <h3 className="text-white text-lg mb-4">{t.contact.email}</h3>
               <a 
                 href="mailto:eybers.cansat@gmail.com" 
@@ -155,7 +155,7 @@ export default function ContactSection() {
               </a>
             </div>
 
-            <div className="border border-white/[0.05] bg-white/[0.01] p-8">
+            <div className="border border-white/10 bg-white/[0.03] p-8">
               <h3 className="text-white text-lg mb-4">{t.contact.connect}</h3>
               <div className="flex gap-4">
                 {[
@@ -177,7 +177,7 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="border border-white/[0.05] bg-white/[0.02] p-8">
+            <div className="border border-white/10 bg-white/[0.04] p-8">
               <h3 className="text-white text-lg mb-3">{t.contact.sponsorTitle}</h3>
               <p className="text-white/80 text-sm leading-relaxed">
                 {t.contact.sponsorMessage}

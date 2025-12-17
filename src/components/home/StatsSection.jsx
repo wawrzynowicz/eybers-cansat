@@ -13,7 +13,7 @@ export default function StatsSection() {
   ];
   
   return (
-    <section className="relative py-12 px-4 border-y border-white/[0.03]">
+    <section className="relative py-12 px-4 border-y border-white/10">
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
           {stats.map((stat, index) => (
