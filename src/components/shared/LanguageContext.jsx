@@ -39,7 +39,7 @@ const translations = {
     },
     stats: {
       teamMembers: "Team Members",
-      activeProject: "Active Project",
+      activeProject: "Fascinating Project",
       curiosity: "Curiosity",
       launchTarget: "Launch Target"
     },
@@ -146,7 +146,7 @@ const translations = {
     },
     stats: {
       teamMembers: "Członków Zespołu",
-      activeProject: "Aktywny Projekt",
+      activeProject: "Fascynujący Projekt",
       curiosity: "Ciekawość",
       launchTarget: "Cel Startu"
     },
