@@ -6,7 +6,7 @@ export default function Footer() {
   const { t } = useLanguage();
   
   return (
-    <footer className="relative border-t border-white/[0.05] bg-black">
+    <footer className="relative border-t-2 border-white/20 bg-black">
       <div className="max-w-6xl mx-auto px-4 py-16">
         <div className="grid md:grid-cols-3 gap-12">
           {/* Brand */}
@@ -59,7 +59,7 @@ export default function Footer() {
                 <a
                   key={index}
                   href={social.href}
-                  className="w-10 h-10 border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-all"
+                  className="w-10 h-10 border-2 border-white/30 flex items-center justify-center text-white/70 hover:text-white hover:border-white/50 transition-all"
                 >
                   <social.icon className="w-4 h-4" />
                 </a>
@@ -68,7 +68,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/[0.05] mt-12 pt-8 text-center">
+        <div className="border-t-2 border-white/20 mt-12 pt-8 text-center">
           <p className="text-white/50 text-xs tracking-wider">
             © {new Date().getFullYear()} EYBERS TEAM. {t.footer.rights}
           </p>

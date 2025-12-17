@@ -86,7 +86,7 @@ export default function ProjectDescription() {
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
               className="group"
             >
-              <div className="relative h-full bg-white/[0.02] border border-white/[0.05] rounded-2xl p-8 hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500">
+              <div className="relative h-full bg-white/[0.02] border-2 border-white/20 rounded-2xl p-8 hover:bg-white/[0.04] hover:border-white/30 transition-all duration-500">
                 {/* Corner accent */}
                 <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden rounded-tr-2xl">
                   <motion.div 
@@ -102,7 +102,7 @@ export default function ProjectDescription() {
                 </div>
 
                 <motion.div 
-                  className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:bg-white/10 transition-colors duration-300"
+                  className="w-12 h-12 rounded-xl bg-white/5 border-2 border-white/30 flex items-center justify-center mb-6 group-hover:bg-white/10 transition-colors duration-300"
                   whileHover={{ rotate: 5, scale: 1.05 }}
                 >
                   <feature.icon className="w-5 h-5 text-white/70" />

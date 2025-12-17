@@ -17,7 +17,7 @@ export default function FeaturedProject() {
           className="relative"
         >
           {/* Main container */}
-          <div className="relative border border-white/[0.05] bg-black/20 overflow-hidden">
+          <div className="relative border-2 border-white/20 bg-black/20 overflow-hidden">
             {/* Animated scan line */}
             <motion.div
               className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"
@@ -74,7 +74,7 @@ export default function FeaturedProject() {
                     t.project.stats.status,
                     t.project.stats.target
                   ].map((stat, i) => (
-                    <div key={stat.label} className="border-l border-white/10 pl-4">
+                    <div key={stat.label} className="border-l-2 border-white/30 pl-4">
                       <p className="text-white/30 text-xs uppercase tracking-wider mb-1">{stat.label}</p>
                       <p className="text-white font-medium">{stat.value}</p>
                     </div>
