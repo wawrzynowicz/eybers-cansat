@@ -90,7 +90,7 @@ export default function ContactSection() {
                         onChange={handleChange}
                         required
                         placeholder={t.contact.form.name}
-                        className="h-12 bg-white/5 border-white/20 text-white placeholder:text-white/50 rounded-none focus:border-white/40 focus:ring-0"
+                        className="h-12 bg-white/[0.08] border-white/30 text-white placeholder:text-white/50 rounded-none focus:border-white/50 focus:ring-0"
                       />
                     </div>
                     <div>
@@ -101,7 +101,7 @@ export default function ContactSection() {
                         onChange={handleChange}
                         required
                         placeholder={t.contact.form.email}
-                        className="h-12 bg-white/5 border-white/20 text-white placeholder:text-white/50 rounded-none focus:border-white/40 focus:ring-0"
+                        className="h-12 bg-white/[0.08] border-white/30 text-white placeholder:text-white/50 rounded-none focus:border-white/50 focus:ring-0"
                       />
                     </div>
                   </div>
