@@ -1,33 +1,30 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Rocket, Trophy, Target } from 'lucide-react';
+import { Users, Rocket, Trophy, Target, Loader2 } from 'lucide-react';
 import { useLanguage } from '@/components/shared/LanguageContext';
+import { base44 } from '@/api/base44Client';
+import { useQuery } from '@tanstack/react-query';
+
+const iconMap = {
+  Users,
+  Rocket,
+  Trophy,
+  Target
+};
 
 export default function MissionSection() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
-  const cards = [
-    {
-      icon: Users,
-      title: t.aboutUs.cards.who.title,
-      description: t.aboutUs.cards.who.description
-    },
-    {
-      icon: Rocket,
-      title: t.aboutUs.cards.mission.title,
-      description: t.aboutUs.cards.mission.description
-    },
-    {
-      icon: Trophy,
-      title: t.aboutUs.cards.competition.title,
-      description: t.aboutUs.cards.competition.description
-    },
-    {
-      icon: Target,
-      title: t.aboutUs.cards.goals.title,
-      description: t.aboutUs.cards.goals.description
-    }
-  ];
+  const { data: cards = [], isLoading } = useQuery({
+    queryKey: ['aboutCards'],
+    queryFn: () => base44.entities.AboutCard.list('order'),
+  });
+
+  const displayCards = cards.map(card => ({
+    icon: iconMap[card.icon] || Users,
+    title: language === 'pl' && card.title_pl ? card.title_pl : card.title,
+    description: language === 'pl' && card.description_pl ? card.description_pl : card.description
+  }));
   
   return (
     <section className="relative py-32 px-4" id="mission">
@@ -51,8 +48,13 @@ export default function MissionSection() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {cards.map((card, index) => (
+        {isLoading ? (
+          <div className="flex justify-center py-20">
+            <Loader2 className="w-6 h-6 text-white/30 animate-spin" />
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {displayCards.map((card, index) => (
             <motion.div
               key={card.title}
               initial={{ opacity: 0, y: 40 }}
@@ -84,9 +86,10 @@ export default function MissionSection() {
                   className="absolute bottom-0 left-0 h-px bg-white/20 w-0 group-hover:w-full transition-all duration-700"
                 />
               </div>
-            </motion.div>
-          ))}
-        </div>
+              </motion.div>
+              ))}
+              </div>
+              )}
       </div>
     </section>
   );
