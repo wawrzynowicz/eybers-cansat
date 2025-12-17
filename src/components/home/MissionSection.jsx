@@ -63,7 +63,7 @@ export default function MissionSection() {
               transition={{ duration: 0.6, delay: index * 0.15 }}
               className="group"
             >
-              <div className="relative h-full border-2 border-white/20 bg-white/[0.02] p-10 hover:bg-white/[0.04] hover:border-white/30 transition-all duration-700">
+              <div className="relative h-full border border-white/[0.05] bg-white/[0.01] p-10 hover:bg-white/[0.03] hover:border-white/10 transition-all duration-700">
                 {/* Animated corner */}
                 <motion.div
                   className="absolute top-0 left-0 w-8 h-8"
@@ -72,8 +72,8 @@ export default function MissionSection() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.5 + index * 0.1 }}
                 >
-                  <div className="absolute top-0 left-0 w-full h-0.5 bg-white/40" />
-                  <div className="absolute top-0 left-0 w-0.5 h-full bg-white/40" />
+                  <div className="absolute top-0 left-0 w-full h-px bg-white/20" />
+                  <div className="absolute top-0 left-0 w-px h-full bg-white/20" />
                 </motion.div>
 
                 <card.icon className="w-6 h-6 text-white/40 mb-8" strokeWidth={1} />
@@ -83,7 +83,7 @@ export default function MissionSection() {
 
                 {/* Hover line */}
                 <motion.div 
-                  className="absolute bottom-0 left-0 h-0.5 bg-white/40 w-0 group-hover:w-full transition-all duration-700"
+                  className="absolute bottom-0 left-0 h-px bg-white/20 w-0 group-hover:w-full transition-all duration-700"
                 />
               </div>
               </motion.div>

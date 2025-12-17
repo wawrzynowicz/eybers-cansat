@@ -79,7 +79,7 @@ function TeamMemberCard({ member, index }) {
 
         {/* Bottom line animation */}
         <motion.div 
-          className="h-0.5 bg-white/40 w-0 group-hover:w-full transition-all duration-700"
+          className="h-px bg-white/20 w-0 group-hover:w-full transition-all duration-700"
         />
       </div>
     </motion.div>
