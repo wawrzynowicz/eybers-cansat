@@ -70,10 +70,10 @@ const translations = {
       specs: {
         title: "Key Specifications",
         items: {
-          dimensions: { label: "Dimensions", value: "10×10×10 cm" },
-          mass: { label: "Mass", value: "~1.5 kg" },
-          power: { label: "Power", value: "Solar + Battery" },
-          comms: { label: "Communications", value: "UHF Radio" }
+          dimensions: { label: "Dimensions", value: "⌀66×115 mm" },
+          mass: { label: "Mass", value: "300-350 g" },
+          power: { label: "Power", value: "Battery" },
+          comms: { label: "Communications", value: "LoRa 433 MHz" }
         }
       }
     },
@@ -177,10 +177,10 @@ const translations = {
       specs: {
         title: "Kluczowe Specyfikacje",
         items: {
-          dimensions: { label: "Wymiary", value: "10×10×10 cm" },
-          mass: { label: "Masa", value: "~1.5 kg" },
-          power: { label: "Zasilanie", value: "Słoneczne + Bateria" },
-          comms: { label: "Komunikacja", value: "Radio UHF" }
+          dimensions: { label: "Wymiary", value: "⌀66×115 mm" },
+          mass: { label: "Masa", value: "300-350 g" },
+          power: { label: "Zasilanie", value: "Bateria" },
+          comms: { label: "Komunikacja", value: "LoRa 433 MHz" }
         }
       }
     },
