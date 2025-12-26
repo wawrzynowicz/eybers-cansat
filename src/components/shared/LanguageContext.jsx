@@ -6,7 +6,7 @@ const translations = {
       mission: "Mission",
       project: "Project",
       team: "Team",
-      muons: "Muons",
+      docs: "Documentation",
       contact: "Contact"
     },
     hero: {
@@ -108,6 +108,116 @@ const translations = {
       rights: "All rights reserved.",
       navigation: "Navigation"
     },
+    docs: {
+      sectionTitle: "Technical Documentation",
+      heading: "Project Documentation",
+      description: "Comprehensive technical and scientific documentation for the EYBERS muon detection satellite project.",
+      design: {
+        title: "Satellite Design",
+        overview: {
+          title: "Overview",
+          content: "The EYBERS-1 satellite follows the CanSat standard format, designed as a compact cylindrical unit measuring 66mm in diameter and 115mm in height. The total mass is carefully optimized to remain between 300-350 grams, ensuring compliance with competition requirements while maximizing scientific capability."
+        },
+        structure: {
+          title: "Physical Structure",
+          content: "The satellite structure consists of a lightweight aluminum frame with precision-machined components. The design incorporates multiple internal compartments to house various subsystems while maintaining structural integrity during launch and descent.",
+          items: [
+            "Outer shell: Aluminum alloy construction",
+            "Internal bays: Modular compartments for electronics",
+            "Thermal management: Passive cooling via heat-conductive materials",
+            "Mounting points: Secure attachment for parachute and sensors"
+          ]
+        },
+        systems: {
+          title: "Key Subsystems",
+          items: [
+            "Power system: Rechargeable lithium-polymer battery with voltage regulation",
+            "Communication: LoRa 433 MHz radio module for long-range data transmission",
+            "Onboard computer: Microcontroller for data processing and system control",
+            "Sensors: Barometer, GPS, temperature, and accelerometer"
+          ]
+        }
+      },
+      detection: {
+        title: "Muon Detection Technology",
+        principle: {
+          title: "Detection Principle",
+          content: "Our muon detection system utilizes scintillation detectors, which emit light when charged particles pass through them. Cosmic muons, traveling at near-light speeds, interact with the scintillator material, producing measurable photon signals that are converted to electrical pulses."
+        },
+        hardware: {
+          title: "Hardware Components",
+          items: [
+            "Scintillator panels: Organic plastic scintillator material",
+            "Photomultiplier tubes: Convert light signals to electrical current",
+            "Signal processing: Amplification and noise filtering circuits",
+            "Data acquisition: High-speed ADC for signal digitization"
+          ]
+        },
+        calibration: {
+          title: "Calibration & Testing",
+          content: "The detector system undergoes extensive ground-based calibration using known radiation sources and cosmic ray measurements. We compare our readings with reference instruments to ensure accuracy and reliability. Environmental testing includes temperature cycling and vibration tests to simulate launch conditions."
+        }
+      },
+      objectives: {
+        title: "Scientific Objectives",
+        primary: {
+          title: "Primary Mission",
+          content: "The primary objective is to measure cosmic muon flux at various altitudes during the satellite's descent. This data will help us understand how muon intensity changes with atmospheric depth and validate theoretical models of cosmic ray interactions."
+        },
+        secondary: {
+          title: "Secondary Objectives",
+          items: [
+            "Characterize muon energy spectrum at different altitudes",
+            "Study atmospheric absorption effects on cosmic rays",
+            "Validate detector performance in real flight conditions",
+            "Correlate muon flux with atmospheric parameters"
+          ]
+        },
+        research: {
+          title: "Research Questions",
+          content: "Our mission aims to answer key questions about cosmic ray propagation: How does muon flux vary with altitude? What is the relationship between atmospheric pressure and muon detection rates? Can we observe directional variations in muon arrival angles?"
+        }
+      },
+      mission: {
+        title: "Mission Plan",
+        launch: {
+          title: "Launch & Ascent",
+          content: "The satellite will be launched via rocket to an altitude of approximately 1 kilometer. During ascent, the system performs pre-flight checks and initializes all sensors. The communication link with the ground station is established and tested."
+        },
+        deployment: {
+          title: "Deployment Phase",
+          content: "At apogee, the satellite separates from the rocket and begins its descent. The parachute deploys automatically to control descent rate, ensuring stable flight conditions for data collection. All scientific instruments activate and begin recording measurements."
+        },
+        descent: {
+          title: "Descent & Data Collection",
+          content: "During the descent phase lasting approximately 10-15 minutes, the satellite continuously measures muon flux, atmospheric parameters, and positional data. All measurements are timestamped and transmitted in real-time to the ground station while also being stored onboard."
+        },
+        recovery: {
+          title: "Landing & Recovery",
+          content: "Upon landing, the GPS beacon activates to facilitate recovery. The satellite is designed to survive impact and protect the stored data. Post-flight analysis includes downloading all recorded data and performing hardware inspection."
+        }
+      },
+      outcomes: {
+        title: "Expected Outcomes",
+        data: {
+          title: "Data Products",
+          items: [
+            "Altitude-dependent muon flux profiles",
+            "Time-series data of cosmic ray detection events",
+            "Correlation between atmospheric conditions and muon rates",
+            "Detector performance metrics in flight conditions"
+          ]
+        },
+        scientific: {
+          title: "Scientific Impact",
+          content: "This mission will contribute valuable data to the understanding of cosmic ray interactions with Earth's atmosphere. The results will be shared with the scientific community and can be used for educational purposes, demonstrating real-world applications of particle physics."
+        },
+        technical: {
+          title: "Technical Achievements",
+          content: "Successfully completing this mission will demonstrate our team's capability in systems engineering, electronics design, software development, and project management. The experience gained will be invaluable for future aerospace projects and careers in STEM fields."
+        }
+      }
+    },
     timeline: {
       sectionTitle: "Our Journey",
       heading: "Project Timeline",
@@ -202,7 +312,7 @@ const translations = {
       mission: "Misja",
       project: "Projekt",
       team: "Zespół",
-      muons: "Miony",
+      docs: "Dokumentacja",
       contact: "Kontakt"
     },
     hero: {
@@ -303,6 +413,116 @@ const translations = {
       tagline: "Odkrywając kosmos, jeden mion na raz.",
       rights: "Wszelkie prawa zastrzeżone.",
       navigation: "Nawigacja"
+    },
+    docs: {
+      sectionTitle: "Dokumentacja Techniczna",
+      heading: "Dokumentacja Projektu",
+      description: "Kompleksowa dokumentacja techniczna i naukowa projektu satelity EYBERS do wykrywania mionów.",
+      design: {
+        title: "Projekt Satelity",
+        overview: {
+          title: "Przegląd",
+          content: "Satelita EYBERS-1 jest zgodny ze standardem CanSat, zaprojektowany jako kompaktowa jednostka cylindryczna o średnicy 66 mm i wysokości 115 mm. Całkowita masa jest starannie zoptymalizowana, aby pozostać w przedziale 300-350 gramów, zapewniając zgodność z wymaganiami konkursu przy jednoczesnym maksymalizowaniu możliwości naukowych."
+        },
+        structure: {
+          title: "Struktura Fizyczna",
+          content: "Struktura satelity składa się z lekkiej ramy aluminiowej z precyzyjnie obrobionymi komponentami. Projekt obejmuje wiele wewnętrznych przedziałów do pomieszczenia różnych podsystemów, zachowując integralność strukturalną podczas startu i opadania.",
+          items: [
+            "Obudowa zewnętrzna: Konstrukcja ze stopu aluminium",
+            "Przedziały wewnętrzne: Modułowe komory dla elektroniki",
+            "Zarządzanie termiczne: Pasywne chłodzenie przez materiały przewodzące ciepło",
+            "Punkty montażowe: Bezpieczne mocowanie spadochronu i czujników"
+          ]
+        },
+        systems: {
+          title: "Kluczowe Podsystemy",
+          items: [
+            "System zasilania: Akumulator litowo-polimerowy z regulacją napięcia",
+            "Komunikacja: Moduł radiowy LoRa 433 MHz do transmisji danych na duże odległości",
+            "Komputer pokładowy: Mikrokontroler do przetwarzania danych i sterowania systemem",
+            "Czujniki: Barometr, GPS, temperatura i akcelerometr"
+          ]
+        }
+      },
+      detection: {
+        title: "Technologia Wykrywania Mionów",
+        principle: {
+          title: "Zasada Wykrywania",
+          content: "Nasz system wykrywania mionów wykorzystuje detektory scyntylacyjne, które emitują światło, gdy naładowane cząstki przez nie przechodzą. Miony kosmiczne, poruszające się z prędkościami bliskimi prędkości światła, wchodzą w interakcję z materiałem scyntylatora, wytwarzając mierzalne sygnały fotonowe, które są konwertowane na impulsy elektryczne."
+        },
+        hardware: {
+          title: "Komponenty Sprzętowe",
+          items: [
+            "Panele scyntylacyjne: Organiczny materiał scyntylacyjny z tworzywa sztucznego",
+            "Fotopowielacze: Konwersja sygnałów świetlnych na prąd elektryczny",
+            "Przetwarzanie sygnału: Układy wzmacniające i filtrujące szumy",
+            "Akwizycja danych: Szybki ADC do cyfryzacji sygnału"
+          ]
+        },
+        calibration: {
+          title: "Kalibracja i Testowanie",
+          content: "System detektora przechodzi rozległą kalibrację naziemną z wykorzystaniem znanych źródeł promieniowania i pomiarów promieniowania kosmicznego. Porównujemy nasze odczyty z instrumentami referencyjnymi, aby zapewnić dokładność i niezawodność. Testy środowiskowe obejmują cykle temperaturowe i testy wibracyjne symulujące warunki startu."
+        }
+      },
+      objectives: {
+        title: "Cele Naukowe",
+        primary: {
+          title: "Misja Podstawowa",
+          content: "Głównym celem jest pomiar strumienia mionów kosmicznych na różnych wysokościach podczas opadania satelity. Te dane pomogą nam zrozumieć, jak intensywność mionów zmienia się wraz z głębokością atmosferyczną i zwalidować teoretyczne modele interakcji promieniowania kosmicznego."
+        },
+        secondary: {
+          title: "Cele Dodatkowe",
+          items: [
+            "Charakteryzacja widma energii mionów na różnych wysokościach",
+            "Badanie efektów absorpcji atmosferycznej na promienie kosmiczne",
+            "Walidacja wydajności detektora w rzeczywistych warunkach lotu",
+            "Korelacja strumienia mionów z parametrami atmosferycznymi"
+          ]
+        },
+        research: {
+          title: "Pytania Badawcze",
+          content: "Nasza misja ma na celu odpowiedź na kluczowe pytania dotyczące propagacji promieniowania kosmicznego: Jak strumień mionów zmienia się z wysokością? Jaka jest relacja między ciśnieniem atmosferycznym a wskaźnikami wykrywania mionów? Czy możemy zaobserwować kierunkowe zmiany w kątach nadejścia mionów?"
+        }
+      },
+      mission: {
+        title: "Plan Misji",
+        launch: {
+          title: "Start i Wznoszenie",
+          content: "Satelita zostanie wystrzelony rakietą na wysokość około 1 kilometra. Podczas wznoszenia system przeprowadza kontrole przedstartowe i inicjalizuje wszystkie czujniki. Łącze komunikacyjne ze stacją naziemną jest ustanawiane i testowane."
+        },
+        deployment: {
+          title: "Faza Rozmieszczenia",
+          content: "W apogeum satelita oddziela się od rakiety i rozpoczyna opadanie. Spadochron rozłożony automatycznie kontroluje prędkość opadania, zapewniając stabilne warunki lotu do zbierania danych. Wszystkie instrumenty naukowe aktywują się i rozpoczynają rejestrację pomiarów."
+        },
+        descent: {
+          title: "Opadanie i Zbieranie Danych",
+          content: "Podczas fazy opadania trwającej około 10-15 minut satelita nieustannie mierzy strumień mionów, parametry atmosferyczne i dane pozycyjne. Wszystkie pomiary są oznaczane czasowo i transmitowane w czasie rzeczywistym do stacji naziemnej, a także zapisywane na pokładzie."
+        },
+        recovery: {
+          title: "Lądowanie i Odzyskanie",
+          content: "Po lądowaniu aktywuje się sygnał GPS ułatwiający odzyskanie. Satelita jest zaprojektowany tak, aby przetrwać uderzenie i chronić zapisane dane. Analiza po locie obejmuje pobieranie wszystkich zarejestrowanych danych i przeprowadzenie inspekcji sprzętu."
+        }
+      },
+      outcomes: {
+        title: "Oczekiwane Wyniki",
+        data: {
+          title: "Produkty Danych",
+          items: [
+            "Profile strumienia mionów zależne od wysokości",
+            "Dane szeregów czasowych zdarzeń wykrywania promieniowania kosmicznego",
+            "Korelacja między warunkami atmosferycznymi a wskaźnikami mionów",
+            "Metryki wydajności detektora w warunkach lotu"
+          ]
+        },
+        scientific: {
+          title: "Wpływ Naukowy",
+          content: "Ta misja wniesie cenne dane do zrozumienia interakcji promieniowania kosmicznego z atmosferą Ziemi. Wyniki zostaną udostępnione społeczności naukowej i mogą być wykorzystane do celów edukacyjnych, демонstrując rzeczywiste zastosowania fizyki cząstek."
+        },
+        technical: {
+          title: "Osiągnięcia Techniczne",
+          content: "Pomyślne ukończenie tej misji zademonstruje zdolności naszego zespołu w inżynierii systemów, projektowaniu elektroniki, tworzeniu oprogramowania i zarządzaniu projektami. Zdobyte doświadczenie będzie nieocenione dla przyszłych projektów lotniczych i karier w dziedzinach STEM."
+        }
+      }
     },
     timeline: {
       sectionTitle: "Nasza Podróż",
