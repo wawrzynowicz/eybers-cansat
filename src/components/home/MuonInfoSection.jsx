@@ -1,0 +1,191 @@
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Atom, Zap, Shield, TrendingDown, Target, Info, ChevronDown } from 'lucide-react';
+import { useLanguage } from '@/components/shared/LanguageContext';
+import { Button } from '@/components/ui/button';
+
+const InfoCard = ({ icon: Icon, title, preview, content, delay }) => {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay }}
+      className="border border-white/10 bg-white/[0.03] p-8 hover:border-white/20 transition-all duration-500"
+    >
+      <div className="flex items-start gap-4 mb-4">
+        <div className="w-12 h-12 rounded-xl bg-white/[0.08] border border-white/20 flex items-center justify-center flex-shrink-0">
+          <Icon className="w-5 h-5 text-white/70" />
+        </div>
+        <h3 className="text-xl font-medium text-white pt-2">{title}</h3>
+      </div>
+      
+      <div className="text-white/70 text-sm leading-relaxed space-y-3 mb-4">
+        <p>{preview}</p>
+      </div>
+
+      <AnimatePresence>
+        {expanded && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="text-white/70 text-sm leading-relaxed space-y-3 mb-4 overflow-hidden"
+          >
+            {content}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <Button
+        variant="ghost"
+        onClick={() => setExpanded(!expanded)}
+        className="text-white/50 hover:text-white hover:bg-white/[0.05] text-xs -ml-2"
+      >
+        {expanded ? 'Show less' : 'Learn more'}
+        <motion.div
+          animate={{ rotate: expanded ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <ChevronDown className="w-4 h-4 ml-1" />
+        </motion.div>
+      </Button>
+    </motion.div>
+  );
+};
+
+export default function MuonInfoSection() {
+  const { t } = useLanguage();
+
+  return (
+    <section className="relative py-32 px-4">
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
+        >
+          <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
+            {t.muonInfo?.sectionTitle || 'Scientific Background'}
+          </p>
+          <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+            {t.muonInfo?.heading || 'Understanding Muons'}
+          </h2>
+          <p className="text-white/70 text-lg max-w-3xl mx-auto">
+            {t.muonInfo?.intro || 'Learn about cosmic rays, muon formation, and why these particles are essential to our research.'}
+          </p>
+        </motion.div>
+
+        {/* Content Cards */}
+        <div className="space-y-6">
+          <InfoCard
+            icon={Zap}
+            title={t.muonInfo?.cosmicRays?.title || 'Cosmic Rays'}
+            delay={0.1}
+            preview={t.muonInfo?.cosmicRays?.p1 || 'Earth is constantly being hit by high-speed particles from space called cosmic rays.'}
+            content={
+              <p>
+                {t.muonInfo?.cosmicRays?.p2 || 'Most of these cosmic rays are tiny pieces of atoms – mainly hydrogen and helium – traveling from distant parts of our galaxy and beyond.'}
+              </p>
+            }
+          />
+
+          <InfoCard
+            icon={Atom}
+            title={t.muonInfo?.birth?.title || 'Birth of Muons'}
+            delay={0.2}
+            preview={t.muonInfo?.birth?.p1 || "Muons don't come directly from space – they're created right here in Earth's atmosphere."}
+            content={
+              <p>
+                {t.muonInfo?.birth?.p2 || 'When cosmic rays crash into air molecules high above us, the collision creates new particles called muons.'}
+              </p>
+            }
+          />
+
+          <InfoCard
+            icon={Shield}
+            title={t.muonInfo?.atmosphere?.title || 'Atmospheric Shielding'}
+            delay={0.3}
+            preview={t.muonInfo?.atmosphere?.p1 || "Our atmosphere acts like a protective blanket, stopping the original cosmic rays from reaching the ground."}
+            content={
+              <p>
+                {t.muonInfo?.atmosphere?.p2 || 'But the muons created by these collisions are tough enough to make it all the way down to Earth\'s surface.'}
+              </p>
+            }
+          />
+
+          <InfoCard
+            icon={Target}
+            title={t.muonInfo?.properties?.title || 'What Makes Muons Special'}
+            delay={0.4}
+            preview={t.muonInfo?.properties?.p1 || 'Muons are tiny charged particles, similar to electrons but heavier.'}
+            content={
+              <>
+                <p>
+                  {t.muonInfo?.properties?.p2 || 'They don\'t last long – just a fraction of a second before breaking apart.'}
+                </p>
+                <p>
+                  {t.muonInfo?.properties?.p3 || 'What makes them amazing is their ability to pass through solid objects.'}
+                </p>
+              </>
+            }
+          />
+
+          <InfoCard
+            icon={TrendingDown}
+            title={t.muonInfo?.reach?.title || 'How Do They Reach Us?'}
+            delay={0.5}
+            preview={t.muonInfo?.reach?.p1 || 'Even though muons break apart quickly, they\'re created high in the atmosphere and travel incredibly fast.'}
+            content={
+              <p>
+                {t.muonInfo?.reach?.p2 || 'Because they move so fast, time actually slows down for them (thanks to Einstein\'s relativity!).'}
+              </p>
+            }
+          />
+
+          <InfoCard
+            icon={Info}
+            title={t.muonInfo?.importance?.title || 'Why Study Muons?'}
+            delay={0.6}
+            preview={t.muonInfo?.importance?.p1 || 'Muons are like messengers from space, carrying information about high-energy events happening far away in the universe.'}
+            content={
+              <p>
+                {t.muonInfo?.importance?.p2 || 'By detecting muons, we can learn about cosmic rays, test fundamental physics theories, and better understand our atmosphere and space environment.'}
+              </p>
+            }
+          />
+        </div>
+
+        {/* Key Facts */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-20 border-t border-white/10 pt-12"
+        >
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+            <div>
+              <p className="text-3xl font-light text-white mb-2">10,000+</p>
+              <p className="text-white/30 text-xs uppercase tracking-wider">Muons Hit You Daily</p>
+            </div>
+            <div>
+              <p className="text-3xl font-light text-white mb-2">~15 km</p>
+              <p className="text-white/30 text-xs uppercase tracking-wider">Creation Altitude</p>
+            </div>
+            <div>
+              <p className="text-3xl font-light text-white mb-2">Super Fast</p>
+              <p className="text-white/30 text-xs uppercase tracking-wider">Near Light Speed</p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

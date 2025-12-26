@@ -2,7 +2,7 @@ import React from 'react';
 import HeroSection from '@/components/home/HeroSection';
 import MissionSection from '@/components/home/MissionSection';
 import StatsSection from '@/components/home/StatsSection';
-import FeaturedProject from '@/components/home/FeaturedProject';
+import MuonInfoSection from '@/components/home/MuonInfoSection';
 import ProjectDescription from '@/components/home/ProjectDescription';
 import TeamSection from '@/components/home/TeamSection';
 import SponsorsSection from '@/components/home/SponsorsSection';
@@ -14,7 +14,7 @@ export default function Home() {
       <HeroSection />
       <StatsSection />
       <MissionSection />
-      <FeaturedProject />
+      <MuonInfoSection />
       <ProjectDescription />
       <TeamSection />
       <SponsorsSection />
