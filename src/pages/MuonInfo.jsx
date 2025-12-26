@@ -163,8 +163,8 @@ export default function MuonInfo() {
               <p className="text-white/30 text-xs uppercase tracking-wider">Muons Hit You Daily</p>
             </div>
             <div>
-              <p className="text-3xl font-light text-white mb-2">High Above</p>
-              <p className="text-white/30 text-xs uppercase tracking-wider">Created in Upper Atmosphere</p>
+              <p className="text-3xl font-light text-white mb-2">~15 km</p>
+              <p className="text-white/30 text-xs uppercase tracking-wider">Creation Altitude</p>
             </div>
             <div>
               <p className="text-3xl font-light text-white mb-2">Super Fast</p>
