@@ -3,10 +3,13 @@ import Navbar from '@/components/navigation/Navbar';
 import Footer from '@/components/navigation/Footer';
 import StarField from '@/components/shared/StarField';
 import { LanguageProvider } from '@/components/shared/LanguageContext';
+import { StarFieldProvider } from '@/components/shared/StarFieldContext';
+import StarFieldControls from '@/components/shared/StarFieldControls';
 
 export default function Layout({ children }) {
   return (
     <LanguageProvider>
+    <StarFieldProvider>
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
       <style>{`
         :root {
@@ -28,7 +31,9 @@ export default function Layout({ children }) {
         {children}
       </main>
       <Footer />
-    </div>
-    </LanguageProvider>
+      <StarFieldControls />
+      </div>
+      </StarFieldProvider>
+      </LanguageProvider>
   );
 }
