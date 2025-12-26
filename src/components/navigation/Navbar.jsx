@@ -15,7 +15,6 @@ export default function Navbar() {
     { name: t.nav.mission, href: '#mission' },
     { name: t.nav.project, href: '#project' },
     { name: t.nav.team, href: '#team' },
-    { name: t.nav.docs, href: createPageUrl('Documentation'), isPage: true },
     { name: t.nav.contact, href: '#contact' },
   ];
 

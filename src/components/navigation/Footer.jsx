@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
 import { Mail, Instagram, Github, Facebook, Linkedin } from 'lucide-react';
 import { useLanguage } from '@/components/shared/LanguageContext';
 
@@ -34,26 +32,15 @@ export default function Footer() {
                 { name: t.nav.mission, href: '#mission' },
                 { name: t.nav.project, href: '#project' },
                 { name: t.nav.team, href: '#team' },
-                { name: t.nav.docs, href: createPageUrl('Documentation') },
                 { name: t.nav.contact, href: '#contact' }
               ].map(link => (
-                link.name === t.nav.docs ? (
-                  <Link
-                    key={link.name}
-                    to={link.href}
-                    className="text-white/70 hover:text-white transition-colors text-sm"
-                  >
-                    {link.name}
-                  </Link>
-                ) : (
-                  <a 
-                    key={link.name}
-                    href={link.href}
-                    className="text-white/70 hover:text-white transition-colors text-sm"
-                  >
-                    {link.name}
-                  </a>
-                )
+                <a 
+                  key={link.name}
+                  href={link.href}
+                  className="text-white/70 hover:text-white transition-colors text-sm"
+                >
+                  {link.name}
+                </a>
               ))}
             </div>
           </div>
