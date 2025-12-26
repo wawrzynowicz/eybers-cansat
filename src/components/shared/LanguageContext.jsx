@@ -108,6 +108,58 @@ const translations = {
       rights: "All rights reserved.",
       navigation: "Navigation"
     },
+    timeline: {
+      sectionTitle: "Our Journey",
+      heading: "Project Timeline",
+      description: "Follow our progress from concept to launch as we work towards detecting cosmic muons from space.",
+      milestones: [
+        {
+          title: "Project Inception",
+          date: "Sep 2024",
+          status: "completed",
+          description: "Team formation and initial concept development. We established our mission and began planning the satellite design.",
+          achievements: [
+            "Formed the EYBERS team",
+            "Defined project objectives",
+            "Initial research on CanSat technology"
+          ]
+        },
+        {
+          title: "Design Phase",
+          date: "Oct - Dec 2024",
+          status: "completed",
+          description: "Detailed satellite design and component selection. We created technical specifications and finalized the muon detection system.",
+          achievements: [
+            "Completed satellite CAD design",
+            "Selected scintillation detectors",
+            "Designed PCB and electronics"
+          ]
+        },
+        {
+          title: "Prototyping & Testing",
+          date: "Jan - Feb 2025",
+          status: "in_progress",
+          description: "Building and testing the first prototype. We're currently conducting laboratory tests and refining our design.",
+          achievements: [
+            "Assembled first prototype",
+            "Initial detector calibration",
+            "Ground station setup in progress"
+          ]
+        },
+        {
+          title: "Integration & Validation",
+          date: "Mar 2025",
+          status: "upcoming",
+          description: "Final assembly and comprehensive testing. All systems will be integrated and validated before the competition.",
+        },
+        {
+          title: "Competition & Launch",
+          date: "Apr 2026",
+          status: "upcoming",
+          description: "Participation in ESA CanSat Competition 2025/2026. Our satellite will be launched and we'll collect real cosmic muon data.",
+        }
+      ]
+    },
     muonInfo: {
       sectionTitle: "Scientific Background",
       heading: "Understanding Muons",
@@ -251,6 +303,58 @@ const translations = {
       tagline: "Odkrywając kosmos, jeden mion na raz.",
       rights: "Wszelkie prawa zastrzeżone.",
       navigation: "Nawigacja"
+    },
+    timeline: {
+      sectionTitle: "Nasza Podróż",
+      heading: "Oś Czasu Projektu",
+      description: "Śledź nasz postęp od koncepcji do startu, gdy pracujemy nad wykrywaniem mionów kosmicznych z kosmosu.",
+      milestones: [
+        {
+          title: "Początek Projektu",
+          date: "Wrz 2024",
+          status: "completed",
+          description: "Formowanie zespołu i początkowy rozwój koncepcji. Ustaliliśmy naszą misję i rozpoczęliśmy planowanie projektu satelity.",
+          achievements: [
+            "Utworzenie zespołu EYBERS",
+            "Określenie celów projektu",
+            "Wstępne badania nad technologią CanSat"
+          ]
+        },
+        {
+          title: "Faza Projektowania",
+          date: "Paź - Gru 2024",
+          status: "completed",
+          description: "Szczegółowy projekt satelity i dobór komponentów. Stworzyliśmy specyfikacje techniczne i sfinalizowaliśmy system wykrywania mionów.",
+          achievements: [
+            "Ukończenie projektu CAD satelity",
+            "Wybór detektorów scyntylacyjnych",
+            "Projekt PCB i elektroniki"
+          ]
+        },
+        {
+          title: "Prototypowanie i Testowanie",
+          date: "Sty - Lut 2025",
+          status: "in_progress",
+          description: "Budowa i testowanie pierwszego prototypu. Obecnie prowadzimy testy laboratoryjne i udoskonalamy nasz projekt.",
+          achievements: [
+            "Zmontowanie pierwszego prototypu",
+            "Wstępna kalibracja detektora",
+            "Trwa konfiguracja stacji naziemnej"
+          ]
+        },
+        {
+          title: "Integracja i Walidacja",
+          date: "Mar 2025",
+          status: "upcoming",
+          description: "Finalna integracja i kompleksowe testowanie. Wszystkie systemy zostaną zintegrowane i zwalidowane przed konkursem.",
+        },
+        {
+          title: "Konkurs i Start",
+          date: "Kwi 2026",
+          status: "upcoming",
+          description: "Udział w Konkursie CanSat ESA 2025/2026. Nasz satelita zostanie wystrzelony i zbierzemy prawdziwe dane o mionach kosmicznych.",
+        }
+      ]
     },
     muonInfo: {
       sectionTitle: "Tło Naukowe",
