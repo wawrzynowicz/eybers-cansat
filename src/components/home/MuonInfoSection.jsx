@@ -4,8 +4,8 @@ import { Atom, Zap, Shield, TrendingDown, Target, Info, ChevronDown } from 'luci
 import { useLanguage } from '@/components/shared/LanguageContext';
 import { Button } from '@/components/ui/button';
 
-const InfoCard = ({ icon: Icon, title, preview, content, delay }) => {
-  const [expanded, setExpanded] = useState(false);
+const InfoCard = ({ icon: Icon, title, preview, content, delay, id, expandedId, onToggle }) => {
+  const isExpanded = expandedId === id;
 
   return (
     <motion.div
@@ -27,7 +27,7 @@ const InfoCard = ({ icon: Icon, title, preview, content, delay }) => {
       </div>
 
       <AnimatePresence>
-        {expanded && (
+        {isExpanded && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
@@ -42,12 +42,12 @@ const InfoCard = ({ icon: Icon, title, preview, content, delay }) => {
 
       <Button
         variant="ghost"
-        onClick={() => setExpanded(!expanded)}
+        onClick={() => onToggle(id)}
         className="text-white/50 hover:text-white hover:bg-white/[0.05] text-xs -ml-2"
       >
-        {expanded ? 'Show less' : 'Learn more'}
+        {isExpanded ? 'Show less' : 'Learn more'}
         <motion.div
-          animate={{ rotate: expanded ? 180 : 0 }}
+          animate={{ rotate: isExpanded ? 180 : 0 }}
           transition={{ duration: 0.3 }}
         >
           <ChevronDown className="w-4 h-4 ml-1" />
@@ -59,6 +59,11 @@ const InfoCard = ({ icon: Icon, title, preview, content, delay }) => {
 
 export default function MuonInfoSection() {
   const { t } = useLanguage();
+  const [expandedId, setExpandedId] = useState(null);
+
+  const handleToggle = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
 
   return (
     <section className="relative py-32 px-4">
@@ -109,6 +114,7 @@ export default function MuonInfoSection() {
         {/* Content Cards */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 items-start">
           <InfoCard
+            id="cosmic-rays"
             icon={Zap}
             title={t.muonInfo?.cosmicRays?.title || 'Cosmic Rays'}
             delay={0.1}
@@ -118,9 +124,12 @@ export default function MuonInfoSection() {
                 {t.muonInfo?.cosmicRays?.p2 || 'Most of these cosmic rays are tiny pieces of atoms – mainly hydrogen and helium – traveling from distant parts of our galaxy and beyond.'}
               </p>
             }
+            expandedId={expandedId}
+            onToggle={handleToggle}
           />
 
           <InfoCard
+            id="birth"
             icon={Atom}
             title={t.muonInfo?.birth?.title || 'Birth of Muons'}
             delay={0.2}
@@ -130,9 +139,12 @@ export default function MuonInfoSection() {
                 {t.muonInfo?.birth?.p2 || 'When cosmic rays crash into air molecules high above us, the collision creates new particles called muons.'}
               </p>
             }
+            expandedId={expandedId}
+            onToggle={handleToggle}
           />
 
           <InfoCard
+            id="atmosphere"
             icon={Shield}
             title={t.muonInfo?.atmosphere?.title || 'Atmospheric Shielding'}
             delay={0.3}
@@ -142,9 +154,12 @@ export default function MuonInfoSection() {
                 {t.muonInfo?.atmosphere?.p2 || 'But the muons created by these collisions are tough enough to make it all the way down to Earth\'s surface.'}
               </p>
             }
+            expandedId={expandedId}
+            onToggle={handleToggle}
           />
 
           <InfoCard
+            id="properties"
             icon={Target}
             title={t.muonInfo?.properties?.title || 'What Makes Muons Special'}
             delay={0.4}
@@ -159,9 +174,12 @@ export default function MuonInfoSection() {
                 </p>
               </>
             }
+            expandedId={expandedId}
+            onToggle={handleToggle}
           />
 
           <InfoCard
+            id="reach"
             icon={TrendingDown}
             title={t.muonInfo?.reach?.title || 'How Do They Reach Us?'}
             delay={0.5}
@@ -171,9 +189,12 @@ export default function MuonInfoSection() {
                 {t.muonInfo?.reach?.p2 || 'Because they move so fast, time actually slows down for them (thanks to Einstein\'s relativity!).'}
               </p>
             }
+            expandedId={expandedId}
+            onToggle={handleToggle}
           />
 
           <InfoCard
+            id="importance"
             icon={Info}
             title={t.muonInfo?.importance?.title || 'Why Study Muons?'}
             delay={0.6}
@@ -183,6 +204,8 @@ export default function MuonInfoSection() {
                 {t.muonInfo?.importance?.p2 || 'By detecting muons, we can learn about cosmic rays, test fundamental physics theories, and better understand our atmosphere and space environment.'}
               </p>
             }
+            expandedId={expandedId}
+            onToggle={handleToggle}
           />
         </div>
       </div>
