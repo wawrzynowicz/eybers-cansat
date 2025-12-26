@@ -15,6 +15,7 @@ export default function Navbar() {
     { name: t.nav.mission, href: '#mission' },
     { name: t.nav.project, href: '#project' },
     { name: t.nav.team, href: '#team' },
+    { name: t.nav.muons || 'Muons', href: createPageUrl('MuonInfo'), isPage: true },
     { name: t.nav.contact, href: '#contact' },
   ];
 
@@ -58,17 +59,28 @@ export default function Navbar() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
               {navLinks.map((link, index) => (
-                <motion.a 
-                  key={link.name} 
-                  href={link.href}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="relative text-sm font-medium text-white/60 hover:text-white transition-colors duration-300 py-2 group"
-                >
-                  {link.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-px bg-white group-hover:w-full transition-all duration-300" />
-                </motion.a>
+                link.isPage ? (
+                  <Link 
+                    key={link.name} 
+                    to={link.href}
+                    className="relative text-sm font-medium text-white/60 hover:text-white transition-colors duration-300 py-2 group"
+                  >
+                    {link.name}
+                    <span className="absolute bottom-0 left-0 w-0 h-px bg-white group-hover:w-full transition-all duration-300" />
+                  </Link>
+                ) : (
+                  <motion.a 
+                    key={link.name} 
+                    href={link.href}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="relative text-sm font-medium text-white/60 hover:text-white transition-colors duration-300 py-2 group"
+                  >
+                    {link.name}
+                    <span className="absolute bottom-0 left-0 w-0 h-px bg-white group-hover:w-full transition-all duration-300" />
+                  </motion.a>
+                )
               ))}
               
               {/* Language switcher */}
@@ -105,18 +117,29 @@ export default function Navbar() {
           >
             <div className="flex flex-col items-center gap-6 p-8">
               {navLinks.map((link, index) => (
-                <motion.a
-                  key={link.name}
-                  href={link.href}
-                  onClick={handleNavClick}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 30 }}
-                  transition={{ delay: index * 0.05 }}
-                  className="text-2xl font-light text-white/80 hover:text-white transition-colors"
-                >
-                  {link.name}
-                </motion.a>
+                link.isPage ? (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    onClick={handleNavClick}
+                    className="text-2xl font-light text-white/80 hover:text-white transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <motion.a
+                    key={link.name}
+                    href={link.href}
+                    onClick={handleNavClick}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 30 }}
+                    transition={{ delay: index * 0.05 }}
+                    className="text-2xl font-light text-white/80 hover:text-white transition-colors"
+                  >
+                    {link.name}
+                  </motion.a>
+                )
               ))}
               
               {/* Mobile language switcher */}

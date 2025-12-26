@@ -6,6 +6,7 @@ const translations = {
       mission: "Mission",
       project: "Project",
       team: "Team",
+      muons: "Muons",
       contact: "Contact"
     },
     hero: {
@@ -149,6 +150,7 @@ const translations = {
       mission: "Misja",
       project: "Projekt",
       team: "Zespół",
+      muons: "Miony",
       contact: "Kontakt"
     },
     hero: {
