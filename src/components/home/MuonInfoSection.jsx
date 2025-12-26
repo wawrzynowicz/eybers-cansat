@@ -69,7 +69,7 @@ export default function MuonInfoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
           <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
             {t.muonInfo?.sectionTitle || 'Scientific Background'}
@@ -80,6 +80,30 @@ export default function MuonInfoSection() {
           <p className="text-white/70 text-lg max-w-3xl mx-auto">
             {t.muonInfo?.intro || 'Learn about cosmic rays, muon formation, and why these particles are essential to our research.'}
           </p>
+        </motion.div>
+
+        {/* Key Facts */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-20 border border-white/10 bg-white/[0.02] p-8"
+        >
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+            <div>
+              <p className="text-3xl font-light text-white mb-2">10,000+</p>
+              <p className="text-white/30 text-xs uppercase tracking-wider">Muons Hit You Daily</p>
+            </div>
+            <div>
+              <p className="text-3xl font-light text-white mb-2">~15 km</p>
+              <p className="text-white/30 text-xs uppercase tracking-wider">Creation Altitude</p>
+            </div>
+            <div>
+              <p className="text-3xl font-light text-white mb-2">Super Fast</p>
+              <p className="text-white/30 text-xs uppercase tracking-wider">Near Light Speed</p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Content Cards */}
@@ -161,30 +185,6 @@ export default function MuonInfoSection() {
             }
           />
         </div>
-
-        {/* Key Facts */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-20 border-t border-white/10 pt-12"
-        >
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <p className="text-3xl font-light text-white mb-2">10,000+</p>
-              <p className="text-white/30 text-xs uppercase tracking-wider">Muons Hit You Daily</p>
-            </div>
-            <div>
-              <p className="text-3xl font-light text-white mb-2">~15 km</p>
-              <p className="text-white/30 text-xs uppercase tracking-wider">Creation Altitude</p>
-            </div>
-            <div>
-              <p className="text-3xl font-light text-white mb-2">Super Fast</p>
-              <p className="text-white/30 text-xs uppercase tracking-wider">Near Light Speed</p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
