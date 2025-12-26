@@ -107,7 +107,7 @@ export default function MuonInfoSection() {
         </motion.div>
 
         {/* Content Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 items-start">
           <InfoCard
             icon={Zap}
             title={t.muonInfo?.cosmicRays?.title || 'Cosmic Rays'}
