@@ -122,6 +122,31 @@ export default function TeamSection() {
             ))}
           </div>
         )}
+
+        {/* Quote */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="mt-24 text-center max-w-3xl mx-auto"
+        >
+          <motion.div
+            className="w-8 h-px bg-white/20 mx-auto mb-8"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          />
+          <blockquote className="text-center">
+            <p className="text-2xl md:text-3xl text-white font-light italic mb-3">
+              {t.team.quote}
+            </p>
+            <p className="text-base md:text-lg text-white/70 font-light">
+              {t.team.quoteTranslation}
+            </p>
+          </blockquote>
+        </motion.div>
       </div>
     </section>
   );
