@@ -6,6 +6,7 @@ import ProjectDescription from '@/components/home/ProjectDescription';
 import TimelineSection from '@/components/home/TimelineSection';
 import TelemetrySection from '@/components/home/TelemetrySection';
 import TeamSection from '@/components/home/TeamSection';
+import SocialMediaSection from '@/components/home/SocialMediaSection';
 import SponsorsSection from '@/components/home/SponsorsSection';
 import ContactSection from '@/components/home/ContactSection';
 
@@ -19,6 +20,7 @@ export default function Home() {
       <TelemetrySection />
       <ProjectDescription />
       <TeamSection />
+      <SocialMediaSection />
       <SponsorsSection />
       <ContactSection />
     </div>
