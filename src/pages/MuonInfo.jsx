@@ -149,7 +149,7 @@ export default function MuonInfo() {
           />
         </div>
 
-        {/* Stats */}
+        {/* Key Facts */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -157,22 +157,18 @@ export default function MuonInfo() {
           transition={{ duration: 0.8 }}
           className="mt-20 border-t border-white/10 pt-12"
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
             <div>
-              <p className="text-3xl font-light text-white mb-2">~74%</p>
-              <p className="text-white/30 text-xs uppercase tracking-wider">Protons</p>
+              <p className="text-3xl font-light text-white mb-2">10,000+</p>
+              <p className="text-white/30 text-xs uppercase tracking-wider">Muons Hit You Daily</p>
             </div>
             <div>
-              <p className="text-3xl font-light text-white mb-2">~15 km</p>
-              <p className="text-white/30 text-xs uppercase tracking-wider">Muon Birth Altitude</p>
+              <p className="text-3xl font-light text-white mb-2">High Above</p>
+              <p className="text-white/30 text-xs uppercase tracking-wider">Created in Upper Atmosphere</p>
             </div>
             <div>
-              <p className="text-3xl font-light text-white mb-2">2.2 μs</p>
-              <p className="text-white/30 text-xs uppercase tracking-wider">Muon Half-Life</p>
-            </div>
-            <div>
-              <p className="text-3xl font-light text-white mb-2">&gt;2.4 GeV</p>
-              <p className="text-white/30 text-xs uppercase tracking-wider">Min Energy to Reach Surface</p>
+              <p className="text-3xl font-light text-white mb-2">Super Fast</p>
+              <p className="text-white/30 text-xs uppercase tracking-wider">Near Light Speed</p>
             </div>
           </div>
         </motion.div>

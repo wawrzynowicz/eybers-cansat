@@ -114,34 +114,34 @@ const translations = {
       intro: "Learn about cosmic rays, muon formation, and why these particles are essential to our research.",
       cosmicRays: {
         title: "Cosmic Rays",
-        p1: "The Earth is continuously bombarded by a flux of particles called cosmic rays. These particles travel near the speed of light, carrying enormous amounts of energy.",
-        p2: "Composition: ~74% ionized hydrogen (protons), ~18% helium nuclei, and trace amounts of heavier elements."
+        p1: "Earth is constantly being hit by high-speed particles from space called cosmic rays. These particles zoom through the universe at nearly the speed of light.",
+        p2: "Most of these cosmic rays are tiny pieces of atoms – mainly hydrogen and helium – traveling from distant parts of our galaxy and beyond."
       },
       birth: {
         title: "Birth of Muons",
-        p1: "Muons aren't originally from cosmic radiation – they are born in Earth's atmosphere.",
-        p2: "When a primary cosmic ray collides with oxygen or nitrogen nuclei in the upper atmosphere, the collision produces short-lived particles called mesons. Muons originate from the decay of these charged mesons."
+        p1: "Muons don't come directly from space – they're created right here in Earth's atmosphere.",
+        p2: "When cosmic rays crash into air molecules high above us, the collision creates new particles called muons. Think of it like cosmic dominoes – one collision triggers a chain reaction."
       },
       atmosphere: {
         title: "Atmospheric Shielding",
-        p1: "Primary cosmic rays don't reach Earth's surface directly – our atmosphere acts as a natural shield.",
-        p2: "Instead, secondary particles like muons are created in the upper atmosphere and shower down to the surface."
+        p1: "Our atmosphere acts like a protective blanket, stopping the original cosmic rays from reaching the ground.",
+        p2: "But the muons created by these collisions are tough enough to make it all the way down to Earth's surface, showering down on us constantly."
       },
       properties: {
-        title: "Muon Properties",
-        p1: "Mass: 105.65 MeV",
-        p2: "Half-life: 2.2 × 10⁻⁶ seconds (2.2 microseconds)",
-        p3: "Muons are particularly penetrating – they interact primarily through ionization and can pass through large amounts of material. This makes them the most numerous charged particles reaching Earth's surface."
+        title: "What Makes Muons Special",
+        p1: "Muons are tiny charged particles, similar to electrons but heavier.",
+        p2: "They don't last long – just a fraction of a second before breaking apart.",
+        p3: "What makes them amazing is their ability to pass through solid objects. Muons can penetrate thick layers of rock, water, and even buildings, making them perfect for our satellite detector."
       },
       reach: {
-        title: "Why Muons Reach Earth",
-        p1: "Despite their short half-life, muons created at ~15 km altitude reach the surface thanks to special relativity.",
-        p2: "Cosmic ray muons with energy >2.4 GeV travel so fast that time dilation extends their lifetime (as observed from Earth). Their decay length becomes greater than 15 km, allowing them to penetrate the atmosphere before decaying."
+        title: "How Do They Reach Us?",
+        p1: "Even though muons break apart quickly, they're created high in the atmosphere and travel incredibly fast.",
+        p2: "Because they move so fast, time actually slows down for them (thanks to Einstein's relativity!). This gives them just enough time to reach the ground before disappearing."
       },
       importance: {
         title: "Why Study Muons?",
-        p1: "Muons provide a window into high-energy cosmic processes and allow us to study particle physics at energies impossible to recreate in laboratories.",
-        p2: "By detecting and measuring muon flux, we can better understand cosmic ray origins, atmospheric interactions, and test fundamental physics principles like relativity."
+        p1: "Muons are like messengers from space, carrying information about high-energy events happening far away in the universe.",
+        p2: "By detecting muons, we can learn about cosmic rays, test fundamental physics theories, and better understand our atmosphere and space environment."
       }
     }
   },
@@ -258,34 +258,34 @@ const translations = {
       intro: "Dowiedz się o promieniowaniu kosmicznym, powstawaniu mionów i dlaczego te cząstki są kluczowe dla naszych badań.",
       cosmicRays: {
         title: "Promieniowanie Kosmiczne",
-        p1: "Ziemia jest nieustannie bombardowana strumieniem cząstek zwanych promieniowaniem kosmicznym. Te cząstki poruszają się z prędkością bliską prędkości światła, niosąc ogromne ilości energii.",
-        p2: "Skład: ~74% zjonizowanego wodoru (protony), ~18% jądra helu, oraz śladowe ilości cięższych pierwiastków."
+        p1: "Ziemia jest nieustannie bombardowana szybkimi cząstkami z kosmosu zwanymi promieniowaniem kosmicznym. Te cząstki pędzą przez wszechświat z prędkością bliską prędkości światła.",
+        p2: "Większość tych promieni kosmicznych to małe fragmenty atomów – głównie wodoru i helu – podróżujące z odległych części naszej galaktyki i dalej."
       },
       birth: {
         title: "Narodziny Mionów",
-        p1: "Miony nie pochodzą bezpośrednio z promieniowania kosmicznego – rodzą się w atmosferze Ziemi.",
-        p2: "Gdy pierwotne promienie kosmiczne zderzają się z jądrami tlenu lub azotu w górnych warstwach atmosfery, zderzenie wytwarza krótkotrwałe cząstki zwane mezonami. Miony powstają z rozpadu tych naładowanych mezonów."
+        p1: "Miony nie pochodzą bezpośrednio z kosmosu – powstają tutaj, w atmosferze Ziemi.",
+        p2: "Gdy promienie kosmiczne zderzają się z cząsteczkami powietrza wysoko nad nami, zderzenie tworzy nowe cząstki zwane mionami. To jak kosmiczne domino – jedno zderzenie uruchamia reakcję łańcuchową."
       },
       atmosphere: {
         title: "Osłona Atmosferyczna",
-        p1: "Pierwotne promienie kosmiczne nie docierają bezpośrednio do powierzchni Ziemi – nasza atmosfera działa jak naturalna tarcza.",
-        p2: "Zamiast tego, cząstki wtórne, takie jak miony, powstają w górnej atmosferze i opadają na powierzchnię."
+        p1: "Nasza atmosfera działa jak ochronny koc, zatrzymując oryginalne promienie kosmiczne przed dotarciem do ziemi.",
+        p2: "Ale miony powstałe w tych zderzeniach są na tyle wytrzymałe, że docierają aż do powierzchni Ziemi, nieustannie na nas opadając."
       },
       properties: {
-        title: "Właściwości Mionów",
-        p1: "Masa: 105.65 MeV",
-        p2: "Okres półtrwania: 2.2 × 10⁻⁶ sekundy (2.2 mikrosekundy)",
-        p3: "Miony są szczególnie przenikliwe – oddziałują głównie poprzez jonizację i mogą przejść przez duże ilości materii. To sprawia, że są najliczniejszymi naładowanymi cząstkami docierającymi do powierzchni Ziemi."
+        title: "Co Czyni Miony Wyjątkowymi",
+        p1: "Miony to maleńkie naładowane cząstki, podobne do elektronów, ale cięższe.",
+        p2: "Nie żyją długo – zaledwie ułamek sekundy, zanim się rozpadną.",
+        p3: "To, co czyni je niesamowitymi, to zdolność przechodzenia przez stałe obiekty. Miony mogą przenikać przez grube warstwy skał, wody, a nawet budynki, co czyni je idealnymi dla naszego detektora satelitarnego."
       },
       reach: {
-        title: "Dlaczego Miony Docierają do Ziemi",
-        p1: "Pomimo krótkiego okresu półtrwania, miony powstające na wysokości ~15 km docierają do powierzchni dzięki szczególnej teorii względności.",
-        p2: "Miony kosmiczne o energii >2.4 GeV poruszają się tak szybko, że dylatacja czasu wydłuża ich czas życia (obserwowany z Ziemi). Ich długość rozpadu staje się większa niż 15 km, pozwalając im przenikać przez atmosferę przed rozpadem."
+        title: "Jak Do Nas Docierają?",
+        p1: "Mimo że miony szybko się rozpadają, są tworzone wysoko w atmosferze i poruszają się niesamowicie szybko.",
+        p2: "Ponieważ poruszają się tak szybko, czas faktycznie dla nich zwalnia (dzięki teorii względności Einsteina!). To daje im wystarczająco dużo czasu, aby dotrzeć do ziemi, zanim znikną."
       },
       importance: {
         title: "Dlaczego Badamy Miony?",
-        p1: "Miony zapewniają okno na wysokoenergetyczne procesy kosmiczne i pozwalają badać fizykę cząstek przy energiach niemożliwych do osiągnięcia w laboratoriach.",
-        p2: "Wykrywając i mierząc strumień mionów, możemy lepiej zrozumieć pochodzenie promieni kosmicznych, interakcje atmosferyczne i testować fundamentalne zasady fizyki, takie jak teoria względności."
+        p1: "Miony są jak posłańcy z kosmosu, niosący informacje o wysokoenergetycznych wydarzeniach dziejących się daleko we wszechświecie.",
+        p2: "Wykrywając miony, możemy dowiedzieć się więcej o promieniowaniu kosmicznym, testować fundamentalne teorie fizyki i lepiej rozumieć naszą atmosferę i środowisko kosmiczne."
       }
     }
   }
