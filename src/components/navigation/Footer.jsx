@@ -6,7 +6,7 @@ export default function Footer() {
   const { t } = useLanguage();
   
   return (
-    <footer className="relative bg-gradient-to-br from-slate-950/70 via-blue-950/70 to-slate-900/70">
+    <footer className="relative">
       <div className="max-w-6xl mx-auto px-4 py-16">
         <div className="grid md:grid-cols-3 gap-12">
           {/* Brand */}
