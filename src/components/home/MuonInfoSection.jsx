@@ -93,10 +93,8 @@ export default function MuonInfoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-20 border border-white/10 bg-white/[0.02] p-8 relative overflow-hidden"
+          className="mb-20 border border-white/10 bg-white/[0.02] p-8"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/5 to-transparent animate-pulse" />
-          <div className="relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
             <div>
               <p className="text-3xl font-light text-white mb-2">10,000+</p>
@@ -110,9 +108,8 @@ export default function MuonInfoSection() {
               <p className="text-3xl font-light text-white mb-2">Super Fast</p>
               <p className="text-white/30 text-xs uppercase tracking-wider">Near Light Speed</p>
             </div>
-            </div>
-            </div>
-            </motion.div>
+          </div>
+        </motion.div>
 
         {/* Content Cards */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 items-start">
