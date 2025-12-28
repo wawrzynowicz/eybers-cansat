@@ -14,9 +14,9 @@ export default function Home() {
     <div>
       <HeroSection />
       <MissionSection />
+      <ProjectDescription />
       <MuonInfoSection />
       <TimelineSection />
-      <ProjectDescription />
       <TeamSection />
       <SocialMediaSection />
       <SponsorsSection />
