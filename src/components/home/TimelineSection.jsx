@@ -90,16 +90,54 @@ export default function TimelineSection() {
           </p>
         </motion.div>
 
-        {/* Timeline */}
+        {/* Timeline with snake path */}
         <div className="relative">
-          {t.timeline?.milestones?.map((milestone, index) => (
-            <TimelineItem
-              key={index}
-              milestone={milestone}
-              index={index}
-              isLast={index === t.timeline.milestones.length - 1}
-            />
-          ))}
+          {/* Center line */}
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-white/20 via-white/10 to-white/5 transform -translate-x-1/2" />
+          
+          {/* Snake connectors */}
+          {t.timeline?.milestones?.map((milestone, index) => {
+            if (index === t.timeline.milestones.length - 1) return null;
+            const isEven = index % 2 === 0;
+            return (
+              <motion.svg
+                key={`connector-${index}`}
+                initial={{ pathLength: 0, opacity: 0 }}
+                whileInView={{ pathLength: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: index * 0.1 + 0.3 }}
+                className="hidden md:block absolute left-1/2 transform -translate-x-1/2 pointer-events-none"
+                style={{ 
+                  top: `${(index + 1) * 250}px`,
+                  width: '50%',
+                  height: '250px'
+                }}
+                viewBox="0 0 400 250"
+                preserveAspectRatio="none"
+              >
+                <motion.path
+                  d={isEven ? "M 200 0 Q 350 125 200 250" : "M 200 0 Q 50 125 200 250"}
+                  fill="none"
+                  stroke="rgba(255,255,255,0.1)"
+                  strokeWidth="2"
+                  strokeDasharray="5,5"
+                />
+              </motion.svg>
+            );
+          })}
+
+          {/* Timeline items */}
+          <div className="space-y-32 md:space-y-64">
+            {t.timeline?.milestones?.map((milestone, index) => (
+              <TimelineItem
+                key={index}
+                milestone={milestone}
+                index={index}
+                isLast={index === t.timeline.milestones.length - 1}
+                isEven={index % 2 === 0}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
