@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Atom, Zap, Shield, TrendingDown, Target, Info, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/components/shared/LanguageContext';
 import { Button } from '@/components/ui/button';
-import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 const InfoCard = ({ icon: Icon, title, preview, content, delay, id, expandedId, onToggle }) => {
   const isExpanded = expandedId === id;
 
