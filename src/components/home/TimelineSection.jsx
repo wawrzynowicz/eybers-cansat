@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle2, Circle, Clock } from 'lucide-react';
 import { useLanguage } from '@/components/shared/LanguageContext';
 
-const TimelineItem = ({ milestone, index, isLast }) => {
+const TimelineItem = ({ milestone, index, isLast, isEven }) => {
   const getStatusIcon = () => {
     switch (milestone.status) {
       case 'completed':
@@ -28,42 +28,37 @@ const TimelineItem = ({ milestone, index, isLast }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: -40 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="relative flex gap-6 group"
+      className={`relative group ${isEven ? 'justify-end' : 'justify-start'} flex`}
     >
-      {/* Timeline line */}
-      {!isLast && (
-        <div className="absolute left-[23px] top-12 w-px h-full bg-gradient-to-b from-white/20 to-transparent" />
-      )}
-
-      {/* Icon container */}
-      <div className="relative z-10 flex-shrink-0">
-        <div className={`w-12 h-12 rounded-full border-2 ${getStatusColor()} flex items-center justify-center backdrop-blur-sm transition-all duration-300 group-hover:scale-110`}>
-          {getStatusIcon()}
-        </div>
-      </div>
-
       {/* Content */}
-      <div className="flex-1 pb-12">
-        <div className={`border ${getStatusColor()} p-6 transition-all duration-300 group-hover:border-white/30`}>
-          <div className="flex items-center justify-between mb-2">
+      <div className={`w-full md:w-[45%] ${isEven ? 'md:text-right' : 'md:text-left'}`}>
+        <div className={`border ${getStatusColor()} p-6 transition-all duration-300 group-hover:border-white/30 group-hover:shadow-lg`}>
+          <div className={`flex items-center justify-between mb-2 ${isEven ? 'md:flex-row-reverse' : ''}`}>
             <h3 className="text-lg font-medium text-white">{milestone.title}</h3>
-            <span className="text-sm text-white/50">{milestone.date}</span>
+            <span className="text-sm text-white/50 whitespace-nowrap ml-4">{milestone.date}</span>
           </div>
           <p className="text-white/70 text-sm leading-relaxed">{milestone.description}</p>
           {milestone.achievements && (
-            <ul className="mt-4 space-y-2">
+            <ul className={`mt-4 space-y-2 ${isEven ? 'md:items-end' : 'md:items-start'} flex flex-col`}>
               {milestone.achievements.map((achievement, idx) => (
-                <li key={idx} className="text-xs text-white/60 flex items-start gap-2">
+                <li key={idx} className={`text-xs text-white/60 flex items-start gap-2 ${isEven ? 'md:flex-row-reverse md:text-right' : ''}`}>
                   <span className="text-blue-400 mt-1">•</span>
                   <span>{achievement}</span>
                 </li>
               ))}
             </ul>
           )}
+        </div>
+      </div>
+
+      {/* Icon container - positioned absolutely at center */}
+      <div className={`absolute top-0 left-1/2 transform -translate-x-1/2 z-10 hidden md:block`}>
+        <div className={`w-12 h-12 rounded-full border-2 ${getStatusColor()} flex items-center justify-center backdrop-blur-sm transition-all duration-300 group-hover:scale-110`}>
+          {getStatusIcon()}
         </div>
       </div>
     </motion.div>
