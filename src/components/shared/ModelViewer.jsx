@@ -1,0 +1,97 @@
+import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+export default function ModelViewer({ modelPath, width = '100%', height = '500px' }) {
+  const mountRef = useRef(null);
+
+  useEffect(() => {
+    if (!mountRef.current) return;
+
+    // Scene setup
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x0a0a0a);
+
+    // Camera setup
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      mountRef.current.clientWidth / mountRef.current.clientHeight,
+      0.1,
+      1000
+    );
+    camera.position.z = 5;
+
+    // Renderer setup
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
+    mountRef.current.appendChild(renderer.domElement);
+
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(5, 5, 5);
+    scene.add(directionalLight);
+
+    // Load Model
+    const loader = new GLTFLoader();
+    let model = null;
+
+    if (modelPath) {
+      loader.load(
+        modelPath,
+        (gltf) => {
+          model = gltf.scene;
+          scene.add(model);
+          console.log('Model loaded successfully!');
+        },
+        (xhr) => {
+          console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+        },
+        (error) => {
+          console.error('Error loading model:', error);
+        }
+      );
+    }
+
+    // Animation loop
+    let animationId;
+    const animate = () => {
+      animationId = requestAnimationFrame(animate);
+
+      // Rotate model if it exists
+      if (model) {
+        model.rotation.y += 0.005;
+      }
+
+      renderer.render(scene, camera);
+    };
+    animate();
+
+    // Handle window resize
+    const handleResize = () => {
+      if (!mountRef.current) return;
+      
+      const width = mountRef.current.clientWidth;
+      const height = mountRef.current.clientHeight;
+      
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+    };
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      cancelAnimationFrame(animationId);
+      if (mountRef.current && renderer.domElement) {
+        mountRef.current.removeChild(renderer.domElement);
+      }
+      renderer.dispose();
+    };
+  }, [modelPath]);
+
+  return <div ref={mountRef} style={{ width, height }} />;
+}
