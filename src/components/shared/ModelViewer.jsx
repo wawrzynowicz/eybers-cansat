@@ -43,8 +43,24 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
         modelPath,
         (gltf) => {
           model = gltf.scene;
+          
+          // Center and scale the model
+          const box = new THREE.Box3().setFromObject(model);
+          const center = box.getCenter(new THREE.Vector3());
+          const size = box.getSize(new THREE.Vector3());
+          
+          // Center the model
+          model.position.x = -center.x;
+          model.position.y = -center.y;
+          model.position.z = -center.z;
+          
+          // Scale to fit camera view
+          const maxDim = Math.max(size.x, size.y, size.z);
+          const scale = 3 / maxDim;
+          model.scale.setScalar(scale);
+          
           scene.add(model);
-          console.log('Model loaded successfully!');
+          console.log('Model loaded successfully!', { size, center });
         },
         (xhr) => {
           console.log((xhr.loaded / xhr.total * 100) + '% loaded');
