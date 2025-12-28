@@ -53,38 +53,28 @@ export default function MissionSection() {
             <Loader2 className="w-6 h-6 text-white/30 animate-spin" />
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {displayCards.map((card, index) => (
             <motion.div
               key={card.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group relative"
             >
-              <div className="relative h-full border border-white/10 bg-white/[0.03] p-10 hover:bg-white/[0.05] hover:border-white/20 transition-all duration-700">
-                {/* Animated corner */}
-                <motion.div
-                  className="absolute top-0 left-0 w-8 h-8"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5 + index * 0.1 }}
-                >
-                  <div className="absolute top-0 left-0 w-full h-px bg-white/20" />
-                  <div className="absolute top-0 left-0 w-px h-full bg-white/20" />
-                </motion.div>
-
-                <card.icon className="w-6 h-6 text-white/40 mb-8" strokeWidth={1} />
+              <div className="relative h-full border border-white/20 bg-gradient-to-br from-white/[0.08] to-white/[0.02] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500">
+                {/* Icon with glow */}
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-500/30 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-blue-400/50 transition-all duration-500">
+                  <card.icon className="w-7 h-7 text-blue-400" strokeWidth={1.5} />
+                </div>
                 
-                <h3 className="text-xl font-medium text-white mb-4">{card.title}</h3>
-                <p className="text-white/70 leading-relaxed text-sm">{card.description}</p>
+                {/* Content */}
+                <h3 className="text-2xl font-semibold text-white mb-3 group-hover:text-blue-300 transition-colors">{card.title}</h3>
+                <p className="text-white/80 leading-relaxed text-base">{card.description}</p>
 
-                {/* Hover line */}
-                <motion.div 
-                  className="absolute bottom-0 left-0 h-px bg-white/20 w-0 group-hover:w-full transition-all duration-700"
-                />
+                {/* Accent line */}
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500/0 via-blue-500/50 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
               </motion.div>
               ))}
