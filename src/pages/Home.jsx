@@ -4,7 +4,6 @@ import MissionSection from '@/components/home/MissionSection';
 import MuonInfoSection from '@/components/home/MuonInfoSection';
 import ProjectDescription from '@/components/home/ProjectDescription';
 import TimelineSection from '@/components/home/TimelineSection';
-import TelemetrySection from '@/components/home/TelemetrySection';
 import TeamSection from '@/components/home/TeamSection';
 import SocialMediaSection from '@/components/home/SocialMediaSection';
 import SponsorsSection from '@/components/home/SponsorsSection';
@@ -17,7 +16,6 @@ export default function Home() {
       <MissionSection />
       <MuonInfoSection />
       <TimelineSection />
-      <TelemetrySection />
       <ProjectDescription />
       <TeamSection />
       <SocialMediaSection />
