@@ -158,6 +158,20 @@ export default function ProjectDescription() {
           ))}
           </div>
         </motion.div>
+
+        {/* 3D Model Viewer */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-20"
+        >
+          <h3 className="text-2xl font-light text-white text-center mb-10">Satellite 3D Model</h3>
+          <div className="max-w-3xl mx-auto h-[500px] rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+            <ModelViewer modelPath="https://example.com/your-model.glb" />
+          </div>
+        </motion.div>
       </div>
     </section>
   );
