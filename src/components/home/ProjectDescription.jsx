@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Atom, Waves, Cpu, Radio, BarChart3, Compass } from 'lucide-react';
 import { useLanguage } from '@/components/shared/LanguageContext';
+import ModelViewer from '@/components/shared/ModelViewer';
 
 export default function ProjectDescription() {
   const { t } = useLanguage();
