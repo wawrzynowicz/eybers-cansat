@@ -33,7 +33,8 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
     controls.dampingFactor = 0.05;
     controls.enableZoom = false;
     controls.enablePan = false;
-    controls.autoRotate = false;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 2;
 
     // Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
@@ -67,10 +68,14 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
           model.position.y = -center.y;
           model.position.z = -center.z;
           
-          // Scale to fit camera view
+          // Scale to fit camera view (enlarged)
           const maxDim = Math.max(size.x, size.y, size.z);
-          const scale = 3 / maxDim;
+          const scale = 4.5 / maxDim;
           model.scale.setScalar(scale);
+          
+          // Rotate to vertical position, slightly tilted
+          model.rotation.x = Math.PI / 2;
+          model.rotation.z = Math.PI / 12;
           
           scene.add(model);
           console.log('Model loaded successfully!', { size, center });
