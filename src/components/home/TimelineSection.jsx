@@ -43,7 +43,7 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
                 {getStatusIcon()}
                 <h3 className="text-base font-medium text-white">{milestone.title}</h3>
               </div>
-              <span className="text-xs text-white/40 whitespace-nowrap ml-3">{milestone.date}</span>
+              <span className="text-sm font-semibold text-blue-400 whitespace-nowrap ml-3">{milestone.date}</span>
             </div>
             <p className="text-white/70 text-sm leading-relaxed">{milestone.description}</p>
             {milestone.achievements && (
@@ -85,7 +85,7 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
                 {getStatusIcon()}
                 <h3 className="text-base font-medium text-white">{milestone.title}</h3>
               </div>
-              <span className="text-xs text-white/40 whitespace-nowrap ml-3">{milestone.date}</span>
+              <span className="text-sm font-semibold text-blue-400 whitespace-nowrap ml-3">{milestone.date}</span>
             </div>
             <p className="text-white/70 text-sm leading-relaxed">{milestone.description}</p>
             {milestone.achievements && (
