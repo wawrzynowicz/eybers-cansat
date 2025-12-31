@@ -67,14 +67,10 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
           model.position.y = -center.y;
           model.position.z = -center.z;
           
-          // Scale to fit camera view (enlarged)
+          // Scale to fit camera view
           const maxDim = Math.max(size.x, size.y, size.z);
-          const scale = 4.5 / maxDim;
+          const scale = 3 / maxDim;
           model.scale.setScalar(scale);
-          
-          // Rotate to vertical position
-          model.rotation.x = Math.PI / 2;
-          model.rotation.z = 0;
           
           scene.add(model);
           console.log('Model loaded successfully!', { size, center });
