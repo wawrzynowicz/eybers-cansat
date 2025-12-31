@@ -7,11 +7,11 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
   const getStatusIcon = () => {
     switch (milestone.status) {
       case 'completed':
-        return <CheckCircle2 className="w-6 h-6 text-green-400" />;
+        return <CheckCircle2 className="w-5 h-5 text-green-400" />;
       case 'in_progress':
-        return <Clock className="w-6 h-6 text-blue-400 animate-pulse" />;
+        return <Clock className="w-5 h-5 text-blue-400 animate-pulse" />;
       default:
-        return <Circle className="w-6 h-6 text-white/30" />;
+        return <Circle className="w-5 h-5 text-white/30" />;
     }
   };
 
@@ -28,33 +28,25 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: isEven ? 40 : -40 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className={`relative group ${isEven ? 'md:col-start-2 md:text-right' : 'md:col-start-1'} ${index > 0 ? 'md:-mt-24' : ''}`}
-      style={{ gridRow: Math.floor(index / 2) + 1 }}
+      className="relative flex items-center gap-0 group"
     >
-      <div className={`flex gap-4 ${isEven ? 'md:flex-row-reverse' : ''}`}>
-        {/* Icon container */}
-        <div className="relative z-10 flex-shrink-0">
-          <div className={`w-10 h-10 rounded-full border-2 ${getStatusColor()} flex items-center justify-center backdrop-blur-sm transition-all duration-300 group-hover:scale-110`}>
-            {getStatusIcon()}
-          </div>
-        </div>
-
-        {/* Content */}
-        <div className="flex-1">
-          <div className={`border ${getStatusColor()} p-4 transition-all duration-300 group-hover:border-white/30`}>
-            <div className={`flex items-center gap-3 mb-2 ${isEven ? 'md:flex-row-reverse md:justify-start' : 'justify-between'}`}>
-              <h3 className="text-sm font-medium text-white">{milestone.title}</h3>
-              <span className="text-xs text-white/40 whitespace-nowrap">{milestone.date}</span>
+      {/* Left content */}
+      <div className={`flex-1 ${isEven ? 'order-3' : 'order-1'}`}>
+        {!isEven && (
+          <div className={`border ${getStatusColor()} rounded-lg p-4 transition-all duration-300 group-hover:border-white/30`}>
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="text-base font-medium text-white">{milestone.title}</h3>
+              <span className="text-xs text-white/40 whitespace-nowrap ml-3">{milestone.date}</span>
             </div>
-            <p className={`text-white/70 text-xs leading-relaxed ${isEven ? 'md:text-right' : ''}`}>{milestone.description}</p>
+            <p className="text-white/70 text-sm leading-relaxed">{milestone.description}</p>
             {milestone.achievements && (
-              <ul className={`mt-2 space-y-1 ${isEven ? 'md:text-right' : ''}`}>
+              <ul className="mt-3 space-y-1.5">
                 {milestone.achievements.map((achievement, idx) => (
-                  <li key={idx} className={`text-xs text-white/60 flex items-start gap-2 ${isEven ? 'md:flex-row-reverse md:justify-end' : ''}`}>
+                  <li key={idx} className="text-xs text-white/60 flex items-start gap-2">
                     <span className="text-blue-400 mt-0.5">•</span>
                     <span>{achievement}</span>
                   </li>
@@ -62,7 +54,46 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
               </ul>
             )}
           </div>
+        )}
+      </div>
+
+      {/* Center line and circle */}
+      <div className="relative flex flex-col items-center order-2 px-6">
+        {/* Connecting line to content */}
+        <div className={`absolute top-1/2 w-12 h-px border-t-2 border-dashed border-white/20 ${isEven ? '-right-12' : '-left-12'}`} />
+        
+        {/* Circle with number */}
+        <div className={`relative z-10 w-14 h-14 rounded-full border-3 ${getStatusColor()} flex items-center justify-center backdrop-blur-sm transition-all duration-300 group-hover:scale-110`}>
+          <span className="text-white font-bold text-lg">{index + 1}</span>
         </div>
+
+        {/* Vertical line */}
+        {!isLast && (
+          <div className="w-px h-24 bg-gradient-to-b from-white/20 to-white/10" />
+        )}
+      </div>
+
+      {/* Right content */}
+      <div className={`flex-1 ${isEven ? 'order-1' : 'order-3'}`}>
+        {isEven && (
+          <div className={`border ${getStatusColor()} rounded-lg p-4 transition-all duration-300 group-hover:border-white/30`}>
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="text-base font-medium text-white">{milestone.title}</h3>
+              <span className="text-xs text-white/40 whitespace-nowrap ml-3">{milestone.date}</span>
+            </div>
+            <p className="text-white/70 text-sm leading-relaxed">{milestone.description}</p>
+            {milestone.achievements && (
+              <ul className="mt-3 space-y-1.5">
+                {milestone.achievements.map((achievement, idx) => (
+                  <li key={idx} className="text-xs text-white/60 flex items-start gap-2">
+                    <span className="text-blue-400 mt-0.5">•</span>
+                    <span>{achievement}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
       </div>
     </motion.div>
   );
@@ -94,7 +125,7 @@ export default function TimelineSection() {
         </motion.div>
 
         {/* Timeline */}
-        <div className="relative grid md:grid-cols-2 gap-x-12 gap-y-4">
+        <div className="relative max-w-5xl mx-auto">
           {t.timeline?.milestones?.map((milestone, index) => (
             <TimelineItem
               key={index}
