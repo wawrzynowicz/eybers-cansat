@@ -72,9 +72,9 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
           const scale = 4.5 / maxDim;
           model.scale.setScalar(scale);
           
-          // Rotate to vertical position, slightly tilted
+          // Rotate to vertical position
           model.rotation.x = Math.PI / 2;
-          model.rotation.z = Math.PI / 12;
+          model.rotation.z = 0;
           
           scene.add(model);
           console.log('Model loaded successfully!', { size, center });
