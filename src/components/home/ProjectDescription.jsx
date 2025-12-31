@@ -25,7 +25,7 @@ export default function ProjectDescription() {
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
   return (
-    <section ref={containerRef} className="relative py-32 px-4 overflow-hidden" id="about">
+    <section ref={containerRef} className="relative py-12 px-4 overflow-hidden" id="about">
       {/* Animated background lines */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(5)].map((_, i) => (

@@ -106,7 +106,7 @@ export default function TimelineSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative py-32 px-4">
+    <section className="relative py-12 px-4">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <motion.div

@@ -27,7 +27,7 @@ export default function MissionSection() {
   }));
   
   return (
-    <section className="relative py-32 px-4" id="mission">
+    <section className="relative py-12 px-4" id="mission">
       {/* Subtle grid background */}
       <div className="absolute inset-0 opacity-[0.02]" style={{
         backgroundImage: `linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)`,

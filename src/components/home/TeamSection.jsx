@@ -96,7 +96,7 @@ export default function TeamSection() {
   const displayMembers = members.length > 0 ? members : defaultMembers(language);
 
   return (
-    <section className="relative py-32 px-4" id="team">
+    <section className="relative py-12 px-4" id="team">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

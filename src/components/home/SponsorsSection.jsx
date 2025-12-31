@@ -91,7 +91,7 @@ export default function SponsorsSection() {
   if (sponsors.length === 0) return null;
 
   return (
-    <section className="relative py-32 px-4">
+    <section className="relative py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

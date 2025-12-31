@@ -7,7 +7,7 @@ export default function FeaturedProject() {
   const { t } = useLanguage();
   
   return (
-    <section className="relative py-32 px-4 overflow-hidden" id="project">
+    <section className="relative py-12 px-4 overflow-hidden" id="project">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
