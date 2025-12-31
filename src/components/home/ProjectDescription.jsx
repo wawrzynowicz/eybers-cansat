@@ -123,7 +123,7 @@ export default function ProjectDescription() {
           ))}
         </div>
 
-        {/* Technical specs */}
+        {/* 3D Model and Technical Specs Combined */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -131,45 +131,41 @@ export default function ProjectDescription() {
           transition={{ duration: 0.8 }}
           className="mt-20"
         >
-          <h3 className="text-2xl font-light text-white text-center mb-10">{t.projectDesc.specs.title}</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {[
-            t.projectDesc.specs.items.dimensions,
-            t.projectDesc.specs.items.mass,
-            t.projectDesc.specs.items.power,
-            t.projectDesc.specs.items.comms
-          ].map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <motion.p 
-                className="text-3xl md:text-4xl font-light text-white mb-2"
-                animate={{ opacity: [0.7, 1, 0.7] }}
-                transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
-              >
-                {stat.value}
-              </motion.p>
-              <p className="text-white/30 text-xs uppercase tracking-wider">{stat.label}</p>
-            </motion.div>
-          ))}
-          </div>
-        </motion.div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Technical specs */}
+            <div>
+              <h3 className="text-2xl font-light text-white mb-10">{t.projectDesc.specs.title}</h3>
+              <div className="grid grid-cols-2 gap-8">
+              {[
+                t.projectDesc.specs.items.dimensions,
+                t.projectDesc.specs.items.mass,
+                t.projectDesc.specs.items.power,
+                t.projectDesc.specs.items.comms
+              ].map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <motion.p 
+                    className="text-3xl md:text-4xl font-light text-white mb-2"
+                    animate={{ opacity: [0.7, 1, 0.7] }}
+                    transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
+                  >
+                    {stat.value}
+                  </motion.p>
+                  <p className="text-white/30 text-xs uppercase tracking-wider">{stat.label}</p>
+                </motion.div>
+              ))}
+              </div>
+            </div>
 
-        {/* 3D Model Viewer */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-20"
-        >
-          <h3 className="text-2xl font-light text-white text-center mb-10">Satellite 3D Model</h3>
-          <div className="max-w-3xl mx-auto h-[500px] rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
-            <ModelViewer modelPath="/CanSat-3D-model.gltf" />
+            {/* 3D Model Viewer */}
+            <div className="h-[500px] rounded-2xl overflow-hidden">
+              <ModelViewer modelPath="/CanSat-3D-model.gltf" />
+            </div>
           </div>
         </motion.div>
       </div>
