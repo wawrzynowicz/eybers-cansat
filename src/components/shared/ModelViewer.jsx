@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 export default function ModelViewer({ modelPath, width = '100%', height = '500px' }) {
   const mountRef = useRef(null);
@@ -10,7 +11,7 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
 
     // Scene setup
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x0a0a0a);
+    scene.background = null;
 
     // Camera setup
     const camera = new THREE.PerspectiveCamera(
@@ -22,9 +23,16 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
     camera.position.z = 5;
 
     // Renderer setup
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
     mountRef.current.appendChild(renderer.domElement);
+
+    // Controls setup
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.enableZoom = true;
+    controls.autoRotate = false;
 
     // Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
@@ -79,12 +87,7 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
     let animationId;
     const animate = () => {
       animationId = requestAnimationFrame(animate);
-
-      // Rotate model if it exists
-      if (model) {
-        model.rotation.y += 0.005;
-      }
-
+      controls.update();
       renderer.render(scene, camera);
     };
     animate();
