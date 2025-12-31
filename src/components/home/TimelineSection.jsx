@@ -62,9 +62,6 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
 
       {/* Center line and circle */}
       <div className="relative flex flex-col items-center order-2 px-6">
-        {/* Connecting line to content */}
-        <div className={`absolute top-1/2 w-12 h-px border-t-2 border-dashed border-white/20 ${isEven ? 'left-full' : 'right-full'}`} />
-        
         {/* Circle with number */}
         <div className={`relative z-10 w-14 h-14 rounded-full border-3 ${getStatusColor()} flex items-center justify-center backdrop-blur-sm transition-all duration-300 group-hover:scale-110`}>
           <span className="text-white font-bold text-lg">{index + 1}</span>
