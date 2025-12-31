@@ -35,7 +35,7 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
     controls.enableZoom = false;
     controls.enablePan = false;
     controls.autoRotate = true;
-    controls.autoRotateSpeed = 6;
+    controls.autoRotateSpeed = 1;
 
     // Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
@@ -123,10 +123,14 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
     <div className="relative" style={{ width, height }}>
       <div ref={mountRef} style={{ width: '100%', height: '100%' }} />
       <motion.div
-        className="absolute bottom-4 right-4 flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full pointer-events-none"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: [0, 1, 1, 0], y: [20, 0, 0, 20] }}
-        transition={{ duration: 3, delay: 1, repeat: 2 }}
+        className="absolute bottom-4 right-4 flex items-center gap-2 bg-slate-900/90 backdrop-blur-md border border-white/30 px-5 py-3 rounded-full pointer-events-none shadow-lg"
+        initial={{ opacity: 0, y: 20, scale: 0.8 }}
+        animate={{ 
+          opacity: [0, 1, 1, 1, 0], 
+          y: [20, 0, 0, 0, 20],
+          scale: [0.8, 1, 1, 1, 0.8]
+        }}
+        transition={{ duration: 4, delay: 0.5, repeat: Infinity, repeatDelay: 2 }}
       >
         <motion.div
           animate={{ rotate: 360 }}
