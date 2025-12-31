@@ -7,11 +7,11 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
   const getStatusIcon = () => {
     switch (milestone.status) {
       case 'completed':
-        return <CheckCircle2 className="w-5 h-5 text-green-400" />;
+        return <CheckCircle2 className="w-6 h-6 text-green-400" />;
       case 'in_progress':
-        return <Clock className="w-5 h-5 text-blue-400 animate-pulse" />;
+        return <Clock className="w-6 h-6 text-blue-400 animate-pulse" />;
       default:
-        return <Circle className="w-5 h-5 text-white/30" />;
+        return <Circle className="w-6 h-6 text-white/30" />;
     }
   };
 
