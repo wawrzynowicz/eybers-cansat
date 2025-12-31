@@ -32,13 +32,8 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className={`relative flex gap-6 group ${isEven ? 'flex-row-reverse' : ''}`}
+      className={`relative flex gap-6 group ${isEven ? 'flex-row-reverse md:col-start-2' : 'md:col-start-1'} ${index > 0 ? '-mt-16' : ''}`}
     >
-      {/* Timeline line - connecting to center */}
-      {!isLast && (
-        <div className={`absolute top-12 w-px h-full bg-gradient-to-b from-white/20 to-transparent ${isEven ? 'right-[23px]' : 'left-[23px]'}`} />
-      )}
-
       {/* Icon container */}
       <div className="relative z-10 flex-shrink-0">
         <div className={`w-12 h-12 rounded-full border-2 ${getStatusColor()} flex items-center justify-center backdrop-blur-sm transition-all duration-300 group-hover:scale-110`}>
@@ -47,7 +42,7 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
       </div>
 
       {/* Content */}
-      <div className="flex-1 pb-8">
+      <div className="flex-1">
         <div className={`border ${getStatusColor()} p-5 transition-all duration-300 group-hover:border-white/30`}>
           <div className="flex items-center justify-between mb-2">
             <h3 className="text-base font-medium text-white">{milestone.title}</h3>
