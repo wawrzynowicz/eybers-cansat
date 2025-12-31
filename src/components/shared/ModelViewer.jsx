@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { motion } from 'framer-motion';
 
 export default function ModelViewer({ modelPath, width = '100%', height = '500px' }) {
   const mountRef = useRef(null);
@@ -118,5 +119,25 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
     };
   }, [modelPath]);
 
-  return <div ref={mountRef} style={{ width, height }} />;
+  return (
+    <div className="relative" style={{ width, height }}>
+      <div ref={mountRef} style={{ width: '100%', height: '100%' }} />
+      <motion.div
+        className="absolute bottom-4 right-4 flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full pointer-events-none"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: [0, 1, 1, 0], y: [20, 0, 0, 20] }}
+        transition={{ duration: 3, delay: 1, repeat: 2 }}
+      >
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+            <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+          </svg>
+        </motion.div>
+        <span className="text-white text-xs">Drag to rotate</span>
+      </motion.div>
+    </div>
+  );
 }
