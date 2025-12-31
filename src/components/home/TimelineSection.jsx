@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle2, Circle, Clock } from 'lucide-react';
 import { useLanguage } from '@/components/shared/LanguageContext';
 
-const TimelineItem = ({ milestone, index, isLast }) => {
+const TimelineItem = ({ milestone, index, isLast, isEven }) => {
   const getStatusIcon = () => {
     switch (milestone.status) {
       case 'completed':
@@ -28,15 +28,15 @@ const TimelineItem = ({ milestone, index, isLast }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: -40 }}
+      initial={{ opacity: 0, x: isEven ? 40 : -40 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="relative flex gap-6 group"
+      className={`relative flex gap-6 group ${isEven ? 'flex-row-reverse' : ''}`}
     >
-      {/* Timeline line */}
+      {/* Timeline line - connecting to center */}
       {!isLast && (
-        <div className="absolute left-[23px] top-12 w-px h-full bg-gradient-to-b from-white/20 to-transparent" />
+        <div className={`absolute top-12 w-px h-full bg-gradient-to-b from-white/20 to-transparent ${isEven ? 'right-[23px]' : 'left-[23px]'}`} />
       )}
 
       {/* Icon container */}
@@ -47,15 +47,15 @@ const TimelineItem = ({ milestone, index, isLast }) => {
       </div>
 
       {/* Content */}
-      <div className="flex-1 pb-12">
-        <div className={`border ${getStatusColor()} p-6 transition-all duration-300 group-hover:border-white/30`}>
+      <div className="flex-1 pb-8">
+        <div className={`border ${getStatusColor()} p-5 transition-all duration-300 group-hover:border-white/30`}>
           <div className="flex items-center justify-between mb-2">
-            <h3 className="text-lg font-medium text-white">{milestone.title}</h3>
-            <span className="text-sm text-white/50">{milestone.date}</span>
+            <h3 className="text-base font-medium text-white">{milestone.title}</h3>
+            <span className="text-xs text-white/50">{milestone.date}</span>
           </div>
           <p className="text-white/70 text-sm leading-relaxed">{milestone.description}</p>
           {milestone.achievements && (
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-3 space-y-1.5">
               {milestone.achievements.map((achievement, idx) => (
                 <li key={idx} className="text-xs text-white/60 flex items-start gap-2">
                   <span className="text-blue-400 mt-1">•</span>
@@ -96,13 +96,14 @@ export default function TimelineSection() {
         </motion.div>
 
         {/* Timeline */}
-        <div className="relative">
+        <div className="relative grid md:grid-cols-2 gap-x-8">
           {t.timeline?.milestones?.map((milestone, index) => (
             <TimelineItem
               key={index}
               milestone={milestone}
               index={index}
               isLast={index === t.timeline.milestones.length - 1}
+              isEven={index % 2 === 1}
             />
           ))}
         </div>
