@@ -69,7 +69,7 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
           
           // Scale to fit camera view
           const maxDim = Math.max(size.x, size.y, size.z);
-          const scale = 3 / maxDim;
+          const scale = 5 / maxDim;
           model.scale.setScalar(scale);
           
           scene.add(model);
