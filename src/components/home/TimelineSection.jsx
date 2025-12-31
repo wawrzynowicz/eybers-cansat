@@ -35,8 +35,8 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
       className="relative flex items-center gap-0 group"
     >
       {/* Left content */}
-      <div className={`flex-1 ${isEven ? 'order-3' : 'order-1'}`}>
-        {!isEven && (
+      <div className={`flex-1 ${isEven ? 'order-1' : 'order-3'}`}>
+        {isEven && (
           <div className={`border ${getStatusColor()} rounded-lg p-4 transition-all duration-300 group-hover:border-white/30`}>
             <div className="flex items-center justify-between mb-2">
               <h3 className="text-base font-medium text-white">{milestone.title}</h3>
@@ -74,8 +74,8 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
       </div>
 
       {/* Right content */}
-      <div className={`flex-1 ${isEven ? 'order-1' : 'order-3'}`}>
-        {isEven && (
+      <div className={`flex-1 ${isEven ? 'order-3' : 'order-1'}`}>
+        {!isEven && (
           <div className={`border ${getStatusColor()} rounded-lg p-4 transition-all duration-300 group-hover:border-white/30`}>
             <div className="flex items-center justify-between mb-2">
               <h3 className="text-base font-medium text-white">{milestone.title}</h3>
