@@ -20,7 +20,7 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
       0.1,
       1000
     );
-    camera.position.z = 5;
+    camera.position.set(5, 2, 0);
 
     // Renderer setup
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
