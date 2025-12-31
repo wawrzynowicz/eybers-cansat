@@ -164,7 +164,7 @@ export default function ProjectDescription() {
 
             {/* 3D Model Viewer */}
             <div className="h-[500px] rounded-2xl overflow-hidden">
-              <ModelViewer modelPath="/CanSat-3D-model.gltf" />
+              <ModelViewer modelPath="https://raw.githubusercontent.com/wawrzynowicz/eybers-cansat/main/CanSat-3D-model.gltf" />
             </div>
           </div>
         </motion.div>
