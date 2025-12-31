@@ -169,7 +169,7 @@ export default function ProjectDescription() {
         >
           <h3 className="text-2xl font-light text-white text-center mb-10">Satellite 3D Model</h3>
           <div className="max-w-3xl mx-auto h-[500px] rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
-            <ModelViewer modelPath="/assmebly-1.gltf" />
+            <ModelViewer modelPath="/assembly-1.gltf" />
           </div>
         </motion.div>
       </div>
