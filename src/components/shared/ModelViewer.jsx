@@ -34,7 +34,7 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
     controls.enableZoom = false;
     controls.enablePan = false;
     controls.autoRotate = true;
-    controls.autoRotateSpeed = 3;
+    controls.autoRotateSpeed = 6;
 
     // Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
