@@ -31,7 +31,8 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
-    controls.enableZoom = true;
+    controls.enableZoom = false;
+    controls.enablePan = false;
     controls.autoRotate = false;
 
     // Lighting
