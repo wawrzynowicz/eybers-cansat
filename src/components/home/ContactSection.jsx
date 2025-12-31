@@ -19,7 +19,10 @@ export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
 
   const mutation = useMutation({
-    mutationFn: (data) => base44.entities.ContactMessage.create(data),
+    mutationFn: async (data) => {
+      await base44.entities.ContactMessage.create(data);
+      await base44.functions.invoke('forwardContactMessage', data);
+    },
     onSuccess: () => {
       setSubmitted(true);
       setFormData({ name: '', email: '', message: '' });
