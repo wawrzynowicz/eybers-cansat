@@ -35,7 +35,7 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
       className="relative flex items-center gap-0 group"
     >
       {/* Left content */}
-      <div className={`flex-1 ${isEven ? 'order-3' : 'order-1'}`}>
+      <div className="flex-1 order-1">
         {!isEven && (
           <div className={`border ${getStatusColor()} rounded-lg p-4 transition-all duration-300 group-hover:border-white/30`}>
             <div className="flex items-center justify-between mb-2">
@@ -60,7 +60,7 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
       {/* Center line and circle */}
       <div className="relative flex flex-col items-center order-2 px-6">
         {/* Connecting line to content */}
-        <div className={`absolute top-1/2 w-12 h-px border-t-2 border-dashed border-white/20 ${isEven ? '-right-12' : '-left-12'}`} />
+        <div className={`absolute top-1/2 w-12 h-px border-t-2 border-dashed border-white/20 ${isEven ? 'left-full' : 'right-full'}`} />
         
         {/* Circle with number */}
         <div className={`relative z-10 w-14 h-14 rounded-full border-3 ${getStatusColor()} flex items-center justify-center backdrop-blur-sm transition-all duration-300 group-hover:scale-110`}>
@@ -74,7 +74,7 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
       </div>
 
       {/* Right content */}
-      <div className={`flex-1 ${isEven ? 'order-1' : 'order-3'}`}>
+      <div className="flex-1 order-3">
         {isEven && (
           <div className={`border ${getStatusColor()} rounded-lg p-4 transition-all duration-300 group-hover:border-white/30`}>
             <div className="flex items-center justify-between mb-2">
