@@ -184,7 +184,7 @@ const translations = {
         subtitle: "Cosmic Muon Detection",
         whatWeDo: {
           title: "What we do",
-          description: "We detect and analyse cosmic-ray secondaries, specifically particles muons, using a compact two-layer segmented detector. Each layer is divided into two independent segments, allowing for multiple types of analysis including coincidence measurements and angle of incidence approximation."
+          description: "We detect and analyse cosmic-ray secondaries, specifically particles muons, using a compact two-layer segmented detector. Each layer is divided into two independent segments. An inner gimbal sphere—a rotating capsule inside the CanSat—keeps the detectors always pointing upward using a low-center-of-mass ballast. All data is stored on a micro SD card for detailed post-flight analysis."
         },
         howWeUse: {
           title: "How we use the data",
@@ -416,7 +416,7 @@ const translations = {
         subtitle: "Wykrywanie Mionów Kosmicznych",
         whatWeDo: {
           title: "Co robimy",
-          description: "Wykrywamy i analizujemy wtórne promieniowanie kosmiczne, szczególnie cząstki miony, używając kompaktowego dwuwarstwowego segmentowanego detektora. Każda warstwa jest podzielona na dwa niezależne segmenty, umożliwiając różne typy analiz, w tym pomiary koincydencji i przybliżenie kąta padania."
+          description: "Wykrywamy i analizujemy wtórne promieniowanie kosmiczne, szczególnie cząstki miony, używając kompaktowego dwuwarstwowego segmentowanego detektora. Każda warstwa jest podzielona na dwa niezależne segmenty. Wewnętrzna kula kardanowa—obracająca się kapsuła wewnątrz CanSata—utrzymuje detektory zawsze skierowane w górę, wykorzystując balast o niskim środku ciężkości. Wszystkie dane są zapisywane na karcie micro SD do szczegółowej analizy po locie."
         },
         howWeUse: {
           title: "Jak wykorzystujemy dane",
