@@ -34,19 +34,25 @@ const SocialPostCard = ({ post, index, language }) => {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group block border border-white/10 bg-white/[0.03] overflow-hidden hover:border-white/20 transition-all duration-500"
     >
-      {post.image_url && (
-        <div className="relative h-48 overflow-hidden">
-          <img 
-            src={post.image_url} 
-            alt="Social post"
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-60" />
-          <div className={`absolute top-4 right-4 w-10 h-10 rounded-lg bg-gradient-to-br ${gradientColor} flex items-center justify-center shadow-lg`}>
-            <Icon className="w-5 h-5 text-white" />
+      <div className="relative h-48 overflow-hidden bg-white/5">
+        {post.image_url ? (
+          <>
+            <img 
+              src={post.image_url} 
+              alt="Social post"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-60" />
+          </>
+        ) : (
+          <div className="w-full h-full flex items-center justify-center">
+            <Icon className="w-12 h-12 text-white/20" />
           </div>
+        )}
+        <div className={`absolute top-4 right-4 w-10 h-10 rounded-lg bg-gradient-to-br ${gradientColor} flex items-center justify-center shadow-lg`}>
+          <Icon className="w-5 h-5 text-white" />
         </div>
-      )}
+      </div>
       
       <div className="p-6">
         <p className="text-white/80 text-sm leading-relaxed mb-4 line-clamp-3">
