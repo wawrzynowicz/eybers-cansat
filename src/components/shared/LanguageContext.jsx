@@ -133,9 +133,9 @@ const translations = {
         },
         {
           title: "Competition & Launch",
-          date: "Apr 2027",
+          date: "Apr 2026",
           status: "upcoming",
-          description: "Participation in ESA CanSat Competition 2026/2027. Our satellite will be launched and we'll collect real cosmic muon data.",
+          description: "Participation in ESA CanSat Competition 2025/2026. Our satellite will be launched and we'll collect real cosmic muon data.",
         }
       ]
     },
@@ -344,9 +344,9 @@ const translations = {
         },
         {
           title: "Konkurs i Start",
-          date: "Kwi 2027",
+          date: "Kwi 2026",
           status: "upcoming",
-          description: "Udział w Konkursie CanSat ESA 2026/2027. Nasz satelita zostanie wystrzelony i zbierzemy prawdziwe dane o mionach kosmicznych.",
+          description: "Udział w Konkursie CanSat ESA 2025/2026. Nasz satelita zostanie wystrzelony i zbierzemy prawdziwe dane o mionach kosmicznych.",
         }
       ]
     },
