@@ -1,6 +1,7 @@
 import React from 'react';
 import HeroSection from '@/components/home/HeroSection';
 import MissionSection from '@/components/home/MissionSection';
+import MissionsSection from '@/components/home/MissionsSection';
 import MuonInfoSection from '@/components/home/MuonInfoSection';
 import ProjectDescription from '@/components/home/ProjectDescription';
 import TimelineSection from '@/components/home/TimelineSection';
