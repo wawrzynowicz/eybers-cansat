@@ -184,15 +184,15 @@ const translations = {
         subtitle: "Cosmic Muon Detection",
         whatWeDo: {
           title: "What we do",
-          description: "Our CanSat is equipped with advanced scintillation detectors designed to capture cosmic muons during flight. These high-energy particles pass through our satellite, generating signals that are recorded and analyzed."
+          description: "We detect and analyse cosmic-ray secondaries, specifically muons, using a compact two-layer segmented detector. Each layer is divided into two independent segments, allowing for multiple types of analysis including coincidence measurements, angle of incidence approximation, and continuous data collection from power-on through descent and post-landing."
         },
         howWeUse: {
           title: "How we use the data",
-          description: "We analyze the muon detection patterns to understand cosmic ray behavior at different altitudes. This data helps us study atmospheric effects on particle detection and contributes to broader cosmic ray research."
+          description: "We extract genuine particle detections by measuring coincidences between layers, estimate the arrival direction of muons using segmented layer data, and correlate muon flux with altitude and atmospheric pressure during descent. Post-landing results are compared with reference measurements from ground-based detectors to validate consistency and accuracy."
         },
         whyMatters: {
           title: "Why it matters",
-          description: "Detecting muons from a high-altitude platform provides unique insights into cosmic radiation that aren't easily obtainable from ground-based observations. This advances our understanding of space weather and particle physics."
+          description: "This mission experimentally confirms special relativity effects through muon detection, simulates satellite measurements in varying atmospheric conditions like those on other planets, and contributes to cosmic ray research. The detector design is inspired by CREDO and Cosmic Watch projects, advancing portable particle detection technology."
         }
       }
     },
@@ -416,15 +416,15 @@ const translations = {
         subtitle: "Wykrywanie Mionów Kosmicznych",
         whatWeDo: {
           title: "Co robimy",
-          description: "Nasz CanSat jest wyposażony w zaawansowane detektory scyntylacyjne zaprojektowane do wychwytywania mionów kosmicznych podczas lotu. Te wysokoenergetyczne cząstki przechodzą przez nasz satelitę, generując sygnały, które są rejestrowane i analizowane."
+          description: "Wykrywamy i analizujemy wtórne promieniowanie kosmiczne, szczególnie miony, używając kompaktowego dwuwarstwowego segmentowanego detektora. Każda warstwa jest podzielona na dwa niezależne segmenty, umożliwiając różne typy analiz, w tym pomiary koincydencji, przybliżenie kąta padania i ciągłe zbieranie danych od włączenia przez opadanie do po lądowaniu."
         },
         howWeUse: {
           title: "Jak wykorzystujemy dane",
-          description: "Analizujemy wzorce wykrywania mionów, aby zrozumieć zachowanie promieniowania kosmicznego na różnych wysokościach. Te dane pomagają nam badać wpływ atmosfery na wykrywanie cząstek i przyczyniają się do szerszych badań nad promieniowaniem kosmicznym."
+          description: "Wyodrębniamy autentyczne detekcje cząstek mierząc koincydencje między warstwami, szacujemy kierunek przybycia mionów używając danych z segmentowanych warstw i korelujemy strumień mionów z wysokością i ciśnieniem atmosferycznym podczas opadania. Wyniki po lądowaniu porównujemy z pomiarami referencyjnymi z detektorów naziemnych w celu walidacji spójności i dokładności."
         },
         whyMatters: {
           title: "Dlaczego to ważne",
-          description: "Wykrywanie mionów z platformy na dużej wysokości zapewnia unikalne spojrzenie na promieniowanie kosmiczne, którego nie można łatwo uzyskać z obserwacji naziemnych. To poszerza nasze zrozumienie pogody kosmicznej i fizyki cząstek."
+          description: "Ta misja eksperymentalnie potwierdza efekty szczególnej teorii względności poprzez wykrywanie mionów, symuluje pomiary satelitarne w różnych warunkach atmosferycznych jak na innych planetach i przyczynia się do badań promieniowania kosmicznego. Projekt detektora został zainspirowany projektami CREDO i Cosmic Watch, rozwijając technologię przenośnej detekcji cząstek."
         }
       }
     },
