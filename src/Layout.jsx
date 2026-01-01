@@ -4,7 +4,6 @@ import Footer from '@/components/navigation/Footer';
 import StarField from '@/components/shared/StarField';
 import { LanguageProvider } from '@/components/shared/LanguageContext';
 import { StarFieldProvider } from '@/components/shared/StarFieldContext';
-import StarFieldControls from '@/components/shared/StarFieldControls';
 
 export default function Layout({ children }) {
   return (
@@ -31,7 +30,6 @@ export default function Layout({ children }) {
         {children}
       </main>
       <Footer />
-      <StarFieldControls />
       </div>
       </StarFieldProvider>
       </LanguageProvider>
