@@ -26,7 +26,7 @@ function SponsorCard({ sponsor, index }) {
             <img 
               src={sponsor.logo_url} 
               alt={sponsor.name}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
             />
           ) : (
             <div className="text-white/40 text-2xl font-light">{sponsor.name}</div>
