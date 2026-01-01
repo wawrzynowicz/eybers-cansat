@@ -163,7 +163,7 @@ export default function ContactSection() {
               <div className="flex gap-4">
                 {[
                   { icon: Facebook, href: 'https://www.facebook.com/eybers.cansat/', label: 'Facebook' },
-                  { icon: Linkedin, href: 'https://www.linkedin.com/in/eybers-undefined-7680a1396/', label: 'LinkedIn' },
+                  { icon: Linkedin, href: 'https://www.linkedin.com/company/eybers-cansat/', label: 'LinkedIn' },
                   { icon: Instagram, href: 'https://www.instagram.com/eybers.cansat/', label: 'Instagram' },
                   { icon: Github, href: 'https://github.com/users/eyberscansat/projects/1', label: 'GitHub' }
                 ].map((social) => (
