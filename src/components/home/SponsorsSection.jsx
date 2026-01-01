@@ -35,7 +35,7 @@ function SponsorCard({ sponsor, index }) {
 
         {/* Content */}
         <div className="space-y-4">
-          <h3 className="text-xl font-medium text-white">{sponsor.name}</h3>
+          <h3 className="text-xl font-medium text-white group-hover:text-blue-300 transition-colors">{sponsor.name}</h3>
           
           {description && (
             <p className="text-white/70 text-sm leading-relaxed">

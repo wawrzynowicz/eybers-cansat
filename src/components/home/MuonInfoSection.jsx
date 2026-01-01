@@ -17,9 +17,9 @@ const InfoCard = ({ icon: Icon, title, preview, content, delay, id, expandedId, 
     >
       <div className="flex items-start gap-4 mb-4">
         <div className="w-12 h-12 rounded-xl bg-white/[0.08] border border-white/20 flex items-center justify-center flex-shrink-0">
-          <Icon className="w-5 h-5 text-white/70" />
+          <Icon className="w-5 h-5 text-blue-400" />
         </div>
-        <h3 className="text-xl font-medium text-white pt-2">{title}</h3>
+        <h3 className="text-xl font-medium text-white group-hover:text-blue-300 transition-colors pt-2">{title}</h3>
       </div>
       
       <div className="text-white/70 text-sm leading-relaxed space-y-3 mb-4">

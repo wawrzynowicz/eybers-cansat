@@ -14,10 +14,10 @@ const MissionCard = ({ mission, icon: Icon, delay }) => {
     >
       <div className="flex items-center gap-4 mb-6">
         <div className="w-12 h-12 rounded-xl bg-white/[0.08] border border-white/20 flex items-center justify-center">
-          <Icon className="w-6 h-6 text-white/70" />
+          <Icon className="w-6 h-6 text-blue-400" />
         </div>
         <div>
-          <h3 className="text-2xl font-semibold text-white">{mission.title}</h3>
+          <h3 className="text-2xl font-semibold text-white group-hover:text-blue-300 transition-colors">{mission.title}</h3>
           <p className="text-white/50 text-sm">{mission.subtitle}</p>
         </div>
       </div>
