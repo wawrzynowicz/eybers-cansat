@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/shared/LanguageContext';
 
 const acronym = [
@@ -191,19 +189,6 @@ export default function HeroSection() {
       >
         <div className="relative z-10 max-w-4xl mx-auto text-center">
         </div>
-
-        {/* Scroll indicator */}
-        <motion.a
-          href="#mission"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <ChevronDown className="w-6 h-6 text-white/20" />
-          </motion.div>
-        </motion.a>
       </motion.section>
     </>
   );
