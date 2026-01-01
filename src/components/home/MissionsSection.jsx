@@ -28,7 +28,7 @@ const MissionCard = ({ mission, icon: Icon, delay }) => {
             <TrendingUp className="w-4 h-4 text-blue-400" />
             <h4 className="text-white/90 font-medium text-sm uppercase tracking-wider">{mission.whatWeDo.title}</h4>
           </div>
-          <p className="text-white/70 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: mission.whatWeDo.description.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>') }} />
+          <p className="text-white/70 text-sm leading-relaxed">{mission.whatWeDo.description}</p>
         </div>
 
         <div>
@@ -36,7 +36,7 @@ const MissionCard = ({ mission, icon: Icon, delay }) => {
             <BarChart3 className="w-4 h-4 text-blue-400" />
             <h4 className="text-white/90 font-medium text-sm uppercase tracking-wider">{mission.howWeUse.title}</h4>
           </div>
-          <p className="text-white/70 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: mission.howWeUse.description.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>') }} />
+          <p className="text-white/70 text-sm leading-relaxed">{mission.howWeUse.description}</p>
         </div>
 
         <div>
@@ -44,7 +44,7 @@ const MissionCard = ({ mission, icon: Icon, delay }) => {
             <Lightbulb className="w-4 h-4 text-blue-400" />
             <h4 className="text-white/90 font-medium text-sm uppercase tracking-wider">{mission.whyMatters.title}</h4>
           </div>
-          <p className="text-white/70 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: mission.whyMatters.description.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>') }} />
+          <p className="text-white/70 text-sm leading-relaxed">{mission.whyMatters.description}</p>
         </div>
       </div>
     </motion.div>

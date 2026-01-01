@@ -168,7 +168,7 @@ const translations = {
         subtitle: "CanSat Requirements",
         whatWeDo: {
           title: "What we do",
-          description: "We are building and programming our CanSat so that it measures external **air temperature and atmospheric pressure**, stores the data on an **SD card**, and **sends telemetry** to our ground station at least **once per second** during launch, descent and after landing. We will then **analyse** all the collected data."
+          description: "We are building and programming our CanSat so that it measures external air temperature and atmospheric pressure, stores the data on an SD card, and sends telemetry to our ground station at least once per second during launch, descent and after landing. We will then analyse all the collected data."
         },
         howWeUse: {
           title: "How we use the data",
@@ -176,7 +176,7 @@ const translations = {
         },
         whyMatters: {
           title: "Why it matters",
-          description: "We clearly define how this data supports our primary mission goals and how it helps us better understand the **CanSat's** flight and environment."
+          description: "We clearly define how this data supports our primary mission goals and how it helps us better understand the CanSat's flight and environment."
         }
       },
       secondary: {
@@ -400,7 +400,7 @@ const translations = {
         subtitle: "Wymagania CanSat",
         whatWeDo: {
           title: "Co robimy",
-          description: "Budujemy i programujemy nasz CanSat tak, aby mierzył zewnętrzną **temperaturę powietrza i ciśnienie atmosferyczne**, zapisywał dane na **karcie SD** i **wysyłał telemetrię** do naszej stacji naziemnej co najmniej **raz na sekundę** podczas startu, opadania i po lądowaniu. Następnie **przeanalizujemy** wszystkie zebrane dane."
+          description: "Budujemy i programujemy nasz CanSat tak, aby mierzył zewnętrzną temperaturę powietrza i ciśnienie atmosferyczne, zapisywał dane na karcie SD i wysyłał telemetrię do naszej stacji naziemnej co najmniej raz na sekundę podczas startu, opadania i po lądowaniu. Następnie przeanalizujemy wszystkie zebrane dane."
         },
         howWeUse: {
           title: "Jak wykorzystujemy dane",
@@ -408,7 +408,7 @@ const translations = {
         },
         whyMatters: {
           title: "Dlaczego to ważne",
-          description: "Jasno definiujemy, w jaki sposób te dane wspierają nasze główne cele misji i jak pomagają nam lepiej zrozumieć lot i środowisko **CanSat**."
+          description: "Jasno definiujemy, w jaki sposób te dane wspierają nasze główne cele misji i jak pomagają nam lepiej zrozumieć lot i środowisko CanSat."
         }
       },
       secondary: {
