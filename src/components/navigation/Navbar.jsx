@@ -13,8 +13,9 @@ export default function Navbar() {
 
   const navLinks = [
     { name: t.nav.mission, href: '#mission' },
-    { name: t.nav.project, href: '#project' },
+    { name: t.nav.project, href: '#about' },
     { name: t.nav.team, href: '#team' },
+    { name: t.nav.muons, href: '#muon-info' },
     { name: t.nav.contact, href: '#contact' },
   ];
 
