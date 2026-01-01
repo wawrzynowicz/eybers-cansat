@@ -56,6 +56,46 @@ const translations = {
         target: { label: "Target", value: "Apr 2026" }
       }
     },
+    projectDesc: {
+      sectionTitle: "The Technology",
+      heading: "How It Works",
+      description: "Our CanSat combines cutting-edge detection technology with robust engineering to capture cosmic muons during flight.",
+      features: {
+        detection: {
+          title: "Muon Detection",
+          description: "Dual-layer scintillation detectors identify muon particles through light emission patterns"
+        },
+        processing: {
+          title: "Data Processing",
+          description: "Onboard microcontroller processes signals in real-time with advanced filtering algorithms"
+        },
+        collection: {
+          title: "Data Collection",
+          description: "High-speed data logging captures every detection event with precise timestamps"
+        },
+        transmission: {
+          title: "Radio Transmission",
+          description: "UHF transceiver sends telemetry data to ground station throughout flight"
+        },
+        analysis: {
+          title: "Ground Analysis",
+          description: "Post-flight data analysis reveals muon flux patterns and atmospheric correlations"
+        },
+        discovery: {
+          title: "Scientific Discovery",
+          description: "Results contribute to understanding cosmic ray interactions in Earth's atmosphere"
+        }
+      },
+      specs: {
+        title: "Key Specifications",
+        items: {
+          dimensions: { label: "Dimensions", value: "66mm Ø" },
+          mass: { label: "Mass", value: "< 350g" },
+          power: { label: "Power", value: "9V Battery" },
+          comms: { label: "Comms", value: "433 MHz" }
+        }
+      }
+    },
 
     team: {
       sectionTitle: "The Crew",
@@ -265,6 +305,46 @@ const translations = {
         dataLink: { label: "Łącze Danych", value: "Stacja Naziemna" },
         status: { label: "Status", value: "W Trakcie" },
         target: { label: "Cel", value: "Kwi 2026" }
+      }
+    },
+    projectDesc: {
+      sectionTitle: "Technologia",
+      heading: "Jak To Działa",
+      description: "Nasz CanSat łączy najnowocześniejszą technologię detekcji z solidną inżynierią, aby przechwytywać miony kosmiczne podczas lotu.",
+      features: {
+        detection: {
+          title: "Wykrywanie Mionów",
+          description: "Dwuwarstwowe detektory scyntylacyjne identyfikują cząstki mionów poprzez wzorce emisji światła"
+        },
+        processing: {
+          title: "Przetwarzanie Danych",
+          description: "Mikrokontroler pokładowy przetwarza sygnały w czasie rzeczywistym z zaawansowanymi algorytmami filtrowania"
+        },
+        collection: {
+          title: "Zbieranie Danych",
+          description: "Szybkie logowanie danych rejestruje każde zdarzenie wykrycia z precyzyjnymi znacznikami czasu"
+        },
+        transmission: {
+          title: "Transmisja Radiowa",
+          description: "Transceiver UHF wysyła dane telemetryczne do stacji naziemnej podczas całego lotu"
+        },
+        analysis: {
+          title: "Analiza Naziemna",
+          description: "Analiza danych po locie ujawnia wzorce strumienia mionów i korelacje atmosferyczne"
+        },
+        discovery: {
+          title: "Odkrycia Naukowe",
+          description: "Wyniki przyczyniają się do zrozumienia interakcji promieniowania kosmicznego w atmosferze Ziemi"
+        }
+      },
+      specs: {
+        title: "Kluczowe Specyfikacje",
+        items: {
+          dimensions: { label: "Wymiary", value: "66mm Ø" },
+          mass: { label: "Masa", value: "< 350g" },
+          power: { label: "Zasilanie", value: "Bateria 9V" },
+          comms: { label: "Komunikacja", value: "433 MHz" }
+        }
       }
     },
 
