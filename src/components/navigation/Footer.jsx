@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Instagram, Github, Facebook, Linkedin } from 'lucide-react';
+import { Mail, Instagram, Facebook, Linkedin } from 'lucide-react';
 import { useLanguage } from '@/components/shared/LanguageContext';
 
 export default function Footer() {
@@ -51,14 +51,15 @@ export default function Footer() {
             <div className="flex gap-3">
               {[
                 { icon: Facebook, href: 'https://www.facebook.com/eybers.cansat/' },
-                { icon: Linkedin, href: 'https://www.linkedin.com/in/eybers-undefined-7680a1396/' },
+                { icon: Linkedin, href: 'https://www.linkedin.com/company/eybers-cansat/' },
                 { icon: Instagram, href: 'https://www.instagram.com/eybers.cansat/' },
-                { icon: Github, href: 'https://github.com/users/eyberscansat/projects/1' },
-                { icon: Mail, href: 'mailto:contact@eybers.com' }
+                { icon: Mail, href: 'mailto:eybers.cansat@gmail.com' }
               ].map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-all"
                 >
                   <social.icon className="w-4 h-4" />

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { base44 } from '@/api/base44Client';
 import { useMutation } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
-import { Send, Mail, CheckCircle, Loader2, Facebook, Linkedin, Instagram, Github, ArrowUpRight } from 'lucide-react';
+import { Send, Mail, CheckCircle, Loader2, Facebook, Linkedin, Instagram, ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -164,12 +164,13 @@ export default function ContactSection() {
                 {[
                   { icon: Facebook, href: 'https://www.facebook.com/eybers.cansat/', label: 'Facebook' },
                   { icon: Linkedin, href: 'https://www.linkedin.com/company/eybers-cansat/', label: 'LinkedIn' },
-                  { icon: Instagram, href: 'https://www.instagram.com/eybers.cansat/', label: 'Instagram' },
-                  { icon: Github, href: 'https://github.com/users/eyberscansat/projects/1', label: 'GitHub' }
+                  { icon: Instagram, href: 'https://www.instagram.com/eybers.cansat/', label: 'Instagram' }
                 ].map((social) => (
                   <motion.a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:border-white/30 transition-all"
                     whileHover={{ y: -2 }}
                     transition={{ duration: 0.2 }}
