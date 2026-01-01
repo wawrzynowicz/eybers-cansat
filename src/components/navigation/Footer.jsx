@@ -71,7 +71,7 @@ export default function Footer() {
 
         <div className="border-t border-white/[0.05] mt-12 pt-8 text-center">
           <p className="text-white/50 text-xs tracking-wider">
-            © {new Date().getFullYear()} EYBERS TEAM. {t.footer.rights}
+            © 2025 EYBERS TEAM. {t.footer.rights}
           </p>
         </div>
       </div>
