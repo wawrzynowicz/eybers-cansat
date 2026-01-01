@@ -160,6 +160,42 @@ const translations = {
         }
       ]
     },
+    missions: {
+      sectionTitle: "About the Project",
+      heading: "Our Missions",
+      primary: {
+        title: "Primary Mission",
+        subtitle: "CanSat Requirements",
+        whatWeDo: {
+          title: "What we do",
+          description: "We are building and programming our CanSat so that it measures external air temperature and atmospheric pressure, stores the data on an SD card, and sends telemetry to our ground station at least once per second during launch, descent and after landing. We will then analyse all the collected data."
+        },
+        howWeUse: {
+          title: "How we use the data",
+          description: "We process the measurements to calculate altitude and visualise everything on clear graphs, such as altitude over time or temperature versus altitude."
+        },
+        whyMatters: {
+          title: "Why it matters",
+          description: "We clearly define how this data supports our primary mission goals and how it helps us better understand the CanSat's flight and environment."
+        }
+      },
+      secondary: {
+        title: "Secondary Mission",
+        subtitle: "Cosmic Muon Detection",
+        whatWeDo: {
+          title: "What we do",
+          description: "Our CanSat is equipped with advanced scintillation detectors designed to capture cosmic muons during flight. These high-energy particles pass through our satellite, generating signals that are recorded and analyzed."
+        },
+        howWeUse: {
+          title: "How we use the data",
+          description: "We analyze the muon detection patterns to understand cosmic ray behavior at different altitudes. This data helps us study atmospheric effects on particle detection and contributes to broader cosmic ray research."
+        },
+        whyMatters: {
+          title: "Why it matters",
+          description: "Detecting muons from a high-altitude platform provides unique insights into cosmic radiation that aren't easily obtainable from ground-based observations. This advances our understanding of space weather and particle physics."
+        }
+      }
+    },
     muonInfo: {
       sectionTitle: "Scientific Background",
       heading: "Understanding Muons",
@@ -355,6 +391,42 @@ const translations = {
           description: "Udział w Konkursie CanSat ESA 2025/2026. Nasz satelita zostanie wystrzelony i zbierzemy prawdziwe dane o mionach kosmicznych.",
         }
       ]
+    },
+    missions: {
+      sectionTitle: "O Projekcie",
+      heading: "Nasze Misje",
+      primary: {
+        title: "Misja Główna",
+        subtitle: "Wymagania CanSat",
+        whatWeDo: {
+          title: "Co robimy",
+          description: "Budujemy i programujemy nasz CanSat tak, aby mierzył zewnętrzną temperaturę powietrza i ciśnienie atmosferyczne, zapisywał dane na karcie SD i wysyłał telemetrię do naszej stacji naziemnej co najmniej raz na sekundę podczas startu, opadania i po lądowaniu. Następnie przeanalizujemy wszystkie zebrane dane."
+        },
+        howWeUse: {
+          title: "Jak wykorzystujemy dane",
+          description: "Przetwarzamy pomiary w celu obliczenia wysokości i wizualizacji wszystkiego na przejrzystych wykresach, takich jak wysokość w czasie lub temperatura względem wysokości."
+        },
+        whyMatters: {
+          title: "Dlaczego to ważne",
+          description: "Jasno definiujemy, w jaki sposób te dane wspierają nasze główne cele misji i jak pomagają nam lepiej zrozumieć lot i środowisko CanSat."
+        }
+      },
+      secondary: {
+        title: "Misja Dodatkowa",
+        subtitle: "Wykrywanie Mionów Kosmicznych",
+        whatWeDo: {
+          title: "Co robimy",
+          description: "Nasz CanSat jest wyposażony w zaawansowane detektory scyntylacyjne zaprojektowane do wychwytywania mionów kosmicznych podczas lotu. Te wysokoenergetyczne cząstki przechodzą przez nasz satelitę, generując sygnały, które są rejestrowane i analizowane."
+        },
+        howWeUse: {
+          title: "Jak wykorzystujemy dane",
+          description: "Analizujemy wzorce wykrywania mionów, aby zrozumieć zachowanie promieniowania kosmicznego na różnych wysokościach. Te dane pomagają nam badać wpływ atmosfery na wykrywanie cząstek i przyczyniają się do szerszych badań nad promieniowaniem kosmicznym."
+        },
+        whyMatters: {
+          title: "Dlaczego to ważne",
+          description: "Wykrywanie mionów z platformy na dużej wysokości zapewnia unikalne spojrzenie na promieniowanie kosmiczne, którego nie można łatwo uzyskać z obserwacji naziemnych. To poszerza nasze zrozumienie pogody kosmicznej i fizyki cząstek."
+        }
+      }
     },
     muonInfo: {
       sectionTitle: "Tło Naukowe",
