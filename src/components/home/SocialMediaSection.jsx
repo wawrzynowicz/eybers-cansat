@@ -30,8 +30,8 @@ const SocialPostCard = ({ post, index, language }) => {
       rel="noopener noreferrer"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6, delay: 0 }}
       className="group block border border-white/10 bg-white/[0.03] overflow-hidden hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500"
     >
       <div className="relative h-48 overflow-hidden bg-white/5">
