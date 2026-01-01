@@ -3,7 +3,6 @@ import HeroSection from '@/components/home/HeroSection';
 import MissionSection from '@/components/home/MissionSection';
 import MissionsSection from '@/components/home/MissionsSection';
 import MuonInfoSection from '@/components/home/MuonInfoSection';
-import ProjectDescription from '@/components/home/ProjectDescription';
 import TimelineSection from '@/components/home/TimelineSection';
 import TeamSection from '@/components/home/TeamSection';
 import SocialMediaSection from '@/components/home/SocialMediaSection';
@@ -16,7 +15,6 @@ export default function Home() {
       <HeroSection />
       <MissionSection />
       <MissionsSection />
-      <ProjectDescription />
       <MuonInfoSection />
       <TimelineSection />
       <TeamSection />

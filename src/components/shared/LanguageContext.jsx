@@ -56,28 +56,7 @@ const translations = {
         target: { label: "Target", value: "Apr 2026" }
       }
     },
-    projectDesc: {
-      sectionTitle: "About",
-      heading: "How It Works",
-      description: "The EYBERS-1 satellite employs advanced scintillation detectors to capture cosmic muons. These high-energy particles pass through the satellite, generating signals that are processed, transmitted to Earth, and analyzed to understand cosmic radiation patterns.",
-      features: {
-        detection: { title: "Muon Detection", description: "Scintillation detectors capture cosmic particles" },
-        processing: { title: "Signal Processing", description: "Electronic circuits amplify and filter signals" },
-        collection: { title: "Data Collection", description: "Onboard computer logs all measurements" },
-        transmission: { title: "Transmission", description: "Radio transmits data to ground station" },
-        analysis: { title: "Analysis", description: "Scientists study patterns and frequencies" },
-        discovery: { title: "Discovery", description: "New insights into cosmic radiation" }
-      },
-      specs: {
-        title: "Key Specifications",
-        items: {
-          dimensions: { label: "Dimensions", value: "⌀66×115 mm" },
-          mass: { label: "Mass", value: "300-350 g" },
-          power: { label: "Power", value: "Battery" },
-          comms: { label: "Communications", value: "LoRa 433 MHz" }
-        }
-      }
-    },
+
     team: {
       sectionTitle: "The Crew",
       heading: "Meet Our",
@@ -288,28 +267,7 @@ const translations = {
         target: { label: "Cel", value: "Kwi 2026" }
       }
     },
-    projectDesc: {
-      sectionTitle: "O Projekcie",
-      heading: "Jak To Działa",
-      description: "Satelita EYBERS-1 wykorzystuje zaawansowane detektory scyntylacyjne do wychwytywania mionów kosmicznych. Te wysokoenergetyczne cząstki przenikają przez satelitę, generując sygnały, które są przetwarzane, przesyłane na Ziemię i analizowane w celu zrozumienia wzorców promieniowania kosmicznego.",
-      features: {
-        detection: { title: "Wykrywanie Mionów", description: "Detektory scyntylacyjne wychwytują cząstki kosmiczne" },
-        processing: { title: "Przetwarzanie Sygnału", description: "Układy elektroniczne wzmacniają i filtrują sygnały" },
-        collection: { title: "Zbieranie Danych", description: "Komputer pokładowy rejestruje wszystkie pomiary" },
-        transmission: { title: "Transmisja", description: "Radio przesyła dane do stacji naziemnej" },
-        analysis: { title: "Analiza", description: "Naukowcy badają wzorce i częstotliwości" },
-        discovery: { title: "Odkrycie", description: "Nowe spojrzenie na promieniowanie kosmiczne" }
-      },
-      specs: {
-        title: "Kluczowe Specyfikacje",
-        items: {
-          dimensions: { label: "Wymiary", value: "⌀66×115 mm" },
-          mass: { label: "Masa", value: "300-350 g" },
-          power: { label: "Zasilanie", value: "Bateria" },
-          comms: { label: "Komunikacja", value: "LoRa 433 MHz" }
-        }
-      }
-    },
+
     team: {
       sectionTitle: "Załoga",
       heading: "Poznaj Nasz",
