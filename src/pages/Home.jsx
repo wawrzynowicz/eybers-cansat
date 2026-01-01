@@ -1,6 +1,7 @@
 import React from 'react';
 import HeroSection from '@/components/home/HeroSection';
 import MissionSection from '@/components/home/MissionSection';
+import ProjectDescription from '@/components/home/ProjectDescription';
 import MissionsSection from '@/components/home/MissionsSection';
 import MuonInfoSection from '@/components/home/MuonInfoSection';
 import TimelineSection from '@/components/home/TimelineSection';
@@ -14,6 +15,7 @@ export default function Home() {
     <div>
       <HeroSection />
       <MissionSection />
+      <ProjectDescription />
       <MissionsSection />
       <MuonInfoSection />
       <TimelineSection />
