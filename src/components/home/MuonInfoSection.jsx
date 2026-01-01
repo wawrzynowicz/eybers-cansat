@@ -66,7 +66,7 @@ export default function MuonInfoSection() {
   };
 
   return (
-    <section className="relative py-12 px-4">
+    <section id="muon-info" className="relative py-12 px-4">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <motion.div
