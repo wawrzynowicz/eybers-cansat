@@ -94,7 +94,7 @@ const translations = {
       milestones: [
         {
           title: "Project Inception",
-          date: "Sep 2024",
+          date: "Sep 2025",
           status: "completed",
           description: "Team formation and initial concept development. We established our mission and began planning the satellite design.",
           achievements: [
@@ -105,7 +105,7 @@ const translations = {
         },
         {
           title: "Design Phase",
-          date: "Oct - Dec 2024",
+          date: "Oct - Dec 2025",
           status: "completed",
           description: "Detailed satellite design and component selection. We created technical specifications and finalized the muon detection system.",
           achievements: [
@@ -116,7 +116,7 @@ const translations = {
         },
         {
           title: "Prototyping & Testing",
-          date: "Jan - Feb 2025",
+          date: "Jan - Feb 2026",
           status: "in_progress",
           description: "Building and testing the first prototype. We're currently conducting laboratory tests and refining our design.",
           achievements: [
@@ -127,15 +127,15 @@ const translations = {
         },
         {
           title: "Integration & Validation",
-          date: "Mar 2025",
+          date: "Mar 2026",
           status: "upcoming",
           description: "Final assembly and comprehensive testing. All systems will be integrated and validated before the competition.",
         },
         {
           title: "Competition & Launch",
-          date: "Apr 2026",
+          date: "Apr 2027",
           status: "upcoming",
-          description: "Participation in ESA CanSat Competition 2025/2026. Our satellite will be launched and we'll collect real cosmic muon data.",
+          description: "Participation in ESA CanSat Competition 2026/2027. Our satellite will be launched and we'll collect real cosmic muon data.",
         }
       ]
     },
@@ -305,7 +305,7 @@ const translations = {
       milestones: [
         {
           title: "Początek Projektu",
-          date: "Wrz 2024",
+          date: "Wrz 2025",
           status: "completed",
           description: "Formowanie zespołu i początkowy rozwój koncepcji. Ustaliliśmy naszą misję i rozpoczęliśmy planowanie projektu satelity.",
           achievements: [
@@ -316,7 +316,7 @@ const translations = {
         },
         {
           title: "Faza Projektowania",
-          date: "Paź - Gru 2024",
+          date: "Paź - Gru 2025",
           status: "completed",
           description: "Szczegółowy projekt satelity i dobór komponentów. Stworzyliśmy specyfikacje techniczne i sfinalizowaliśmy system wykrywania mionów.",
           achievements: [
@@ -327,7 +327,7 @@ const translations = {
         },
         {
           title: "Prototypowanie i Testowanie",
-          date: "Sty - Lut 2025",
+          date: "Sty - Lut 2026",
           status: "in_progress",
           description: "Budowa i testowanie pierwszego prototypu. Obecnie prowadzimy testy laboratoryjne i udoskonalamy nasz projekt.",
           achievements: [
@@ -338,15 +338,15 @@ const translations = {
         },
         {
           title: "Integracja i Walidacja",
-          date: "Mar 2025",
+          date: "Mar 2026",
           status: "upcoming",
           description: "Finalna integracja i kompleksowe testowanie. Wszystkie systemy zostaną zintegrowane i zwalidowane przed konkursem.",
         },
         {
           title: "Konkurs i Start",
-          date: "Kwi 2026",
+          date: "Kwi 2027",
           status: "upcoming",
-          description: "Udział w Konkursie CanSat ESA 2025/2026. Nasz satelita zostanie wystrzelony i zbierzemy prawdziwe dane o mionach kosmicznych.",
+          description: "Udział w Konkursie CanSat ESA 2026/2027. Nasz satelita zostanie wystrzelony i zbierzemy prawdziwe dane o mionach kosmicznych.",
         }
       ]
     },
