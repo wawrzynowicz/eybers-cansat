@@ -37,7 +37,7 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
       {/* Left content */}
       <div className="flex-1 order-1">
         {!isEven && (
-          <div className={`border ${getStatusColor()} rounded-lg p-4 transition-all duration-300 group-hover:border-white/30`}>
+          <div className={`border ${getStatusColor()} rounded-lg p-4 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500`}>
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-2">
                 {getStatusIcon()}
@@ -76,7 +76,7 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
       {/* Right content */}
       <div className="flex-1 order-3">
         {isEven && (
-          <div className={`border ${getStatusColor()} rounded-lg p-4 transition-all duration-300 group-hover:border-white/30`}>
+          <div className={`border ${getStatusColor()} rounded-lg p-4 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500`}>
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-2">
                 {getStatusIcon()}

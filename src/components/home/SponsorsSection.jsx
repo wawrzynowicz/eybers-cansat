@@ -19,7 +19,7 @@ function SponsorCard({ sponsor, index }) {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group"
     >
-      <div className="relative border border-white/20 bg-white/[0.04] backdrop-blur-sm p-8 hover:border-white/30 transition-all duration-500">
+      <div className="relative border border-white/20 bg-white/[0.04] backdrop-blur-sm p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500">
         {/* Logo */}
         <div className="aspect-[2/1] relative overflow-hidden bg-white mb-6 flex items-center justify-center p-6">
           {sponsor.logo_url ? (
