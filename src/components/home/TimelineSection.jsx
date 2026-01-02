@@ -94,7 +94,7 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
           </div>
         )}
       </div>
-    </motion.div>
+    </div>
   );
 };
 
