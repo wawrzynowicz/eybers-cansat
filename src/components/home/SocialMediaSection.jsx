@@ -81,10 +81,15 @@ const SocialPostCard = ({ post, index, language }) => {
 export default function SocialMediaSection() {
   const { language } = useLanguage();
 
-  const { data: posts = [], isLoading } = useQuery({
+  const { data: rawPosts = [], isLoading } = useQuery({
     queryKey: ['socialPosts'],
-    queryFn: () => base44.entities.SocialPost.filter({ featured: true }, '-post_date', 6)
+    queryFn: () => base44.entities.SocialPost.filter({ featured: true }, '-post_date', 10)
   });
+
+  const platformOrder = { facebook: 1, instagram: 2, linkedin: 3, twitter: 4 };
+  const posts = [...rawPosts].sort((a, b) => {
+    return (platformOrder[a.platform] || 999) - (platformOrder[b.platform] || 999);
+  }).slice(0, 6);
 
   const isPolish = language === 'pl';
 
