@@ -71,7 +71,7 @@ export default function MissionSection() {
                 
                 {/* Content */}
                 <h3 className="text-2xl font-semibold text-white mb-3 group-hover:text-blue-300 transition-colors">{card.title}</h3>
-                <p className="text-white/80 leading-relaxed text-base">{card.description}</p>
+                <p className="text-white/80 leading-relaxed text-base text-justify">{card.description}</p>
 
                 {/* Accent line */}
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500/0 via-blue-500/50 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

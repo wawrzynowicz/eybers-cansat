@@ -22,7 +22,7 @@ const InfoCard = ({ icon: Icon, title, preview, content, delay, id, expandedId, 
         <h3 className="text-xl font-medium text-white group-hover:text-blue-300 transition-colors pt-2">{title}</h3>
       </div>
       
-      <div className="text-white/70 text-sm leading-relaxed space-y-3 mb-4 text-justify">
+      <div className="text-white/70 text-sm leading-relaxed space-y-3 mb-4">
         <p>{preview}</p>
       </div>
 
@@ -33,7 +33,7 @@ const InfoCard = ({ icon: Icon, title, preview, content, delay, id, expandedId, 
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="text-white/70 text-sm leading-relaxed space-y-3 mb-4 overflow-hidden text-justify"
+            className="text-white/70 text-sm leading-relaxed space-y-3 mb-4 overflow-hidden"
             >
             {content}
             </motion.div>
