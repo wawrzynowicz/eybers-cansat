@@ -16,9 +16,14 @@ export default function Layout({ children }) {
           --foreground: 210 40% 98%;
           --primary: 217 91% 60%;
           --accent: 25 95% 53%;
+          --purple: 270 91% 65%;
+          --cyan: 189 85% 55%;
+          --green: 142 76% 56%;
+          --orange: 25 95% 53%;
+          --pink: 330 85% 60%;
         }
         body {
-          background: linear-gradient(135deg, #0f172a 0%, #0c1e3d 50%, #1e293b 100%);
+          background: linear-gradient(135deg, #0f172a 0%, #1a0b3d 25%, #0c1e3d 50%, #1e293b 75%, #0f172a 100%);
         }
         html {
             scroll-behavior: smooth;

@@ -9,8 +9,8 @@ const MissionCard = ({ mission, icon: Icon }) => {
       className="group border border-white/10 bg-white/[0.03] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500"
     >
       <div className="flex items-center gap-4 mb-6">
-        <div className="w-12 h-12 rounded-xl bg-white/[0.08] border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-          <Icon className="w-6 h-6 text-blue-400" />
+        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 border border-purple-500/30 flex items-center justify-center group-hover:scale-110 group-hover:border-purple-400/50 transition-all duration-300">
+          <Icon className="w-6 h-6 text-purple-400" />
         </div>
         <div>
           <h3 className="text-2xl font-semibold text-white group-hover:text-blue-400 transition-colors">{mission.title}</h3>
@@ -21,24 +21,24 @@ const MissionCard = ({ mission, icon: Icon }) => {
       <div className="space-y-6">
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <TrendingUp className="w-4 h-4 text-blue-400" />
-            <h4 className="text-white/90 font-medium text-sm uppercase tracking-wider group-hover:text-blue-300 transition-colors">{mission.whatWeDo.title}</h4>
+            <TrendingUp className="w-4 h-4 text-cyan-400" />
+            <h4 className="text-white/90 font-medium text-sm uppercase tracking-wider group-hover:text-cyan-300 transition-colors">{mission.whatWeDo.title}</h4>
           </div>
           <p className="text-white/70 text-sm leading-relaxed text-justify">{mission.whatWeDo.description}</p>
         </div>
 
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <BarChart3 className="w-4 h-4 text-blue-400" />
-            <h4 className="text-white/90 font-medium text-sm uppercase tracking-wider group-hover:text-blue-300 transition-colors">{mission.howWeUse.title}</h4>
+            <BarChart3 className="w-4 h-4 text-green-400" />
+            <h4 className="text-white/90 font-medium text-sm uppercase tracking-wider group-hover:text-green-300 transition-colors">{mission.howWeUse.title}</h4>
           </div>
           <p className="text-white/70 text-sm leading-relaxed text-justify">{mission.howWeUse.description}</p>
         </div>
 
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <Lightbulb className="w-4 h-4 text-blue-400" />
-            <h4 className="text-white/90 font-medium text-sm uppercase tracking-wider group-hover:text-blue-300 transition-colors">{mission.whyMatters.title}</h4>
+            <Lightbulb className="w-4 h-4 text-orange-400" />
+            <h4 className="text-white/90 font-medium text-sm uppercase tracking-wider group-hover:text-orange-300 transition-colors">{mission.whyMatters.title}</h4>
           </div>
           <p className="text-white/70 text-sm leading-relaxed text-justify">{mission.whyMatters.description}</p>
         </div>
