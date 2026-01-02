@@ -78,7 +78,7 @@ export default function MuonInfoSection() {
               </div>
 
             {/* Key Facts */}
-            <div className="mb-20 border border-white/10 bg-white/[0.02] p-8">
+            <div className="mb-20 border border-white/10 bg-white/[0.02] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
             <div>
               <p className="text-3xl font-light text-white mb-2">10,000+</p>
