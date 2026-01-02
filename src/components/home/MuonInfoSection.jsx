@@ -9,12 +9,11 @@ const InfoCard = ({ icon: Icon, title, preview, content, delay, id, expandedId, 
 
           return (
             <motion.div
-              initial={{ opacity: 0, y: 60, rotateX: 45, scale: 0.8 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.7, delay, type: "spring", stiffness: 100, damping: 15 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay }}
               className="group border border-white/10 bg-white/[0.03] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500"
-              style={{ transformStyle: 'preserve-3d' }}
             >
       <div className="flex items-start gap-4 mb-4">
         <div className="w-12 h-12 rounded-xl bg-white/[0.08] border border-white/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
@@ -71,10 +70,10 @@ export default function MuonInfoSection() {
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.7, rotate: -5 }}
-          whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.2, type: "spring", stiffness: 50 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
           <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
@@ -90,10 +89,10 @@ export default function MuonInfoSection() {
 
             {/* Key Facts */}
             <motion.div
-            initial={{ opacity: 0, scale: 0.85, y: 50 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.3, type: "spring", stiffness: 70 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="mb-20 border border-white/10 bg-white/[0.02] p-8"
             >
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">

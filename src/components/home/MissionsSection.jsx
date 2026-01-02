@@ -3,15 +3,14 @@ import { motion } from 'framer-motion';
 import { Target, Atom, TrendingUp, BarChart3, Lightbulb } from 'lucide-react';
 import { useLanguage } from '@/components/shared/LanguageContext';
 
-const MissionCard = ({ mission, icon: Icon, delay, direction }) => {
+const MissionCard = ({ mission, icon: Icon, delay }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, x: direction === 'left' ? -80 : 80, scale: 0.9, rotateY: direction === 'left' ? -15 : 15 }}
-      whileInView={{ opacity: 1, x: 0, scale: 1, rotateY: 0 }}
-      viewport={{ once: true, margin: "-150px" }}
-      transition={{ duration: 0.8, delay, type: "spring", stiffness: 80 }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.5, delay }}
       className="group border border-white/10 bg-white/[0.03] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500"
-      style={{ perspective: '1000px' }}
     >
       <div className="flex items-center gap-4 mb-6">
         <div className="w-12 h-12 rounded-xl bg-white/[0.08] border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -60,10 +59,10 @@ export default function MissionsSection() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, y: -50 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, type: "spring", stiffness: 60 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
           <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
@@ -79,14 +78,12 @@ export default function MissionsSection() {
           <MissionCard 
             mission={t.missions?.primary} 
             icon={Target}
-            delay={0.2}
-            direction="left"
+            delay={0.1}
           />
           <MissionCard 
             mission={t.missions?.secondary} 
             icon={Atom}
-            delay={0.4}
-            direction="right"
+            delay={0.2}
           />
         </div>
       </div>
