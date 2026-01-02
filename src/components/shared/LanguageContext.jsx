@@ -4,7 +4,7 @@ const translations = {
   en: {
     nav: {
       mission: "Mission",
-      project: "Project",
+      project: "About Us",
       team: "Team",
       muons: "Muons",
       contact: "Contact"
@@ -255,7 +255,7 @@ const translations = {
   pl: {
     nav: {
       mission: "Misja",
-      project: "Projekt",
+      project: "O Nas",
       team: "Zespół",
       muons: "Miony",
       contact: "Kontakt"
