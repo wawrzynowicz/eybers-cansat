@@ -45,7 +45,7 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
               </div>
               <span className="text-sm font-semibold text-blue-400 whitespace-nowrap ml-3">{milestone.date}</span>
             </div>
-            <p className="text-white/70 text-sm leading-relaxed">{milestone.description}</p>
+            <p className="text-white/70 text-sm leading-relaxed text-justify">{milestone.description}</p>
             {milestone.achievements && (
               <ul className="mt-3 space-y-1.5">
                 {milestone.achievements.map((achievement, idx) => (
@@ -84,7 +84,7 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
               </div>
               <span className="text-sm font-semibold text-blue-400 whitespace-nowrap ml-3">{milestone.date}</span>
             </div>
-            <p className="text-white/70 text-sm leading-relaxed">{milestone.description}</p>
+            <p className="text-white/70 text-sm leading-relaxed text-justify">{milestone.description}</p>
             {milestone.achievements && (
               <ul className="mt-3 space-y-1.5">
                 {milestone.achievements.map((achievement, idx) => (
