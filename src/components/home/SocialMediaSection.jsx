@@ -55,7 +55,7 @@ const SocialPostCard = ({ post, index, language }) => {
       </div>
       
       <div className="p-6">
-        <p className="text-white/80 text-sm leading-relaxed mb-4 line-clamp-3 text-justify">
+        <p className="text-white/80 text-sm leading-relaxed mb-4 line-clamp-3">
           {language === 'pl' && post.content_pl ? post.content_pl : post.content}
         </p>
         
