@@ -158,7 +158,7 @@ const translations = {
           title: "Prototyping & Testing",
           date: "Jan - Feb 2026",
           status: "in_progress",
-          description: "Building and testing the first prototype. We're currently conducting laboratory tests and refining our design.",
+          description: "Building and testing first prototypes. We're currently conducting laboratory tests and refining our design.",
           achievements: [
             "Assembled first prototype",
             "Initial detector calibration",
@@ -409,7 +409,7 @@ const translations = {
           title: "Prototypowanie i Testowanie",
           date: "Sty - Lut 2026",
           status: "in_progress",
-          description: "Budowa i testowanie pierwszego prototypu. Obecnie prowadzimy testy laboratoryjne i udoskonalamy nasz projekt.",
+          description: "Budowa i testowanie pierwszych prototypów. Obecnie prowadzimy testy laboratoryjne i udoskonalamy nasz projekt.",
           achievements: [
             "Zmontowanie pierwszego prototypu",
             "Wstępna kalibracja detektora",
