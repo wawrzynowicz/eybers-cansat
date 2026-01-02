@@ -38,7 +38,7 @@ export default function ProjectDescription() {
                   transition={{ delay: index * 0.1 }}
                 >
                   <motion.p 
-                    className="text-3xl md:text-4xl font-light text-white mb-2"
+                    className="text-3xl md:text-4xl font-light text-white mb-2 whitespace-pre-line"
                     animate={{ opacity: [0.7, 1, 0.7] }}
                     transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
                   >
