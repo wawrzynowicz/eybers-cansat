@@ -45,18 +45,26 @@ export default function ContactSection() {
   return (
     <section className="relative py-12 px-4" id="contact">
       <div className="max-w-5xl mx-auto">
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
           <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">{t.contact.sectionTitle}</p>
           <h2 className="text-4xl md:text-5xl font-light text-white">
             {t.contact.heading}
           </h2>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Form */}
-          <div
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
           >
             <div className="border border-white/10 bg-white/[0.03] p-8 md:p-10 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500">
               {submitted ? (
@@ -128,10 +136,14 @@ export default function ContactSection() {
                 </form>
               )}
             </div>
-          </div>
+          </motion.div>
 
           {/* Info */}
-          <div
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-8"
           >
             <div className="border border-white/10 bg-white/[0.03] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500">
@@ -173,7 +185,7 @@ export default function ContactSection() {
                 {t.contact.sponsorMessage}
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
