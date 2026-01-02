@@ -4,15 +4,11 @@ import { Atom, Zap, Shield, TrendingDown, Target, Info, ChevronDown } from 'luci
 import { useLanguage } from '@/components/shared/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-const InfoCard = ({ icon: Icon, title, preview, content, delay, id, expandedId, onToggle }) => {
+const InfoCard = ({ icon: Icon, title, preview, content, id, expandedId, onToggle }) => {
           const isExpanded = expandedId === id;
 
           return (
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay }}
+            <div
               className="group border border-white/10 bg-white/[0.03] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500"
             >
       <div className="flex items-start gap-4 mb-4">
@@ -53,7 +49,7 @@ const InfoCard = ({ icon: Icon, title, preview, content, delay, id, expandedId, 
           <ChevronDown className="w-4 h-4 ml-1" />
         </motion.div>
         </Button>
-        </motion.div>
+        </div>
         );
         };
 
@@ -69,13 +65,7 @@ export default function MuonInfoSection() {
     <section id="muon-info" className="relative py-12 px-4">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
             {t.muonInfo?.sectionTitle || 'Scientific Background'}
           </p>
@@ -84,18 +74,12 @@ export default function MuonInfoSection() {
           </h2>
           <p className="text-white/70 text-lg max-w-3xl mx-auto">
             {t.muonInfo?.intro || 'Learn about cosmic rays, muon formation, and why these particles are essential to our research.'}
-            </p>
-            </motion.div>
+              </p>
+              </div>
 
             {/* Key Facts */}
-            <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-20 border border-white/10 bg-white/[0.02] p-8"
-            >
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+            <div className="mb-20 border border-white/10 bg-white/[0.02] p-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
             <div>
               <p className="text-3xl font-light text-white mb-2">10,000+</p>
               <p className="text-white/30 text-xs uppercase tracking-wider">Muons Hit You Daily</p>
@@ -108,8 +92,8 @@ export default function MuonInfoSection() {
               <p className="text-3xl font-light text-white mb-2">Super Fast</p>
               <p className="text-white/30 text-xs uppercase tracking-wider">Near Light Speed</p>
             </div>
-            </div>
-            </motion.div>
+              </div>
+              </div>
 
             {/* Content Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
@@ -117,7 +101,6 @@ export default function MuonInfoSection() {
                 id="cosmic-rays"
                 icon={Zap}
                 title={t.muonInfo?.cosmicRays?.title || 'Cosmic Rays'}
-                delay={0.1}
                 preview={t.muonInfo?.cosmicRays?.p1 || 'Earth is constantly being hit by high-speed particles from space called cosmic rays.'}
                 content={
                   <p>
@@ -132,7 +115,6 @@ export default function MuonInfoSection() {
                 id="birth"
                 icon={Atom}
                 title={t.muonInfo?.birth?.title || 'Birth of Muons'}
-                delay={0.2}
                 preview={t.muonInfo?.birth?.p1 || "Muons don't come directly from space – they're created right here in Earth's atmosphere."}
                 content={
                   <p>
@@ -147,7 +129,6 @@ export default function MuonInfoSection() {
                 id="atmosphere"
                 icon={Shield}
                 title={t.muonInfo?.atmosphere?.title || 'Atmospheric Shielding'}
-                delay={0.3}
                 preview={t.muonInfo?.atmosphere?.p1 || "Our atmosphere acts like a protective blanket, stopping the original cosmic rays from reaching the ground."}
                 content={
                   <p>
@@ -162,7 +143,6 @@ export default function MuonInfoSection() {
                 id="properties"
                 icon={Target}
                 title={t.muonInfo?.properties?.title || 'What Makes Muons Special'}
-                delay={0.4}
                 preview={t.muonInfo?.properties?.p1 || 'Muons are tiny charged particles, similar to electrons but heavier.'}
                 content={
                   <>
@@ -182,7 +162,6 @@ export default function MuonInfoSection() {
                 id="reach"
                 icon={TrendingDown}
                 title={t.muonInfo?.reach?.title || 'How Do They Reach Us?'}
-                delay={0.5}
                 preview={t.muonInfo?.reach?.p1 || 'Even though muons break apart quickly, they\'re created high in the atmosphere and travel incredibly fast.'}
                 content={
                   <p>
@@ -197,7 +176,6 @@ export default function MuonInfoSection() {
                 id="importance"
                 icon={Info}
                 title={t.muonInfo?.importance?.title || 'Why Study Muons?'}
-                delay={0.6}
                 preview={t.muonInfo?.importance?.p1 || 'Muons are like messengers from space, carrying information about high-energy events happening far away in the universe.'}
                 content={
                   <p>

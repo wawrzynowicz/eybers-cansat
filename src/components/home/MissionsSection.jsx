@@ -3,13 +3,9 @@ import { motion } from 'framer-motion';
 import { Target, Atom, TrendingUp, BarChart3, Lightbulb } from 'lucide-react';
 import { useLanguage } from '@/components/shared/LanguageContext';
 
-const MissionCard = ({ mission, icon: Icon, delay }) => {
+const MissionCard = ({ mission, icon: Icon }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5, delay }}
+    <div
       className="group border border-white/10 bg-white/[0.03] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500"
     >
       <div className="flex items-center gap-4 mb-6">
@@ -47,7 +43,7 @@ const MissionCard = ({ mission, icon: Icon, delay }) => {
           <p className="text-white/70 text-sm leading-relaxed text-justify">{mission.whyMatters.description}</p>
         </div>
         </div>
-        </motion.div>
+        </div>
         );
         };
 
@@ -58,32 +54,24 @@ export default function MissionsSection() {
     <section className="relative py-12 px-4" id="missions">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
             {t.missions?.sectionTitle || 'About the Project'}
           </p>
           <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
             {t.missions?.heading || 'Our Missions'}
-            </h2>
-            </motion.div>
+              </h2>
+              </div>
 
         {/* Missions Grid */}
         <div className="grid lg:grid-cols-2 gap-8">
           <MissionCard 
             mission={t.missions?.primary} 
             icon={Target}
-            delay={0.1}
           />
           <MissionCard 
             mission={t.missions?.secondary} 
             icon={Atom}
-            delay={0.2}
           />
         </div>
       </div>

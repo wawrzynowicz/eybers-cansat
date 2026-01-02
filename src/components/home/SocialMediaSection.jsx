@@ -19,16 +19,12 @@ const platformColors = {
   twitter: 'from-sky-500 to-sky-600'
 };
 
-const SocialPostCard = ({ post, index, language }) => {
+const SocialPostCard = ({ post, language }) => {
     const Icon = platformIcons[post.platform];
     const gradientColor = platformColors[post.platform];
 
     return (
-      <motion.a
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
+      <a
         href={post.post_url}
         target="_blank"
         rel="noopener noreferrer"
@@ -74,7 +70,7 @@ const SocialPostCard = ({ post, index, language }) => {
           <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
         </div>
         </div>
-        </motion.a>
+        </a>
         );
         };
 
@@ -105,47 +101,34 @@ export default function SocialMediaSection() {
     <section className="relative py-12 px-4">
       <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
-          <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
-            {isPolish ? 'Bądź na Bieżąco' : 'Stay Connected'}
-          </p>
-          <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
-            {isPolish ? 'Nasze Ostatnie' : 'Latest From'} <span className="font-normal">Social Media</span>
-          </h2>
-          <p className="text-white/70 text-lg max-w-3xl mx-auto">
-            {isPolish 
-              ? 'Śledź nasz postęp, zobacz zakulisowe zdjęcia i bądź częścią naszej podróży w kosmos'
-              : 'Follow our progress, see behind-the-scenes photos, and be part of our journey to space'
-              }
+          <div className="text-center mb-16">
+              <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
+                {isPolish ? 'Bądź na Bieżąco' : 'Stay Connected'}
               </p>
-              </motion.div>
+              <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+                {isPolish ? 'Nasze Ostatnie' : 'Latest From'} <span className="font-normal">Social Media</span>
+              </h2>
+              <p className="text-white/70 text-lg max-w-3xl mx-auto">
+                {isPolish 
+                  ? 'Śledź nasz postęp, zobacz zakulisowe zdjęcia i bądź częścią naszej podróży w kosmos'
+                  : 'Follow our progress, see behind-the-scenes photos, and be part of our journey to space'
+                  }
+                  </p>
+                  </div>
 
         {/* Posts Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {posts.map((post, index) => (
+          {posts.map((post) => (
             <SocialPostCard 
               key={post.id} 
               post={post} 
-              index={index}
               language={language}
             />
           ))}
         </div>
 
         {/* Social Links */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center"
-        >
+        <div className="text-center">
           <p className="text-white/50 text-sm mb-4">
             {isPolish ? 'Śledź nas' : 'Follow us'}
           </p>
@@ -174,8 +157,8 @@ export default function SocialMediaSection() {
             >
               <Linkedin className="w-5 h-5" />
             </a>
-            </div>
-            </motion.div>
+              </div>
+              </div>
       </div>
     </section>
   );
