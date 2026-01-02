@@ -41,7 +41,7 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-2">
                 {getStatusIcon()}
-                <h3 className="text-base font-medium text-white group-hover:text-blue-300 transition-colors">{milestone.title}</h3>
+                <h3 className="text-base font-medium text-white">{milestone.title}</h3>
               </div>
               <span className="text-sm font-semibold text-blue-400 whitespace-nowrap ml-3">{milestone.date}</span>
             </div>
@@ -80,7 +80,7 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-2">
                 {getStatusIcon()}
-                <h3 className="text-base font-medium text-white group-hover:text-blue-300 transition-colors">{milestone.title}</h3>
+                <h3 className="text-base font-medium text-white">{milestone.title}</h3>
               </div>
               <span className="text-sm font-semibold text-blue-400 whitespace-nowrap ml-3">{milestone.date}</span>
             </div>
