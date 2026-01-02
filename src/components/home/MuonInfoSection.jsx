@@ -66,10 +66,10 @@ export default function MuonInfoSection() {
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
+          <p className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 uppercase tracking-[0.3em] text-xs mb-4 font-bold">
             {t.muonInfo?.sectionTitle || 'Scientific Background'}
           </p>
-          <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 mb-6">
             {t.muonInfo?.heading || 'Understanding Muons'}
           </h2>
           <p className="text-white/70 text-lg max-w-3xl mx-auto">
@@ -78,19 +78,19 @@ export default function MuonInfoSection() {
               </div>
 
             {/* Key Facts */}
-            <div className="mb-20 border border-white/10 bg-white/[0.02] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500">
+            <div className="mb-20 border border-purple-500/20 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-orange-500/10 p-8 hover:border-purple-400/60 hover:shadow-[0_0_50px_rgba(168,85,247,0.4)] transition-all duration-500">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
             <div>
-              <p className="text-3xl font-light text-white mb-2">10,000+</p>
-              <p className="text-white/30 text-xs uppercase tracking-wider">Muons Hit You Daily</p>
+              <p className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">10,000+</p>
+              <p className="text-purple-300 text-xs uppercase tracking-wider font-semibold">Muons Hit You Daily</p>
             </div>
             <div>
-              <p className="text-3xl font-light text-white mb-2">~15 km</p>
-              <p className="text-white/30 text-xs uppercase tracking-wider">Creation Altitude</p>
+              <p className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400 mb-2">~15 km</p>
+              <p className="text-pink-300 text-xs uppercase tracking-wider font-semibold">Creation Altitude</p>
             </div>
             <div>
-              <p className="text-3xl font-light text-white mb-2">Super Fast</p>
-              <p className="text-white/30 text-xs uppercase tracking-wider">Near Light Speed</p>
+              <p className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400 mb-2">Super Fast</p>
+              <p className="text-orange-300 text-xs uppercase tracking-wider font-semibold">Near Light Speed</p>
             </div>
               </div>
               </div>

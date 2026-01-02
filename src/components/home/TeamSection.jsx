@@ -101,9 +101,9 @@ export default function TeamSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">{t.team.sectionTitle}</p>
-          <h2 className="text-4xl md:text-5xl font-light text-white">
-            {t.team.heading} <span className="font-semibold">{t.team.headingBold}</span>
+          <p className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-cyan-400 to-blue-400 uppercase tracking-[0.3em] text-xs mb-4 font-bold">{t.team.sectionTitle}</p>
+          <h2 className="text-4xl md:text-6xl font-bold text-white">
+            {t.team.heading} <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">{t.team.headingBold}</span>
           </h2>
         </motion.div>
 

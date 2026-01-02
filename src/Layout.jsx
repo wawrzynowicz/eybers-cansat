@@ -23,7 +23,13 @@ export default function Layout({ children }) {
           --pink: 330 85% 60%;
         }
         body {
-          background: linear-gradient(135deg, #0f172a 0%, #1a0b3d 25%, #0c1e3d 50%, #1e293b 75%, #0f172a 100%);
+          background: linear-gradient(135deg, #0f172a 0%, #1a0b3d 20%, #0c1e3d 40%, #1e1b4b 60%, #1e293b 80%, #0f172a 100%);
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+          font-weight: 700;
+          letter-spacing: -0.02em;
         }
         html {
             scroll-behavior: smooth;
