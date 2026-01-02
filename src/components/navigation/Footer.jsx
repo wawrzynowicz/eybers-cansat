@@ -19,7 +19,7 @@ export default function Footer() {
               />
               <span className="text-lg font-medium text-white">EYBERS</span>
             </a>
-            <p className="text-white/80 text-sm leading-relaxed max-w-xs">
+            <p className="text-white/80 text-sm leading-relaxed max-w-xs text-justify">
               {t.footer.tagline}
             </p>
           </div>
