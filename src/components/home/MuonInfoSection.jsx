@@ -13,13 +13,13 @@ const InfoCard = ({ icon: Icon, title, preview, content, delay, id, expandedId, 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6, delay: 0 }}
-      className="border border-white/10 bg-white/[0.03] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500"
+      className="group border border-white/10 bg-white/[0.03] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500"
     >
       <div className="flex items-start gap-4 mb-4">
         <div className="w-12 h-12 rounded-xl bg-white/[0.08] border border-white/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
           <Icon className="w-5 h-5 text-blue-400" />
         </div>
-        <h3 className="text-xl font-medium text-white group-hover:text-blue-300 transition-colors pt-2">{title}</h3>
+        <h3 className="text-xl font-medium text-white group-hover:text-blue-400 transition-colors pt-2">{title}</h3>
       </div>
       
       <div className="text-white/70 text-sm leading-relaxed space-y-3 mb-4">
