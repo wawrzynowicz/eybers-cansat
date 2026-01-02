@@ -23,12 +23,10 @@ const SocialPostCard = ({ post, index, language }) => {
     const Icon = platformIcons[post.platform];
     const gradientColor = platformColors[post.platform];
 
-    const direction = index % 2 === 0 ? -50 : 50;
-    
     return (
       <motion.a
-        initial={{ opacity: 0, x: direction }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
         href={post.post_url}
@@ -108,8 +106,8 @@ export default function SocialMediaSection() {
       <div className="max-w-6xl mx-auto">
           {/* Header */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
@@ -142,8 +140,8 @@ export default function SocialMediaSection() {
 
         {/* Social Links */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-center"

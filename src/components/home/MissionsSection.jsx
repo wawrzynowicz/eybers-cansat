@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 import { Target, Atom, TrendingUp, BarChart3, Lightbulb } from 'lucide-react';
 import { useLanguage } from '@/components/shared/LanguageContext';
 
-const MissionCard = ({ mission, icon: Icon, delay, direction }) => {
+const MissionCard = ({ mission, icon: Icon, delay }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, x: direction === 'left' ? -50 : 50 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.5, delay }}
       className="group border border-white/10 bg-white/[0.03] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500"
@@ -59,8 +59,8 @@ export default function MissionsSection() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
@@ -79,13 +79,11 @@ export default function MissionsSection() {
             mission={t.missions?.primary} 
             icon={Target}
             delay={0.1}
-            direction="left"
           />
           <MissionCard 
             mission={t.missions?.secondary} 
             icon={Atom}
             delay={0.2}
-            direction="right"
           />
         </div>
       </div>
