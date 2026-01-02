@@ -29,8 +29,8 @@ export default function Footer() {
             <h4 className="text-white/70 uppercase tracking-wider text-xs mb-6">{t.footer.navigation}</h4>
             <div className="flex flex-col gap-3">
               {[
-                { name: t.nav.mission, href: '#mission' },
-                { name: t.nav.project, href: '#project' },
+                { name: t.nav.project, href: '#mission' },
+                { name: t.nav.mission, href: '#missions' },
                 { name: t.nav.team, href: '#team' },
                 { name: t.nav.contact, href: '#contact' }
               ].map(link => (
