@@ -17,7 +17,7 @@ const MissionCard = ({ mission, icon: Icon, delay }) => {
           <Icon className="w-6 h-6 text-blue-400" />
         </div>
         <div>
-          <h3 className="text-2xl font-semibold text-white group-hover:text-blue-300 transition-colors">{mission.title}</h3>
+          <h3 className="text-2xl font-semibold text-white hover:text-blue-400 transition-colors">{mission.title}</h3>
           <p className="text-white/50 text-sm">{mission.subtitle}</p>
         </div>
       </div>
