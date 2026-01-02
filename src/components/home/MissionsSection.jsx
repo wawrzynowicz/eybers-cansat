@@ -28,7 +28,7 @@ const MissionCard = ({ mission, icon: Icon, delay }) => {
             <TrendingUp className="w-4 h-4 text-blue-400" />
             <h4 className="text-white/90 font-medium text-sm uppercase tracking-wider group-hover:text-blue-300 transition-colors">{mission.whatWeDo.title}</h4>
           </div>
-          <p className="text-white/70 text-sm leading-relaxed">{mission.whatWeDo.description}</p>
+          <p className="text-white/70 text-sm leading-relaxed text-justify">{mission.whatWeDo.description}</p>
         </div>
 
         <div>
@@ -36,7 +36,7 @@ const MissionCard = ({ mission, icon: Icon, delay }) => {
             <BarChart3 className="w-4 h-4 text-blue-400" />
             <h4 className="text-white/90 font-medium text-sm uppercase tracking-wider group-hover:text-blue-300 transition-colors">{mission.howWeUse.title}</h4>
           </div>
-          <p className="text-white/70 text-sm leading-relaxed">{mission.howWeUse.description}</p>
+          <p className="text-white/70 text-sm leading-relaxed text-justify">{mission.howWeUse.description}</p>
         </div>
 
         <div>
@@ -44,7 +44,7 @@ const MissionCard = ({ mission, icon: Icon, delay }) => {
             <Lightbulb className="w-4 h-4 text-blue-400" />
             <h4 className="text-white/90 font-medium text-sm uppercase tracking-wider group-hover:text-blue-300 transition-colors">{mission.whyMatters.title}</h4>
           </div>
-          <p className="text-white/70 text-sm leading-relaxed">{mission.whyMatters.description}</p>
+          <p className="text-white/70 text-sm leading-relaxed text-justify">{mission.whyMatters.description}</p>
         </div>
       </div>
     </motion.div>

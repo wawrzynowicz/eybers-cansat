@@ -183,7 +183,7 @@ export default function ContactSection() {
 
             <div className="border border-white/10 bg-white/[0.04] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500">
               <h3 className="text-white text-lg mb-3">{t.contact.sponsorTitle}</h3>
-              <p className="text-white/80 text-sm leading-relaxed">
+              <p className="text-white/80 text-sm leading-relaxed text-justify">
                 {t.contact.sponsorMessage}
               </p>
             </div>

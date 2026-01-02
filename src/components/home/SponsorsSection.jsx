@@ -38,7 +38,7 @@ function SponsorCard({ sponsor, index }) {
           <h3 className="text-xl font-medium text-white group-hover:text-blue-300 transition-colors">{sponsor.name}</h3>
           
           {description && (
-            <p className="text-white/70 text-sm leading-relaxed">
+            <p className="text-white/70 text-sm leading-relaxed text-justify">
               {description}
             </p>
           )}
@@ -48,7 +48,7 @@ function SponsorCard({ sponsor, index }) {
               <p className="text-white/50 text-xs uppercase tracking-wider mb-2">
                 {language === 'pl' ? 'Zakres Współpracy' : 'Cooperation Scope'}
               </p>
-              <p className="text-white/80 text-sm">
+              <p className="text-white/80 text-sm text-justify">
                 {cooperationScope}
               </p>
             </div>
