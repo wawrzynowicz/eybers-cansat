@@ -63,7 +63,7 @@ function TeamMemberCard({ member, index }) {
                     background: 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
                     boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
                   }}
-                  animate={isHovered ? { opacity: 1, maxHeight: 1000, y: 0 } : { opacity: 0, maxHeight: 0, y: -10 }}
+                  animate={isHovered ? { opacity: 1, maxHeight: 1000, y: 0 } : { opacity: 1, maxHeight: 0, y: 20 }}
                   transition={{ duration: 0.8, ease: "easeInOut" }}
                 >
                   {bio}
