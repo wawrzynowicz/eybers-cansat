@@ -89,7 +89,7 @@ const translations = {
       specs: {
         title: "Key Specifications",
         items: {
-          dimensions: { label: "Dimensions", value: "115 × Ø66 mm" },
+          dimensions: { label: "Dimensions", value: "115 mm height\nØ66 mm" },
           mass: { label: "Mass", value: "300-350g" },
           power: { label: "Power", value: "Battery" },
           comms: { label: "Communications", value: "LoRa 433 MHz" }
@@ -340,7 +340,7 @@ const translations = {
       specs: {
         title: "Kluczowe Specyfikacje",
         items: {
-          dimensions: { label: "Wymiary", value: "115 × Ø66 mm" },
+          dimensions: { label: "Wymiary", value: "115 mm wysokość\nØ66 mm" },
           mass: { label: "Masa", value: "300-350g" },
           power: { label: "Zasilanie", value: "Bateria" },
           comms: { label: "Komunikacja", value: "LoRa 433 MHz" }
