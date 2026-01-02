@@ -9,7 +9,7 @@ export default function ProjectDescription() {
   const containerRef = useRef(null);
 
   return (
-    <section ref={containerRef} className="relative py-12 px-4 overflow-hidden" id="about">
+    <section ref={containerRef} className="relative pt-4 pb-12 px-4 overflow-hidden" id="about">
       <div className="max-w-6xl mx-auto relative z-10">
         {/* 3D Model and Technical Specs Combined */}
         <motion.div
