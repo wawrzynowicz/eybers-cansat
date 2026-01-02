@@ -20,20 +20,16 @@ const platformColors = {
 };
 
 const SocialPostCard = ({ post, index, language }) => {
-  const Icon = platformIcons[post.platform];
-  const gradientColor = platformColors[post.platform];
+    const Icon = platformIcons[post.platform];
+    const gradientColor = platformColors[post.platform];
 
-  return (
-    <motion.a
-      href={post.post_url}
-      target="_blank"
-      rel="noopener noreferrer"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6, delay: 0 }}
-      className="group block border border-white/10 bg-white/[0.03] overflow-hidden hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500"
-    >
+    return (
+      <a
+        href={post.post_url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group block border border-white/10 bg-white/[0.03] overflow-hidden hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500"
+      >
       <div className="relative h-48 overflow-hidden bg-white/5">
         {post.image_url ? (
           <>
@@ -73,10 +69,10 @@ const SocialPostCard = ({ post, index, language }) => {
           </div>
           <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
         </div>
-      </div>
-    </motion.a>
-  );
-};
+        </div>
+        </a>
+        );
+        };
 
 export default function SocialMediaSection() {
   const { language } = useLanguage();
@@ -104,14 +100,10 @@ export default function SocialMediaSection() {
   return (
     <section className="relative py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
+          {/* Header */}
+          <div
+            className="text-center mb-16"
+          >
           <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
             {isPolish ? 'Bądź na Bieżąco' : 'Stay Connected'}
           </p>
@@ -122,9 +114,9 @@ export default function SocialMediaSection() {
             {isPolish 
               ? 'Śledź nasz postęp, zobacz zakulisowe zdjęcia i bądź częścią naszej podróży w kosmos'
               : 'Follow our progress, see behind-the-scenes photos, and be part of our journey to space'
-            }
-          </p>
-        </motion.div>
+              }
+              </p>
+              </div>
 
         {/* Posts Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -139,11 +131,7 @@ export default function SocialMediaSection() {
         </div>
 
         {/* Social Links */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+        <div
           className="text-center"
         >
           <p className="text-white/50 text-sm mb-4">
@@ -174,8 +162,8 @@ export default function SocialMediaSection() {
             >
               <Linkedin className="w-5 h-5" />
             </a>
-          </div>
-        </motion.div>
+            </div>
+            </div>
       </div>
     </section>
   );

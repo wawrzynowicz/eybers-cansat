@@ -5,11 +5,7 @@ import { useLanguage } from '@/components/shared/LanguageContext';
 
 const MissionCard = ({ mission, icon: Icon, delay }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay }}
+    <div
       className="group border border-white/10 bg-white/[0.03] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500"
     >
       <div className="flex items-center gap-4 mb-6">
@@ -47,9 +43,9 @@ const MissionCard = ({ mission, icon: Icon, delay }) => {
           <p className="text-white/70 text-sm leading-relaxed text-justify">{mission.whyMatters.description}</p>
         </div>
       </div>
-    </motion.div>
-  );
-};
+      </div>
+      );
+      };
 
 export default function MissionsSection() {
   const { t } = useLanguage();
@@ -58,11 +54,7 @@ export default function MissionsSection() {
     <section className="relative py-12 px-4" id="missions">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+        <div
           className="text-center mb-16"
         >
           <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
@@ -70,8 +62,8 @@ export default function MissionsSection() {
           </p>
           <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
             {t.missions?.heading || 'Our Missions'}
-          </h2>
-        </motion.div>
+            </h2>
+            </div>
 
         {/* Missions Grid */}
         <div className="grid lg:grid-cols-2 gap-8">

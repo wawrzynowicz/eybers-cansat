@@ -5,16 +5,12 @@ import { useLanguage } from '@/components/shared/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 const InfoCard = ({ icon: Icon, title, preview, content, delay, id, expandedId, onToggle }) => {
-  const isExpanded = expandedId === id;
+    const isExpanded = expandedId === id;
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6, delay: 0 }}
-      className="group border border-white/10 bg-white/[0.03] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500"
-    >
+    return (
+      <div
+        className="group border border-white/10 bg-white/[0.03] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500"
+      >
       <div className="flex items-start gap-4 mb-4">
         <div className="w-12 h-12 rounded-xl bg-white/[0.08] border border-white/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
           <Icon className="w-5 h-5 text-blue-400" />
@@ -52,10 +48,10 @@ const InfoCard = ({ icon: Icon, title, preview, content, delay, id, expandedId, 
         >
           <ChevronDown className="w-4 h-4 ml-1" />
         </motion.div>
-      </Button>
-    </motion.div>
-  );
-};
+        </Button>
+        </div>
+        );
+        };
 
 export default function MuonInfoSection() {
   const { t } = useLanguage();
@@ -69,11 +65,7 @@ export default function MuonInfoSection() {
     <section id="muon-info" className="relative py-12 px-4">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+        <div
           className="text-center mb-12"
         >
           <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
@@ -84,17 +76,13 @@ export default function MuonInfoSection() {
           </h2>
           <p className="text-white/70 text-lg max-w-3xl mx-auto">
             {t.muonInfo?.intro || 'Learn about cosmic rays, muon formation, and why these particles are essential to our research.'}
-          </p>
-        </motion.div>
+            </p>
+            </div>
 
-        {/* Key Facts */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-20 border border-white/10 bg-white/[0.02] p-8"
-        >
+            {/* Key Facts */}
+            <div
+            className="mb-20 border border-white/10 bg-white/[0.02] p-8"
+            >
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
             <div>
               <p className="text-3xl font-light text-white mb-2">10,000+</p>
@@ -108,8 +96,8 @@ export default function MuonInfoSection() {
               <p className="text-3xl font-light text-white mb-2">Super Fast</p>
               <p className="text-white/30 text-xs uppercase tracking-wider">Near Light Speed</p>
             </div>
-          </div>
-        </motion.div>
+            </div>
+            </div>
 
         {/* Content Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">

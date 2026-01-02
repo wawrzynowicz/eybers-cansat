@@ -21,11 +21,7 @@ function TeamMemberCard({ member, index }) {
   const bio = language === 'pl' && member.bio_pl ? member.bio_pl : member.bio;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+    <div
       className="group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -78,11 +74,11 @@ function TeamMemberCard({ member, index }) {
         </div>
 
         {/* Bottom line animation */}
-        <motion.div 
+        <div 
           className="h-px bg-white/20 w-0 group-hover:w-full transition-all duration-700"
         />
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -98,18 +94,14 @@ export default function TeamSection() {
   return (
     <section className="relative py-12 px-4" id="team">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+        <div
           className="text-center mb-20"
         >
           <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">{t.team.sectionTitle}</p>
           <h2 className="text-4xl md:text-5xl font-light text-white">
             {t.team.heading} <span className="font-semibold">{t.team.headingBold}</span>
           </h2>
-        </motion.div>
+        </div>
 
         {isLoading ? (
           <div className="flex justify-center py-20">
@@ -124,19 +116,11 @@ export default function TeamSection() {
         )}
 
         {/* Quote */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
+        <div
           className="mt-24 text-center max-w-3xl mx-auto"
         >
-          <motion.div
+          <div
             className="w-8 h-px bg-white/20 mx-auto mb-8"
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
           />
           <blockquote className="text-center">
             <p className="text-2xl md:text-3xl text-white font-light italic mb-3">
@@ -146,7 +130,7 @@ export default function TeamSection() {
               {t.team.quoteTranslation}
             </p>
           </blockquote>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
