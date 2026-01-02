@@ -10,14 +10,14 @@ const MissionCard = ({ mission, icon: Icon, delay }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay }}
-      className="border border-white/10 bg-white/[0.03] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500"
+      className="group border border-white/10 bg-white/[0.03] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500"
     >
       <div className="flex items-center gap-4 mb-6">
         <div className="w-12 h-12 rounded-xl bg-white/[0.08] border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
           <Icon className="w-6 h-6 text-blue-400" />
         </div>
         <div>
-          <h3 className="text-2xl font-semibold text-white hover:text-blue-400 transition-colors">{mission.title}</h3>
+          <h3 className="text-2xl font-semibold text-white group-hover:text-blue-400 transition-colors">{mission.title}</h3>
           <p className="text-white/50 text-sm">{mission.subtitle}</p>
         </div>
       </div>
