@@ -27,7 +27,11 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
   };
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, x: isEven ? 40 : -40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
       className="relative flex items-center gap-0 group"
     >
       {/* Left content */}
@@ -94,7 +98,7 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -105,7 +109,11 @@ export default function TimelineSection() {
     <section className="relative py-12 px-4">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
           <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
@@ -117,7 +125,7 @@ export default function TimelineSection() {
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             {t.timeline?.description || 'Follow our progress from concept to launch as we work towards detecting cosmic muons from space.'}
             </p>
-            </div>
+            </motion.div>
 
         {/* Timeline */}
         <div className="relative max-w-5xl mx-auto">

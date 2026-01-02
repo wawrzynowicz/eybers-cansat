@@ -24,7 +24,11 @@ const SocialPostCard = ({ post, index, language }) => {
     const gradientColor = platformColors[post.platform];
 
     return (
-      <a
+      <motion.a
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6, delay: index * 0.1 }}
         href={post.post_url}
         target="_blank"
         rel="noopener noreferrer"
@@ -70,7 +74,7 @@ const SocialPostCard = ({ post, index, language }) => {
           <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
         </div>
         </div>
-        </a>
+        </motion.a>
         );
         };
 
@@ -101,7 +105,11 @@ export default function SocialMediaSection() {
     <section className="relative py-12 px-4">
       <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
           <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
@@ -116,7 +124,7 @@ export default function SocialMediaSection() {
               : 'Follow our progress, see behind-the-scenes photos, and be part of our journey to space'
               }
               </p>
-              </div>
+              </motion.div>
 
         {/* Posts Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -131,7 +139,11 @@ export default function SocialMediaSection() {
         </div>
 
         {/* Social Links */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           className="text-center"
         >
           <p className="text-white/50 text-sm mb-4">
@@ -163,7 +175,7 @@ export default function SocialMediaSection() {
               <Linkedin className="w-5 h-5" />
             </a>
             </div>
-            </div>
+            </motion.div>
       </div>
     </section>
   );

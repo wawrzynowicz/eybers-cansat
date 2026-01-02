@@ -12,7 +12,11 @@ export default function ProjectDescription() {
     <section ref={containerRef} className="relative pt-4 pb-12 px-4 overflow-hidden" id="about">
       <div className="max-w-6xl mx-auto relative z-10">
         {/* 3D Model and Technical Specs Combined */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
           className="mt-20"
         >
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -47,7 +51,7 @@ export default function ProjectDescription() {
                   <ModelViewer modelPath="https://raw.githubusercontent.com/wawrzynowicz/eybers-cansat/main/CanSat-3D-model.gltf" />
                   </div>
                   </div>
-                  </div>
+                  </motion.div>
       </div>
     </section>
   );

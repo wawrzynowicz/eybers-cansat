@@ -21,7 +21,11 @@ function TeamMemberCard({ member, index }) {
   const bio = language === 'pl' && member.bio_pl ? member.bio_pl : member.bio;
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -74,7 +78,7 @@ function TeamMemberCard({ member, index }) {
           className="h-px bg-white/20 w-0 group-hover:w-full transition-all duration-700"
         />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -90,14 +94,18 @@ export default function TeamSection() {
   return (
     <section className="relative py-12 px-4" id="team">
       <div className="max-w-6xl mx-auto">
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
           <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">{t.team.sectionTitle}</p>
           <h2 className="text-4xl md:text-5xl font-light text-white">
             {t.team.heading} <span className="font-semibold">{t.team.headingBold}</span>
           </h2>
-        </div>
+        </motion.div>
 
         {isLoading ? (
           <div className="flex justify-center py-20">
@@ -112,7 +120,11 @@ export default function TeamSection() {
         )}
 
         {/* Quote */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-24 text-center max-w-3xl mx-auto"
         >
           <div
@@ -126,7 +138,7 @@ export default function TeamSection() {
               {t.team.quoteTranslation}
             </p>
           </blockquote>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -12,7 +12,11 @@ function SponsorCard({ sponsor, index }) {
   const cooperationScope = language === 'pl' && sponsor.cooperation_scope_pl ? sponsor.cooperation_scope_pl : sponsor.cooperation_scope;
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group"
     >
       <div className="relative border border-white/20 bg-white/[0.04] backdrop-blur-sm p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500">
@@ -63,7 +67,7 @@ function SponsorCard({ sponsor, index }) {
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -89,7 +93,11 @@ export default function SponsorsSection() {
   return (
     <section className="relative py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
           <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
@@ -98,7 +106,7 @@ export default function SponsorsSection() {
           <h2 className="text-4xl md:text-5xl font-light text-white">
             {language === 'pl' ? 'Sponsorzy' : 'Sponsors'}
           </h2>
-        </div>
+        </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {sponsors.map((sponsor, index) => (
