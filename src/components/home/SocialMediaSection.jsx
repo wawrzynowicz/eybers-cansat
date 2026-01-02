@@ -23,16 +23,19 @@ const SocialPostCard = ({ post, index, language }) => {
     const Icon = platformIcons[post.platform];
     const gradientColor = platformColors[post.platform];
 
+    const direction = index % 2 === 0 ? 1 : -1;
+    
     return (
       <motion.a
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6, delay: index * 0.1 }}
+        initial={{ opacity: 0, y: 80, rotateZ: direction * 8, scale: 0.7 }}
+        whileInView={{ opacity: 1, y: 0, rotateZ: 0, scale: 1 }}
+        viewport={{ once: true, margin: "-120px" }}
+        transition={{ duration: 0.8, delay: index * 0.15, type: "spring", stiffness: 90, damping: 12 }}
         href={post.post_url}
         target="_blank"
         rel="noopener noreferrer"
         className="group block border border-white/10 bg-white/[0.03] overflow-hidden hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500"
+        style={{ transformOrigin: 'center bottom' }}
       >
       <div className="relative h-48 overflow-hidden bg-white/5">
         {post.image_url ? (
@@ -106,10 +109,10 @@ export default function SocialMediaSection() {
       <div className="max-w-6xl mx-auto">
           {/* Header */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: -60, scale: 0.85 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, type: "spring", stiffness: 60, damping: 15 }}
             className="text-center mb-16"
           >
           <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
@@ -140,10 +143,10 @@ export default function SocialMediaSection() {
 
         {/* Social Links */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.5, y: 30 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.9, delay: 0.6, type: "spring", stiffness: 100 }}
           className="text-center"
         >
           <p className="text-white/50 text-sm mb-4">
