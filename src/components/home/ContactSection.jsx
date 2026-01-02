@@ -154,17 +154,15 @@ export default function ContactSection() {
                   { icon: Linkedin, href: 'https://www.linkedin.com/company/eybers-cansat/', label: 'LinkedIn' },
                   { icon: Instagram, href: 'https://www.instagram.com/eybers.cansat/', label: 'Instagram' }
                 ].map((social) => (
-                  <motion.a
+                  <a
                     key={social.label}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:border-white/30 transition-all"
-                    whileHover={{ y: -2 }}
-                    transition={{ duration: 0.2 }}
                   >
                     <social.icon className="w-5 h-5" />
-                  </motion.a>
+                  </a>
                 ))}
               </div>
             </div>

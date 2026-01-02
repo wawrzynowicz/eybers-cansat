@@ -48,11 +48,7 @@ function TeamMemberCard({ member, index }) {
           
           {/* Content overlay */}
           <div className="absolute bottom-0 left-0 right-0 p-6">
-            <motion.div
-              initial={{ y: 10, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 + index * 0.1 }}
+            <div
             >
               <p className="text-white/60 text-xs uppercase tracking-wider mb-1">{member.role}</p>
               <h3 className="text-xl font-medium text-white mb-2">{member.name}</h3>
@@ -69,7 +65,7 @@ function TeamMemberCard({ member, index }) {
                   {bio}
                 </motion.p>
               )}
-            </motion.div>
+            </div>
           </div>
         </div>
 
