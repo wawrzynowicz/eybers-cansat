@@ -162,7 +162,7 @@ export default function SocialMediaSection() {
               <Instagram className="w-5 h-5" />
             </a>
             <a 
-              href="https://www.linkedin.com/in/eybers-undefined-7680a1396/" 
+              href="https://www.linkedin.com/company/eybers-cansat/" 
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 hover:bg-white/5 transition-all"
