@@ -21,8 +21,11 @@ export default function Layout({ children }) {
           background: linear-gradient(135deg, #0f172a 0%, #0c1e3d 50%, #1e293b 100%);
         }
         html {
-          scroll-behavior: smooth;
-        }
+            scroll-behavior: smooth;
+          }
+          section {
+            scroll-margin-top: 120px;
+          }
       `}</style>
       <StarField />
       <Navbar />

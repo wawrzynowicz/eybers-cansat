@@ -12,8 +12,8 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   const navLinks = [
-    { name: t.nav.project, href: '#about' },
-    { name: t.nav.mission, href: '#mission' },
+    { name: t.nav.project, href: '#mission' },
+    { name: t.nav.mission, href: '#missions' },
     { name: t.nav.team, href: '#team' },
     { name: t.nav.contact, href: '#contact' },
   ];
