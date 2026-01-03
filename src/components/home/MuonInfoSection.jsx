@@ -12,10 +12,10 @@ const InfoCard = ({ icon: Icon, title, preview, content, id, expandedId, onToggl
               className="group border border-white/10 bg-white/[0.03] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500"
             >
       <div className="flex items-start gap-4 mb-4">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:border-pink-400/50 transition-all duration-300">
-          <Icon className="w-5 h-5 text-pink-400" />
+        <div className="w-12 h-12 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:border-white/20 transition-all duration-300">
+          <Icon className="w-5 h-5 text-white/60" />
         </div>
-        <h3 className="text-xl font-medium text-white group-hover:text-pink-400 transition-colors pt-2">{title}</h3>
+        <h3 className="text-xl font-medium text-white group-hover:text-blue-400 transition-colors pt-2">{title}</h3>
       </div>
       
       <div className="text-white/70 text-sm leading-relaxed space-y-3 mb-4">
@@ -78,19 +78,19 @@ export default function MuonInfoSection() {
               </div>
 
             {/* Key Facts */}
-            <div className="mb-20 border border-purple-500/20 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-orange-500/10 p-8 hover:border-purple-400/60 hover:shadow-[0_0_50px_rgba(168,85,247,0.4)] transition-all duration-500">
+            <div className="mb-20 border border-white/10 bg-white/[0.02] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
             <div>
-              <p className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">10,000+</p>
-              <p className="text-purple-300 text-xs uppercase tracking-wider font-semibold">Muons Hit You Daily</p>
+              <p className="text-3xl font-light text-white mb-2">10,000+</p>
+              <p className="text-white/30 text-xs uppercase tracking-wider">Muons Hit You Daily</p>
             </div>
             <div>
-              <p className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-orange-400 mb-2">~15 km</p>
-              <p className="text-pink-300 text-xs uppercase tracking-wider font-semibold">Creation Altitude</p>
+              <p className="text-3xl font-light text-white mb-2">~15 km</p>
+              <p className="text-white/30 text-xs uppercase tracking-wider">Creation Altitude</p>
             </div>
             <div>
-              <p className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400 mb-2">Super Fast</p>
-              <p className="text-orange-300 text-xs uppercase tracking-wider font-semibold">Near Light Speed</p>
+              <p className="text-3xl font-light text-white mb-2">Super Fast</p>
+              <p className="text-white/30 text-xs uppercase tracking-wider">Near Light Speed</p>
             </div>
               </div>
               </div>
