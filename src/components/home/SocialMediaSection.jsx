@@ -28,7 +28,7 @@ const SocialPostCard = ({ post, language }) => {
         href={post.post_url}
         target="_blank"
         rel="noopener noreferrer"
-        className="group block border border-white/10 bg-white/[0.03] overflow-hidden hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500"
+        className="group block border border-white/10 bg-white/[0.03] overflow-hidden hover:border-cyan-500/40 hover:shadow-[0_0_40px_rgba(34,211,238,0.3)] transition-all duration-500"
       >
       <div className="relative h-48 overflow-hidden bg-white/5">
         {post.image_url ? (
@@ -102,11 +102,11 @@ export default function SocialMediaSection() {
       <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-              <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
+              <p className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 uppercase tracking-[0.3em] text-xs mb-4 font-bold">
                 {isPolish ? 'Bądź na Bieżąco' : 'Stay Connected'}
               </p>
-              <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
-                {isPolish ? 'Nasze Ostatnie' : 'Latest From'} <span className="font-normal">Social Media</span>
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                {isPolish ? 'Nasze Ostatnie' : 'Latest From'} <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Social Media</span>
               </h2>
               <p className="text-white/70 text-lg max-w-3xl mx-auto">
                 {isPolish 
@@ -137,7 +137,7 @@ export default function SocialMediaSection() {
               href="https://www.facebook.com/eybers.cansat/" 
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 hover:bg-white/5 transition-all"
+              className="w-12 h-12 border border-white/20 flex items-center justify-center text-white hover:scale-110 bg-gradient-to-br from-blue-400 to-blue-600 shadow-lg transition-all"
             >
               <Facebook className="w-5 h-5" />
             </a>
@@ -145,7 +145,7 @@ export default function SocialMediaSection() {
               href="https://www.instagram.com/eybers.cansat/" 
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 hover:bg-white/5 transition-all"
+              className="w-12 h-12 border border-white/20 flex items-center justify-center text-white hover:scale-110 bg-gradient-to-br from-pink-500 to-purple-500 shadow-lg transition-all"
             >
               <Instagram className="w-5 h-5" />
             </a>
@@ -153,7 +153,7 @@ export default function SocialMediaSection() {
               href="https://www.linkedin.com/company/eybers-cansat/" 
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 hover:bg-white/5 transition-all"
+              className="w-12 h-12 border border-white/20 flex items-center justify-center text-white hover:scale-110 bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg transition-all"
             >
               <Linkedin className="w-5 h-5" />
             </a>

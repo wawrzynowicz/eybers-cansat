@@ -19,9 +19,9 @@ function SponsorCard({ sponsor, index }) {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group"
     >
-      <div className="relative border border-white/20 bg-white/[0.04] backdrop-blur-sm p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500">
+      <div className="relative border border-orange-500/20 bg-gradient-to-br from-orange-500/10 to-yellow-500/10 backdrop-blur-sm p-8 hover:border-orange-400/60 hover:shadow-[0_0_40px_rgba(249,115,22,0.3)] transition-all duration-500">
         {/* Logo */}
-        <div className="aspect-[2/1] relative overflow-hidden bg-white mb-6 flex items-center justify-center p-6">
+        <div className="aspect-[2/1] relative overflow-hidden bg-white mb-6 flex items-center justify-center p-6 border border-orange-500/20">
           {sponsor.logo_url ? (
             <img 
               src={sponsor.logo_url} 
@@ -35,7 +35,7 @@ function SponsorCard({ sponsor, index }) {
 
         {/* Content */}
         <div className="space-y-4">
-          <h3 className="text-xl font-medium text-white group-hover:text-blue-300 transition-colors">{sponsor.name}</h3>
+          <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400 group-hover:from-yellow-400 group-hover:to-orange-400 transition-all">{sponsor.name}</h3>
           
           {description && (
             <p className="text-white/70 text-sm leading-relaxed text-justify">
@@ -100,10 +100,10 @@ export default function SponsorsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
+          <p className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-pink-400 uppercase tracking-[0.3em] text-xs mb-4 font-bold">
             {language === 'pl' ? 'Nasi Partnerzy' : 'Our Partners'}
           </p>
-          <h2 className="text-4xl md:text-5xl font-light text-white">
+          <h2 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-pink-500">
             {language === 'pl' ? 'Sponsorzy' : 'Sponsors'}
           </h2>
         </motion.div>

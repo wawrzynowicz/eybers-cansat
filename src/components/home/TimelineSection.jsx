@@ -37,20 +37,20 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
       {/* Left content */}
       <div className="flex-1 order-1">
         {!isEven && (
-          <div className={`border ${getStatusColor()} rounded-lg p-4 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500`}>
+          <div className={`border ${getStatusColor()} rounded-lg p-4 hover:border-purple-400/60 hover:shadow-[0_0_40px_rgba(168,85,247,0.3)] transition-all duration-500`}>
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-2">
                 {getStatusIcon()}
-                <h3 className="text-base font-medium text-white">{milestone.title}</h3>
+                <h3 className="text-base font-bold text-white">{milestone.title}</h3>
               </div>
-              <span className="text-sm font-semibold text-blue-400 whitespace-nowrap ml-3">{milestone.date}</span>
+              <span className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 whitespace-nowrap ml-3">{milestone.date}</span>
             </div>
             <p className="text-white/70 text-sm leading-relaxed text-justify">{milestone.description}</p>
             {milestone.achievements && (
               <ul className="mt-3 space-y-1.5">
                 {milestone.achievements.map((achievement, idx) => (
                   <li key={idx} className="text-xs text-white/60 flex items-start gap-2">
-                    <span className="text-blue-400 mt-0.5">•</span>
+                    <span className="text-purple-400 mt-0.5">•</span>
                     <span>{achievement}</span>
                   </li>
                 ))}
