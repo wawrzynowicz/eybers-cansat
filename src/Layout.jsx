@@ -11,7 +11,7 @@ function LayoutContent({ children }) {
   const { language } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -29,10 +29,6 @@ function LayoutContent({ children }) {
         body {
           background: linear-gradient(135deg, #0f172a 0%, #1a0b3d 20%, #0c1e3d 40%, #1e1b4b 60%, #1e293b 80%, #0f172a 100%);
           font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-          overflow-x: hidden;
-        }
-        html {
-          overflow-x: hidden;
         }
 
         h1, h2, h3, h4, h5, h6 {
