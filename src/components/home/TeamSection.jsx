@@ -36,7 +36,8 @@ function TeamMemberCard({ member, index }) {
           {member.image_url ? (
             <motion.img 
               src={member.image_url} 
-              alt={member.name}
+              alt={`${member.name} - ${member.role} - EYBERS CanSat Team`}
+              title={`${member.name} - ${member.role} - EYBERS CanSat Competition`}
               className="w-full h-full object-cover md:grayscale md:group-hover:grayscale-0 transition-all duration-700"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.7 }}
