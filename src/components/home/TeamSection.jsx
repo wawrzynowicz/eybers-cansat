@@ -37,8 +37,7 @@ function TeamMemberCard({ member, index }) {
             <motion.img 
               src={member.image_url} 
               alt={member.name}
-              className="w-full h-full object-cover object-top md:grayscale md:group-hover:grayscale-0 transition-all duration-700"
-              style={{ objectPosition: '50% 15%' }}
+              className="w-full h-full object-cover md:grayscale md:group-hover:grayscale-0 transition-all duration-700"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.7 }}
             />
