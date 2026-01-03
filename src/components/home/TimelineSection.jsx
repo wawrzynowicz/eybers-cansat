@@ -32,12 +32,12 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="relative flex items-center gap-0 group">
-
+      className="relative flex items-center gap-0 group"
+    >
       {/* Left content */}
       <div className="flex-1 order-1">
-        {!isEven &&
-        <div className={`border ${getStatusColor()} rounded-lg p-4 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500`}>
+        {!isEven && (
+          <div className={`border ${getStatusColor()} rounded-lg p-4 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500`}>
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-2">
                 {getStatusIcon()}
@@ -46,18 +46,18 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
               <span className="text-sm font-semibold text-blue-400 whitespace-nowrap ml-3">{milestone.date}</span>
             </div>
             <p className="text-white/70 text-sm leading-relaxed text-justify">{milestone.description}</p>
-            {milestone.achievements &&
-          <ul className="mt-3 space-y-1.5">
-                {milestone.achievements.map((achievement, idx) =>
-            <li key={idx} className="text-xs text-white/60 flex items-start gap-2">
+            {milestone.achievements && (
+              <ul className="mt-3 space-y-1.5">
+                {milestone.achievements.map((achievement, idx) => (
+                  <li key={idx} className="text-xs text-white/60 flex items-start gap-2">
                     <span className="text-blue-400 mt-0.5">•</span>
                     <span>{achievement}</span>
                   </li>
-            )}
+                ))}
               </ul>
-          }
+            )}
           </div>
-        }
+        )}
       </div>
 
       {/* Center line and circle */}
@@ -68,15 +68,15 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
         </div>
 
         {/* Vertical line */}
-        {!isLast &&
-        <div className="w-px h-24 bg-gradient-to-b from-white/20 to-white/10" />
-        }
+        {!isLast && (
+          <div className="w-px h-24 bg-gradient-to-b from-white/20 to-white/10" />
+        )}
       </div>
 
       {/* Right content */}
       <div className="flex-1 order-3">
-        {isEven &&
-        <div className={`border ${getStatusColor()} rounded-lg p-4 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500`}>
+        {isEven && (
+          <div className={`border ${getStatusColor()} rounded-lg p-4 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500`}>
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-2">
                 {getStatusIcon()}
@@ -85,21 +85,21 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
               <span className="text-sm font-semibold text-blue-400 whitespace-nowrap ml-3">{milestone.date}</span>
             </div>
             <p className="text-white/70 text-sm leading-relaxed text-justify">{milestone.description}</p>
-            {milestone.achievements &&
-          <ul className="mt-3 space-y-1.5">
-                {milestone.achievements.map((achievement, idx) =>
-            <li key={idx} className="text-xs text-white/60 flex items-start gap-2">
+            {milestone.achievements && (
+              <ul className="mt-3 space-y-1.5">
+                {milestone.achievements.map((achievement, idx) => (
+                  <li key={idx} className="text-xs text-white/60 flex items-start gap-2">
                     <span className="text-blue-400 mt-0.5">•</span>
                     <span>{achievement}</span>
                   </li>
-            )}
+                ))}
               </ul>
-          }
+            )}
           </div>
-        }
+        )}
       </div>
-    </motion.div>);
-
+    </motion.div>
+  );
 };
 
 export default function TimelineSection() {
@@ -114,32 +114,32 @@ export default function TimelineSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16">
-
+          className="text-center mb-16"
+        >
           <p className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-yellow-400 to-green-400 uppercase tracking-[0.3em] text-xs mb-4 font-bold">
             {t.timeline?.sectionTitle || 'Our Journey'}
           </p>
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-yellow-400">{t.timeline?.heading || 'Project Timeline'}</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400">{t.timeline?.heading || 'Project Timeline'}</span>
           </h2>
-          <p className="text-white/70 mx-auto text-lg opacity-100 max-w-2xl">
+          <p className="text-white/70 text-lg max-w-2xl mx-auto">
             {t.timeline?.description || 'Follow our progress from concept to launch as we work towards detecting cosmic muons from space.'}
             </p>
             </motion.div>
 
         {/* Timeline */}
         <div className="relative max-w-5xl mx-auto">
-          {t.timeline?.milestones?.map((milestone, index) =>
-          <TimelineItem
-            key={index}
-            milestone={milestone}
-            index={index}
-            isLast={index === t.timeline.milestones.length - 1}
-            isEven={index % 2 === 1} />
-
-          )}
+          {t.timeline?.milestones?.map((milestone, index) => (
+            <TimelineItem
+              key={index}
+              milestone={milestone}
+              index={index}
+              isLast={index === t.timeline.milestones.length - 1}
+              isEven={index % 2 === 1}
+            />
+          ))}
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
