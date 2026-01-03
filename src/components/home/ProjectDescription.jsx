@@ -33,7 +33,7 @@ export default function ProjectDescription() {
                 <div
                   key={stat.label}>
 
-                  <motion.p className="bg-gradient-to-r text-slate-50 mb-2 text-3xl font-extrabold md:text-4xl from-orange-400 to-yellow-400 whitespace-pre-line"
+                  <motion.p className="bg-gradient-to-r text-slate-50 mb-2 text-3xl font-extrabold md:text-4xl from-orange-400 via-pink to-yellow-400 whitespace-pre-line"
 
                   animate={{ opacity: [0.7, 1, 0.7] }}
                   transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}>
