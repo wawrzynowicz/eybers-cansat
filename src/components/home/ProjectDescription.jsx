@@ -25,10 +25,10 @@ export default function ProjectDescription() {
               <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 mb-10">{t.projectDesc.specs.title}</h3>
               <div className="grid grid-cols-2 gap-8">
               {[
-                { ...t.projectDesc.specs.items.dimensions, color: 'from-purple-400 to-pink-400' },
-                { ...t.projectDesc.specs.items.mass, color: 'from-purple-400 to-pink-400' },
-                { ...t.projectDesc.specs.items.power, color: 'from-purple-400 to-pink-400' },
-                { ...t.projectDesc.specs.items.comms, color: 'from-purple-400 to-pink-400' }
+                { ...t.projectDesc.specs.items.dimensions, color: 'from-cyan-400 to-blue-400' },
+                { ...t.projectDesc.specs.items.mass, color: 'from-cyan-400 to-blue-400' },
+                { ...t.projectDesc.specs.items.power, color: 'from-cyan-400 to-blue-400' },
+                { ...t.projectDesc.specs.items.comms, color: 'from-cyan-400 to-blue-400' }
               ].map((stat, index) => (
                 <div
                   key={stat.label}
