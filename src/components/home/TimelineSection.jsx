@@ -120,7 +120,7 @@ export default function TimelineSection() {
             {t.timeline?.sectionTitle || 'Our Journey'}
           </p>
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400">{t.timeline?.heading || 'Project Timeline'}</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-yellow-400">{t.timeline?.heading || 'Project Timeline'}</span>
           </h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             {t.timeline?.description || 'Follow our progress from concept to launch as we work towards detecting cosmic muons from space.'}
