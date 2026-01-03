@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '@/components/navigation/Navbar';
 import Footer from '@/components/navigation/Footer';
 import StarField from '@/components/shared/StarField';
-import { LanguageProvider } from '@/components/shared/LanguageContext';
+import { LanguageProvider, useLanguage } from '@/components/shared/LanguageContext';
 import { StarFieldProvider } from '@/components/shared/StarFieldContext';
+import { X } from 'lucide-react';
 
-export default function Layout({ children }) {
+function LayoutContent({ children }) {
+  const [showMobileNotice, setShowMobileNotice] = useState(true);
+  const { language } = useLanguage();
+
   return (
-    <LanguageProvider>
-    <StarFieldProvider>
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
