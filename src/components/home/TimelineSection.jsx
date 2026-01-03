@@ -18,11 +18,11 @@ const TimelineItem = ({ milestone, index, isLast, isEven }) => {
   const getStatusColor = () => {
     switch (milestone.status) {
       case 'completed':
-        return 'border-green-400/50 bg-green-400/10';
+        return 'border-green-500/40 bg-gradient-to-br from-green-500/20 to-emerald-500/10';
       case 'in_progress':
-        return 'border-blue-400/50 bg-blue-400/10';
+        return 'border-purple-500/40 bg-gradient-to-br from-purple-500/20 to-pink-500/10';
       default:
-        return 'border-white/20 bg-white/5';
+        return 'border-orange-500/40 bg-gradient-to-br from-orange-500/20 to-yellow-500/10';
     }
   };
 
@@ -116,10 +116,10 @@ export default function TimelineSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
+          <p className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-400 to-purple-400 uppercase tracking-[0.3em] text-xs mb-4 font-bold">
             {t.timeline?.sectionTitle || 'Our Journey'}
           </p>
-          <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-400 to-purple-500 mb-6">
             {t.timeline?.heading || 'Project Timeline'}
           </h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">

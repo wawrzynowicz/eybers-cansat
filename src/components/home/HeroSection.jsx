@@ -156,7 +156,7 @@ export default function HeroSection() {
                   }}
                 >
                   <motion.span
-                    className="text-6xl md:text-8xl font-extralight text-white"
+                    className="text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400"
                   >
                     {item.letter}
                   </motion.span>
@@ -167,7 +167,7 @@ export default function HeroSection() {
                       width: wordWidth
                     }}
                   >
-                    <span className="text-3xl md:text-5xl font-light text-white/90 ml-1">
+                    <span className="text-3xl md:text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300 ml-1">
                       {item.word}
                     </span>
                   </motion.div>
