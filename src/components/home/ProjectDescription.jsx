@@ -17,8 +17,8 @@ export default function ProjectDescription() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mt-20"
-        >
+          className="mt-20">
+
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Technical specs */}
             <div>
@@ -28,21 +28,21 @@ export default function ProjectDescription() {
                 { ...t.projectDesc.specs.items.dimensions, color: 'from-purple-400 to-pink-400' },
                 { ...t.projectDesc.specs.items.mass, color: 'from-purple-400 to-pink-400' },
                 { ...t.projectDesc.specs.items.power, color: 'from-purple-400 to-pink-400' },
-                { ...t.projectDesc.specs.items.comms, color: 'from-purple-400 to-pink-400' }
-              ].map((stat, index) => (
+                { ...t.projectDesc.specs.items.comms, color: 'from-purple-400 to-pink-400' }].
+                map((stat, index) =>
                 <div
-                  key={stat.label}
-                >
-                  <motion.p 
-                    className={`text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r ${stat.color} mb-2 whitespace-pre-line`}
-                    animate={{ opacity: [0.7, 1, 0.7] }}
-                    transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
-                  >
+                  key={stat.label}>
+
+                  <motion.p className="bg-gradient-to-r text-[#8ffffb] mb-2 text-3xl font-extrabold md:text-4xl from-purple-400 to-pink-400 whitespace-pre-line"
+
+                  animate={{ opacity: [0.7, 1, 0.7] }}
+                  transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}>
+
                     {stat.value}
                   </motion.p>
                   <p className="text-white/50 text-xs uppercase tracking-wider font-semibold">{stat.label}</p>
                   </div>
-                  ))}
+                )}
                   </div>
                   </div>
 
@@ -53,6 +53,6 @@ export default function ProjectDescription() {
                   </div>
                   </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
