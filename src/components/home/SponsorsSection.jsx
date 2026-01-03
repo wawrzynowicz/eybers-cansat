@@ -100,11 +100,11 @@ export default function SponsorsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
+          <p className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-pink-400 uppercase tracking-[0.3em] text-xs mb-4 font-bold">
             {language === 'pl' ? 'Nasi Partnerzy' : 'Our Partners'}
           </p>
-          <h2 className="text-4xl md:text-5xl font-light text-white">
-            {language === 'pl' ? 'Sponsorzy' : 'Sponsors'}
+          <h2 className="text-4xl md:text-6xl font-bold text-white">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">{language === 'pl' ? 'Sponsorzy' : 'Sponsors'}</span>
           </h2>
         </motion.div>
 
