@@ -69,7 +69,7 @@ export default function MuonInfoSection() {
           <p className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 uppercase tracking-[0.3em] text-xs mb-4 font-bold">
             {t.muonInfo?.sectionTitle || 'Scientific Background'}
           </p>
-          <h2 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
             {t.muonInfo?.heading || 'Understanding Muons'}
           </h2>
           <p className="text-white/70 text-lg max-w-3xl mx-auto">
