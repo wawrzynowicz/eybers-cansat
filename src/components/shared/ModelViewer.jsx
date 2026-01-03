@@ -17,20 +17,15 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
 
     // Camera setup
     const camera = new THREE.PerspectiveCamera(
-      50,
+      75,
       mountRef.current.clientWidth / mountRef.current.clientHeight,
       0.1,
       1000
     );
-    camera.position.set(3, 1.5, 0);
+    camera.position.set(5, 2, 0);
 
-    // Renderer setup - high quality settings
-    const renderer = new THREE.WebGLRenderer({ 
-      antialias: true, 
-      alpha: true,
-      powerPreference: "high-performance"
-    });
-    renderer.setPixelRatio(window.devicePixelRatio);
+    // Renderer setup
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
     mountRef.current.appendChild(renderer.domElement);
 
@@ -49,21 +44,17 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
     };
     controls.addEventListener('start', handleInteraction);
 
-    // Lighting - enhanced for better detail visibility
-    const ambientLight = new THREE.AmbientLight(0xffffff, 2);
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
     scene.add(ambientLight);
 
-    const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1.5);
+    const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight1.position.set(5, 5, 5);
     scene.add(directionalLight1);
 
-    const directionalLight2 = new THREE.DirectionalLight(0xffffff, 1);
+    const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.5);
     directionalLight2.position.set(-5, -5, -5);
     scene.add(directionalLight2);
-
-    const directionalLight3 = new THREE.DirectionalLight(0xffffff, 0.8);
-    directionalLight3.position.set(0, -5, 0);
-    scene.add(directionalLight3);
 
     // Load Model
     const loader = new GLTFLoader();
@@ -85,9 +76,9 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
           model.position.y = -center.y;
           model.position.z = -center.z;
           
-          // Scale to fit camera view - larger for more detail
+          // Scale to fit camera view
           const maxDim = Math.max(size.x, size.y, size.z);
-          const scale = 6 / maxDim;
+          const scale = 5 / maxDim;
           model.scale.setScalar(scale);
           
           scene.add(model);
