@@ -42,9 +42,9 @@ export default function MissionSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">{t.aboutUs.sectionTitle}</p>
-          <h2 className="text-4xl md:text-5xl font-light text-white">
-            {t.aboutUs.heading}
+          <p className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 uppercase tracking-[0.3em] text-xs mb-4 font-bold">{t.aboutUs.sectionTitle}</p>
+          <h2 className="text-4xl md:text-6xl font-bold text-white">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">{t.aboutUs.heading}</span>
           </h2>
         </motion.div>
 

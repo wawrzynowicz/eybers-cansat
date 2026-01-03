@@ -55,11 +55,11 @@ export default function MissionsSection() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
+          <p className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 uppercase tracking-[0.3em] text-xs mb-4 font-bold">
             {t.missions?.sectionTitle || 'About the Project'}
           </p>
-          <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
-            {t.missions?.heading || 'Our Missions'}
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">{t.missions?.heading || 'Our Missions'}</span>
               </h2>
               </div>
 

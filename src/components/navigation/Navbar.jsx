@@ -52,7 +52,7 @@ export default function Navbar() {
                 />
                 <div className="absolute inset-0 rounded-full bg-white/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 tracking-wide">EYBERS</span>
+              <span className="text-xl font-bold text-white tracking-wide">EYBERS</span>
             </a>
 
             {/* Desktop Navigation */}

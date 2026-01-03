@@ -102,11 +102,11 @@ export default function SocialMediaSection() {
       <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-              <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
+              <p className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 uppercase tracking-[0.3em] text-xs mb-4 font-bold">
                 {isPolish ? 'Bądź na Bieżąco' : 'Stay Connected'}
               </p>
-              <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
-                {isPolish ? 'Nasze Ostatnie' : 'Latest From'} <span className="font-normal">Social Media</span>
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                {isPolish ? 'Nasze Ostatnie' : 'Latest From'} <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">Social Media</span>
               </h2>
               <p className="text-white/70 text-lg max-w-3xl mx-auto">
                 {isPolish 
