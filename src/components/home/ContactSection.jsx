@@ -66,7 +66,7 @@ export default function ContactSection() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <div className="border border-purple-500/20 bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 md:p-10 hover:border-purple-400/60 hover:shadow-[0_0_40px_rgba(168,85,247,0.3)] transition-all duration-500">
+            <div className="border border-white/10 bg-white/[0.03] p-8 md:p-10 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500">
               {submitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -122,7 +122,7 @@ export default function ContactSection() {
                   <Button
                     type="submit"
                     disabled={mutation.isPending}
-                    className="w-full h-12 bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 rounded-none font-bold tracking-wide shadow-lg shadow-purple-500/50"
+                    className="w-full h-12 bg-white/10 text-white hover:bg-white/15 rounded-none font-bold tracking-wide border border-white/20"
                   >
                     {mutation.isPending ? (
                       <Loader2 className="w-4 h-4 animate-spin" />
@@ -146,8 +146,8 @@ export default function ContactSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-8"
           >
-            <div className="border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 p-8 hover:border-cyan-400/60 hover:shadow-[0_0_40px_rgba(34,211,238,0.3)] transition-all duration-500">
-              <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 text-lg mb-4 font-bold">{t.contact.email}</h3>
+            <div className="border border-white/10 bg-white/[0.03] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500">
+              <h3 className="text-white text-lg mb-4 font-bold">{t.contact.email}</h3>
               <a 
                 href="mailto:eybers.cansat@gmail.com" 
                 className="flex items-center gap-2 text-white/80 hover:text-white transition-colors group"
@@ -158,8 +158,8 @@ export default function ContactSection() {
               </a>
             </div>
 
-            <div className="border border-green-500/20 bg-gradient-to-br from-green-500/10 to-emerald-500/10 p-8 hover:border-green-400/60 hover:shadow-[0_0_40px_rgba(34,197,94,0.3)] transition-all duration-500">
-              <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400 text-lg mb-4 font-bold">{t.contact.connect}</h3>
+            <div className="border border-white/10 bg-white/[0.03] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500">
+              <h3 className="text-white text-lg mb-4 font-bold">{t.contact.connect}</h3>
               <div className="flex gap-4">
                 {[
                   { icon: Facebook, href: 'https://www.facebook.com/eybers.cansat/', label: 'Facebook', color: 'from-blue-400 to-blue-600' },
@@ -171,7 +171,7 @@ export default function ContactSection() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-12 h-12 border border-white/20 flex items-center justify-center text-white hover:scale-110 bg-gradient-to-br ${social.color} shadow-lg transition-all`}
+                    className="w-12 h-12 border border-white/20 flex items-center justify-center text-white hover:scale-110 hover:bg-white/[0.05] transition-all"
                   >
                     <social.icon className="w-5 h-5" />
                   </a>
@@ -179,8 +179,8 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="border border-orange-500/20 bg-gradient-to-br from-orange-500/10 to-yellow-500/10 p-8 hover:border-orange-400/60 hover:shadow-[0_0_40px_rgba(249,115,22,0.3)] transition-all duration-500">
-              <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400 text-lg mb-3 font-bold">{t.contact.sponsorTitle}</h3>
+            <div className="border border-white/10 bg-white/[0.03] p-8 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500">
+              <h3 className="text-white text-lg mb-3 font-bold">{t.contact.sponsorTitle}</h3>
               <p className="text-white/80 text-sm leading-relaxed text-justify">
                 {t.contact.sponsorMessage}
               </p>
