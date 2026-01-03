@@ -22,25 +22,25 @@ export default function ProjectDescription() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Technical specs */}
             <div>
-              <h3 className="text-2xl font-light text-white mb-10">{t.projectDesc.specs.title}</h3>
+              <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 mb-10">{t.projectDesc.specs.title}</h3>
               <div className="grid grid-cols-2 gap-8">
               {[
-                t.projectDesc.specs.items.dimensions,
-                t.projectDesc.specs.items.mass,
-                t.projectDesc.specs.items.power,
-                t.projectDesc.specs.items.comms
+                { ...t.projectDesc.specs.items.dimensions, color: 'from-cyan-400 to-blue-400' },
+                { ...t.projectDesc.specs.items.mass, color: 'from-purple-400 to-pink-400' },
+                { ...t.projectDesc.specs.items.power, color: 'from-orange-400 to-yellow-400' },
+                { ...t.projectDesc.specs.items.comms, color: 'from-green-400 to-emerald-400' }
               ].map((stat, index) => (
                 <div
                   key={stat.label}
                 >
                   <motion.p 
-                    className="text-3xl md:text-4xl font-light text-white mb-2 whitespace-pre-line"
+                    className={`text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r ${stat.color} mb-2 whitespace-pre-line`}
                     animate={{ opacity: [0.7, 1, 0.7] }}
                     transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
                   >
                     {stat.value}
                   </motion.p>
-                  <p className="text-white/30 text-xs uppercase tracking-wider">{stat.label}</p>
+                  <p className="text-white/50 text-xs uppercase tracking-wider font-semibold">{stat.label}</p>
                   </div>
                   ))}
                   </div>

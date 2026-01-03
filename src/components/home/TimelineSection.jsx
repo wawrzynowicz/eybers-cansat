@@ -116,11 +116,11 @@ export default function TimelineSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-white/30 uppercase tracking-[0.3em] text-xs mb-4">
+          <p className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-yellow-400 to-green-400 uppercase tracking-[0.3em] text-xs mb-4 font-bold">
             {t.timeline?.sectionTitle || 'Our Journey'}
           </p>
-          <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
-            {t.timeline?.heading || 'Project Timeline'}
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400">{t.timeline?.heading || 'Project Timeline'}</span>
           </h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             {t.timeline?.description || 'Follow our progress from concept to launch as we work towards detecting cosmic muons from space.'}
