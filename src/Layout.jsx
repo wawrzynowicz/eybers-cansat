@@ -46,15 +46,30 @@ function LayoutContent({ children }) {
       <StarField />
       <Navbar />
       {/* Mobile notice */}
-      <div className="md:hidden fixed top-20 left-0 right-0 z-50 bg-blue-600/90 backdrop-blur-sm text-white text-center py-2 px-4 text-sm">
-        Best experience on desktop
-      </div>
+      {showMobileNotice && (
+        <div className="md:hidden fixed top-20 left-0 right-0 z-50 bg-blue-600/90 backdrop-blur-sm text-white py-2 px-4 text-sm flex items-center justify-between">
+          <span className="flex-1 text-center">
+            {language === 'pl' ? 'Najlepsze wrażenia na komputerze' : 'Best experience on desktop'}
+          </span>
+          <button onClick={() => setShowMobileNotice(false)} className="ml-2">
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+      )}
       <main className="relative z-10">
         {children}
       </main>
       <Footer />
       </div>
+      );
+      }
+
+      export default function Layout({ children }) {
+      return (
+      <LanguageProvider>
+      <StarFieldProvider>
+      <LayoutContent>{children}</LayoutContent>
       </StarFieldProvider>
       </LanguageProvider>
-  );
-}
+      );
+      }
