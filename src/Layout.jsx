@@ -60,16 +60,16 @@ function LayoutContent({ children }) {
         {children}
       </main>
       <Footer />
-      </div>
-      );
-      }
+    </div>
+  );
+}
 
-      export default function Layout({ children }) {
-      return (
-      <LanguageProvider>
+export default function Layout({ children }) {
+  return (
+    <LanguageProvider>
       <StarFieldProvider>
-      <LayoutContent>{children}</LayoutContent>
+        <LayoutContent>{children}</LayoutContent>
       </StarFieldProvider>
-      </LanguageProvider>
-      );
-      }
+    </LanguageProvider>
+  );
+}
