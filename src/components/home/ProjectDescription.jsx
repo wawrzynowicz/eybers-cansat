@@ -27,8 +27,8 @@ export default function ProjectDescription() {
               {[
                 { ...t.projectDesc.specs.items.dimensions, color: 'from-cyan-400 to-blue-400' },
                 { ...t.projectDesc.specs.items.mass, color: 'from-purple-400 to-pink-400' },
-                { ...t.projectDesc.specs.items.power, color: 'from-orange-400 to-yellow-400' },
-                { ...t.projectDesc.specs.items.comms, color: 'from-green-400 to-emerald-400' }
+                { ...t.projectDesc.specs.items.power, color: 'from-cyan-400 to-blue-400' },
+                { ...t.projectDesc.specs.items.comms, color: 'from-purple-400 to-pink-400' }
               ].map((stat, index) => (
                 <div
                   key={stat.label}
