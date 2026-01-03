@@ -43,6 +43,10 @@ export default function Layout({ children }) {
       `}</style>
       <StarField />
       <Navbar />
+      {/* Mobile notice */}
+      <div className="md:hidden fixed top-20 left-0 right-0 z-50 bg-blue-600/90 backdrop-blur-sm text-white text-center py-2 px-4 text-sm">
+        Best experience on desktop
+      </div>
       <main className="relative z-10">
         {children}
       </main>
