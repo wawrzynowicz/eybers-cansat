@@ -1,21 +1,21 @@
 import Home from './pages/Home';
-import ameliaMroz from './pages/amelia-mroz';
 import erykFrackowiak from './pages/eryk-frackowiak';
-import lukaFrench from './pages/luka-french';
+import piotrSulikowski from './pages/piotr-sulikowski';
 import maciejWawrzynowicz from './pages/maciej-wawrzynowicz';
 import piotrSokolski from './pages/piotr-sokolski';
-import piotrSulikowski from './pages/piotr-sulikowski';
+import ameliaMroz from './pages/amelia-mroz';
+import lukaFrench from './pages/luka-french';
 import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
     "Home": Home,
-    "amelia-mroz": ameliaMroz,
     "eryk-frackowiak": erykFrackowiak,
-    "luka-french": lukaFrench,
+    "piotr-sulikowski": piotrSulikowski,
     "maciej-wawrzynowicz": maciejWawrzynowicz,
     "piotr-sokolski": piotrSokolski,
-    "piotr-sulikowski": piotrSulikowski,
+    "amelia-mroz": ameliaMroz,
+    "luka-french": lukaFrench,
 }
 
 export const pagesConfig = {

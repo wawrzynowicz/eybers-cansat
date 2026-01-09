@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from '@/components/navigation/Navbar';
 import Footer from '@/components/navigation/Footer';
 import StarField from '@/components/shared/StarField';
-import { LanguageProvider, useLanguage } from '@/components/shared/LanguageContext';
+import { LanguageProvider } from '@/components/shared/LanguageContext';
 import { StarFieldProvider } from '@/components/shared/StarFieldContext';
-import { X } from 'lucide-react';
 
-function LayoutContent({ children }) {
-  const [showMobileNotice, setShowMobileNotice] = useState(true);
-  const { language } = useLanguage();
-
+export default function Layout({ children }) {
   return (
+    <LanguageProvider>
+    <StarFieldProvider>
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
@@ -45,31 +43,12 @@ function LayoutContent({ children }) {
       `}</style>
       <StarField />
       <Navbar />
-      {/* Mobile notice */}
-      {showMobileNotice && (
-        <div className="md:hidden fixed top-20 left-0 right-0 z-50 bg-blue-600/90 backdrop-blur-sm text-white py-2 px-4 text-sm flex items-center justify-between">
-          <span className="flex-1 text-center">
-            {language === 'pl' ? 'Najlepsze wrażenia na komputerze' : 'Best experience on desktop'}
-          </span>
-          <button onClick={() => setShowMobileNotice(false)} className="ml-2">
-            <X className="w-4 h-4" />
-          </button>
-        </div>
-      )}
       <main className="relative z-10">
         {children}
       </main>
       <Footer />
-    </div>
-  );
-}
-
-export default function Layout({ children }) {
-  return (
-    <LanguageProvider>
-      <StarFieldProvider>
-        <LayoutContent>{children}</LayoutContent>
+      </div>
       </StarFieldProvider>
-    </LanguageProvider>
+      </LanguageProvider>
   );
 }
