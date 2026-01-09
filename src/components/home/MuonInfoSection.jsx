@@ -70,8 +70,7 @@ export default function MuonInfoSection() {
             {t.muonInfo?.sectionTitle || 'Scientific Background'}
           </p>
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="text-white">Understanding </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400">Muons</span>
+            <span className="text-white">{t.muonInfo?.heading || 'Understanding Muons'}</span>
           </h2>
           <p className="text-white/70 text-lg max-w-3xl mx-auto">
             {t.muonInfo?.intro || 'Learn about cosmic rays, muon formation, and why these particles are essential to our research.'}
