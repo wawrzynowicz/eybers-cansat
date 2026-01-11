@@ -36,7 +36,14 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
     controls.enableZoom = false;
     controls.enablePan = false;
     controls.autoRotate = true;
-    controls.autoRotateSpeed = 1;
+    controls.autoRotateSpeed = 0.5;
+
+    // Detect user interaction
+    const handleInteraction = () => {
+      setHasInteracted(true);
+      controls.autoRotate = false;
+    };
+    controls.addEventListener('start', handleInteraction);
 
     // Detect user interaction
     const handleInteraction = () => {
@@ -98,15 +105,9 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
     const animate = () => {
       animationId = requestAnimationFrame(animate);
       
-      // Rotate model on all axes when not being controlled by user
-      if (model && !controls.enabled) {
-        model.rotation.x += 0.005;
-        model.rotation.y += 0.005;
-        model.rotation.z += 0.005;
-      } else if (model && controls.autoRotate) {
-        model.rotation.x += 0.003;
-        model.rotation.y += 0.005;
-        model.rotation.z += 0.002;
+      // Rotate model on Y axis only when autorotate is enabled
+      if (model && controls.autoRotate && !hasInteracted) {
+        model.rotation.y += 0.003;
       }
       
       controls.update();
