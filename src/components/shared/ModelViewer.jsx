@@ -22,7 +22,10 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
       0.1,
       1000
     );
-    camera.position.set(5, 2, 0);
+    
+    // Adjust camera position based on screen size
+    const isMobile = window.innerWidth < 768;
+    camera.position.set(isMobile ? 7 : 5, isMobile ? 3 : 2, 0);
 
     // Renderer setup
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -79,7 +82,8 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
           
           // Scale to fit camera view
           const maxDim = Math.max(size.x, size.y, size.z);
-          const scale = 5 / maxDim;
+          const isMobile = window.innerWidth < 768;
+          const scale = (isMobile ? 3.5 : 5) / maxDim;
           model.scale.setScalar(scale);
           
           scene.add(model);
