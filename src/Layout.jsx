@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '@/components/navigation/Navbar';
 import Footer from '@/components/navigation/Footer';
 import StarField from '@/components/shared/StarField';
 import { LanguageProvider, useLanguage } from '@/components/shared/LanguageContext';
 import { StarFieldProvider } from '@/components/shared/StarFieldContext';
-import { Monitor } from 'lucide-react';
+import { Monitor, X } from 'lucide-react';
 
 function LayoutContent({ children }) {
   const { t } = useLanguage();
+  const [showMobileNotice, setShowMobileNotice] = useState(true);
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
@@ -43,15 +44,25 @@ function LayoutContent({ children }) {
           }
       `}</style>
       <StarField />
+      <Navbar />
 
       {/* Mobile Desktop Notice */}
-      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 text-center text-xs flex items-center justify-center gap-2">
-        <Monitor className="w-4 h-4" />
-        <span>{t.mobile.desktopMessage}</span>
-      </div>
+      {showMobileNotice && (
+        <div className="md:hidden fixed top-20 left-4 right-4 z-50 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-3 rounded-lg shadow-lg text-xs flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <Monitor className="w-4 h-4" />
+            <span>{t.mobile.desktopMessage}</span>
+          </div>
+          <button 
+            onClick={() => setShowMobileNotice(false)}
+            className="flex-shrink-0 hover:bg-white/20 rounded p-1 transition-colors"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+      )}
 
-      <Navbar />
-      <main className="relative z-10 md:mt-0 mt-10">
+      <main className="relative z-10">
         {children}
       </main>
       <Footer />
