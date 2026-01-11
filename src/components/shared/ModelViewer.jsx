@@ -45,12 +45,6 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
     };
     controls.addEventListener('start', handleInteraction);
 
-    // Detect user interaction
-    const handleInteraction = () => {
-      setHasInteracted(true);
-    };
-    controls.addEventListener('start', handleInteraction);
-
     // Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
     scene.add(ambientLight);
