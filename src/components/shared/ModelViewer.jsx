@@ -22,10 +22,7 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
       0.1,
       1000
     );
-    
-    // Adjust camera position based on screen size
-    const isMobile = window.innerWidth < 768;
-    camera.position.set(isMobile ? 7 : 5, isMobile ? 3 : 2, 0);
+    camera.position.set(5, 2, 0);
 
     // Renderer setup
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -39,15 +36,11 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
     controls.enableZoom = false;
     controls.enablePan = false;
     controls.autoRotate = true;
-    controls.autoRotateSpeed = 0.5;
-    // Allow full rotation in all directions after user interaction
-    controls.minPolarAngle = 0;
-    controls.maxPolarAngle = Math.PI;
+    controls.autoRotateSpeed = 1;
 
     // Detect user interaction
     const handleInteraction = () => {
       setHasInteracted(true);
-      controls.autoRotate = false;
     };
     controls.addEventListener('start', handleInteraction);
 
@@ -85,8 +78,7 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
           
           // Scale to fit camera view
           const maxDim = Math.max(size.x, size.y, size.z);
-          const isMobile = window.innerWidth < 768;
-          const scale = (isMobile ? 3.5 : 5) / maxDim;
+          const scale = 5 / maxDim;
           model.scale.setScalar(scale);
           
           scene.add(model);
@@ -106,11 +98,15 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
     const animate = () => {
       animationId = requestAnimationFrame(animate);
       
-      // Rotate model on multiple axes when autorotate is enabled
-      if (model && controls.autoRotate && !hasInteracted) {
-        model.rotation.x += 0.002;
-        model.rotation.y += 0.003;
-        model.rotation.z += 0.001;
+      // Rotate model on all axes when not being controlled by user
+      if (model && !controls.enabled) {
+        model.rotation.x += 0.005;
+        model.rotation.y += 0.005;
+        model.rotation.z += 0.005;
+      } else if (model && controls.autoRotate) {
+        model.rotation.x += 0.003;
+        model.rotation.y += 0.005;
+        model.rotation.z += 0.002;
       }
       
       controls.update();
@@ -141,7 +137,7 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
       }
       renderer.dispose();
     };
-  }, [modelPath, hasInteracted]);
+  }, [modelPath]);
 
   return (
     <div className="relative" style={{ width, height }}>
