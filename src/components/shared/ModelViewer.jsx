@@ -40,6 +40,9 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
     controls.enablePan = false;
     controls.autoRotate = true;
     controls.autoRotateSpeed = 0.5;
+    // Allow full rotation in all directions after user interaction
+    controls.minPolarAngle = 0;
+    controls.maxPolarAngle = Math.PI;
 
     // Detect user interaction
     const handleInteraction = () => {
