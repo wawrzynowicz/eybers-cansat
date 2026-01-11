@@ -106,9 +106,11 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
     const animate = () => {
       animationId = requestAnimationFrame(animate);
       
-      // Rotate model on Y axis only when autorotate is enabled
+      // Rotate model on multiple axes when autorotate is enabled
       if (model && controls.autoRotate && !hasInteracted) {
+        model.rotation.x += 0.002;
         model.rotation.y += 0.003;
+        model.rotation.z += 0.001;
       }
       
       controls.update();
