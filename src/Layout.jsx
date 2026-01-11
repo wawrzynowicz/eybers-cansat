@@ -2,13 +2,14 @@ import React from 'react';
 import Navbar from '@/components/navigation/Navbar';
 import Footer from '@/components/navigation/Footer';
 import StarField from '@/components/shared/StarField';
-import { LanguageProvider } from '@/components/shared/LanguageContext';
+import { LanguageProvider, useLanguage } from '@/components/shared/LanguageContext';
 import { StarFieldProvider } from '@/components/shared/StarFieldContext';
+import { Monitor } from 'lucide-react';
 
-export default function Layout({ children }) {
+function LayoutContent({ children }) {
+  const { t } = useLanguage();
+  
   return (
-    <LanguageProvider>
-    <StarFieldProvider>
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
@@ -42,13 +43,28 @@ export default function Layout({ children }) {
           }
       `}</style>
       <StarField />
+
+      {/* Mobile Desktop Notice */}
+      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 text-center text-xs flex items-center justify-center gap-2">
+        <Monitor className="w-4 h-4" />
+        <span>{t.mobile.desktopMessage}</span>
+      </div>
+
       <Navbar />
-      <main className="relative z-10">
+      <main className="relative z-10 md:mt-0 mt-10">
         {children}
       </main>
       <Footer />
       </div>
+      );
+      }
+
+      export default function Layout({ children }) {
+      return (
+      <LanguageProvider>
+      <StarFieldProvider>
+      <LayoutContent>{children}</LayoutContent>
       </StarFieldProvider>
       </LanguageProvider>
-  );
-}
+      );
+      }

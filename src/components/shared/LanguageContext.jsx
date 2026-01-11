@@ -127,6 +127,9 @@ const translations = {
       rights: "All rights reserved.",
       navigation: "Navigation"
     },
+    mobile: {
+      desktopMessage: "Best experience on desktop"
+    },
     timeline: {
       sectionTitle: "Our Journey",
       heading: "Project Timeline",
@@ -377,6 +380,9 @@ const translations = {
       tagline: "Odkrywając kosmos, jeden mion na raz.",
       rights: "Wszelkie prawa zastrzeżone.",
       navigation: "Nawigacja"
+    },
+    mobile: {
+      desktopMessage: "Najlepsze wrażenia na komputerze"
     },
     timeline: {
       sectionTitle: "Nasza Podróż",
