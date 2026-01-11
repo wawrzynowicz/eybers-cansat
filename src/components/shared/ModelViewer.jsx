@@ -36,7 +36,14 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
     controls.enableZoom = false;
     controls.enablePan = false;
     controls.autoRotate = true;
-    controls.autoRotateSpeed = 1;
+    controls.autoRotateSpeed = 0.5;
+
+    // Detect user interaction
+    const handleInteraction = () => {
+      setHasInteracted(true);
+      controls.autoRotate = false;
+    };
+    controls.addEventListener('start', handleInteraction);
 
     // Detect user interaction
     const handleInteraction = () => {
@@ -99,14 +106,10 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
       animationId = requestAnimationFrame(animate);
       
       // Rotate model on all axes when not being controlled by user
-      if (model && !controls.enabled) {
-        model.rotation.x += 0.005;
-        model.rotation.y += 0.005;
-        model.rotation.z += 0.005;
-      } else if (model && controls.autoRotate) {
-        model.rotation.x += 0.003;
-        model.rotation.y += 0.005;
-        model.rotation.z += 0.002;
+      if (model && controls.autoRotate && !hasInteracted) {
+        model.rotation.x += 0.002;
+        model.rotation.y += 0.003;
+        model.rotation.z += 0.0015;
       }
       
       controls.update();
@@ -137,7 +140,7 @@ export default function ModelViewer({ modelPath, width = '100%', height = '500px
       }
       renderer.dispose();
     };
-  }, [modelPath]);
+  }, [modelPath, hasInteracted]);
 
   return (
     <div className="relative" style={{ width, height }}>
