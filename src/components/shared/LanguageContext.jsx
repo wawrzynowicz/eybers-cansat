@@ -130,6 +130,10 @@ const translations = {
     mobile: {
       desktopMessage: "Best experience on desktop"
     },
+    mediaPatronage: {
+      sectionTitle: "Media Partners",
+      heading: "Media Patronage"
+    },
     timeline: {
       sectionTitle: "Our Journey",
       heading: "Project Timeline",
@@ -383,6 +387,10 @@ const translations = {
     },
     mobile: {
       desktopMessage: "Najlepsze wrażenia na komputerze"
+    },
+    mediaPatronage: {
+      sectionTitle: "Partnerzy Medialni",
+      heading: "Patronat Medialny"
     },
     timeline: {
       sectionTitle: "Nasza Podróż",

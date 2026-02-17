@@ -8,6 +8,7 @@ import TimelineSection from '@/components/home/TimelineSection';
 import TeamSection from '@/components/home/TeamSection';
 import SocialMediaSection from '@/components/home/SocialMediaSection';
 import SponsorsSection from '@/components/home/SponsorsSection';
+import MediaPatronageSection from '@/components/home/MediaPatronageSection';
 import ContactSection from '@/components/home/ContactSection';
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
       <TeamSection />
       <SocialMediaSection />
       <SponsorsSection />
+      <MediaPatronageSection />
       <ContactSection />
     </div>
   );
