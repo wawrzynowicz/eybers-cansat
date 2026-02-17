@@ -47,11 +47,12 @@ export default function MediaPatronageSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="bg-white rounded-xl px-8 py-6 flex items-center justify-center"
               >
                 <img
                   src={partner.logo_url}
                   alt={`${partner.name} logo`}
-                  className="h-16 md:h-20 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+                  className="h-16 md:h-20 w-auto object-contain"
                 />
               </motion.a>
             ))}
