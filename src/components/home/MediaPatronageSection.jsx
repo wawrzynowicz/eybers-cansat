@@ -36,31 +36,24 @@ export default function MediaPatronageSection() {
             <Loader2 className="w-6 h-6 text-white/30 animate-spin" />
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          <div className="flex flex-wrap justify-center items-center gap-16">
             {mediaPartners.map((partner, index) => (
-            <motion.a
-              key={partner.name}
-              href={partner.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="group"
-            >
-              <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-500 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="relative flex items-center justify-center h-32">
-                  <img 
-                    src={partner.logo_url} 
-                    alt={`${partner.name} logo`}
-                    className="max-h-full max-w-full object-contain filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                  />
-                </div>
-              </div>
-            </motion.a>
+              <motion.a
+                key={partner.name}
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+              >
+                <img
+                  src={partner.logo_url}
+                  alt={`${partner.name} logo`}
+                  className="h-16 md:h-20 w-auto object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-300"
+                />
+              </motion.a>
             ))}
           </div>
         )}
