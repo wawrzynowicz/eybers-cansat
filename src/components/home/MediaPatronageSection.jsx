@@ -1,22 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/components/shared/LanguageContext';
+import { base44 } from '@/api/base44Client';
+import { useQuery } from '@tanstack/react-query';
+import { Loader2 } from 'lucide-react';
 
 export default function MediaPatronageSection() {
   const { t } = useLanguage();
 
-  const mediaPartners = [
-    {
-      name: "Głos Wielkopolski",
-      url: "https://gloswielkopolski.pl/",
-      logo: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6931f02077d600a24db95382/2c4ed96ab_CMYK-Glos-Wielkopolski.pdf"
-    },
-    {
-      name: "Nasze Miasto Poznań",
-      url: "https://poznan.naszemiasto.pl/",
-      logo: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6931f02077d600a24db95382/fb8e75677_naszemiasto.pdf"
-    }
-  ];
+  const { data: mediaPartners = [], isLoading } = useQuery({
+    queryKey: ['mediaPartners'],
+    queryFn: () => base44.entities.MediaPartner.list('order'),
+  });
 
   return (
     <section className="relative py-20 px-4 overflow-hidden">
@@ -36,8 +31,13 @@ export default function MediaPatronageSection() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-          {mediaPartners.map((partner, index) => (
+        {isLoading ? (
+          <div className="flex justify-center py-20">
+            <Loader2 className="w-6 h-6 text-white/30 animate-spin" />
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            {mediaPartners.map((partner, index) => (
             <motion.a
               key={partner.name}
               href={partner.url}
@@ -54,15 +54,16 @@ export default function MediaPatronageSection() {
                 
                 <div className="relative flex items-center justify-center h-32">
                   <img 
-                    src={partner.logo} 
+                    src={partner.logo_url} 
                     alt={`${partner.name} logo`}
                     className="max-h-full max-w-full object-contain filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                   />
                 </div>
               </div>
             </motion.a>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
