@@ -6,7 +6,6 @@ import MissionsSection from '@/components/home/MissionsSection';
 import MuonInfoSection from '@/components/home/MuonInfoSection';
 import TimelineSection from '@/components/home/TimelineSection';
 import TeamSection from '@/components/home/TeamSection';
-import SocialMediaSection from '@/components/home/SocialMediaSection';
 import SponsorsSection from '@/components/home/SponsorsSection';
 import MediaPatronageSection from '@/components/home/MediaPatronageSection';
 import ContactSection from '@/components/home/ContactSection';
