@@ -20,7 +20,6 @@ export default function Home() {
       <MuonInfoSection />
       <TimelineSection />
       <TeamSection />
-      <SocialMediaSection />
       <SponsorsSection />
       <MediaPatronageSection />
       <ContactSection />
