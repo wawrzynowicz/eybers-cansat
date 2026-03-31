@@ -23,7 +23,7 @@ export default function TeamSupervisorCard({ supervisor }) {
   const { language } = useLanguage();
 
   const description = language === 'pl' ? descriptionPL : descriptionEN;
-  const thankYouTitle = language === 'pl' ? 'Wielkie podziękowania' : 'A huge thank you';
+  const thankYouTitle = language === 'pl' ? 'Szczególne podziękowania' : 'A special thank you';
 
   return (
     <motion.div
@@ -55,14 +55,7 @@ export default function TeamSupervisorCard({ supervisor }) {
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
-            {/* PUT logo — bottom right */}
-            <div className="absolute bottom-3 right-3 w-14 h-14 rounded-full overflow-hidden shadow-lg">
-              <img
-                src="https://media.base44.com/images/public/6931f02077d600a24db95382/9dc772ebd_putlogozw_Nero_AI_Background_Remover_transparent.png"
-                alt="Politechnika Poznańska"
-                className="w-full h-full object-contain"
-              />
-            </div>
+
           </div>
 
           {/* Name below photo */}
@@ -74,12 +67,21 @@ export default function TeamSupervisorCard({ supervisor }) {
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
             {thankYouTitle}
           </h3>
-          <div className="space-y-4">
-            {description.split('\n\n').map((para, i) => (
-              <p key={i} className="text-white/70 text-sm leading-relaxed">
-                {para}
-              </p>
-            ))}
+          <div className="relative">
+            {/* PUT logo floated top-right so text wraps around it */}
+            <img
+              src="https://media.base44.com/images/public/6931f02077d600a24db95382/9dc772ebd_putlogozw_Nero_AI_Background_Remover_transparent.png"
+              alt="Politechnika Poznańska"
+              className="float-right ml-6 mb-4 w-28 h-28 object-contain"
+            />
+            <div className="space-y-4">
+              {description.split('\n\n').map((para, i) => (
+                <p key={i} className="text-white/70 text-sm leading-relaxed">
+                  {para}
+                </p>
+              ))}
+            </div>
+            <div className="clear-both" />
           </div>
         </div>
       </div>
