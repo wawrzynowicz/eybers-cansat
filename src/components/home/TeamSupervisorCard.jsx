@@ -55,8 +55,8 @@ export default function TeamSupervisorCard({ supervisor }) {
       >
         {/* Photos row */}
         <div className="flex gap-4">
-          <PhotoSlot url={supervisor.image_url_1} subtitle={supervisor.image_subtitle_1} />
-          <PhotoSlot url={supervisor.image_url_2} subtitle={supervisor.image_subtitle_2} />
+          <PhotoSlot url="https://media.base44.com/images/public/6931f02077d600a24db95382/b794813fe_5d54f6f4-77f5-4cfc-a019-6f58bf90d64b.jpeg" subtitle={supervisor.image_subtitle_1} />
+          <PhotoSlot url="https://media.base44.com/images/public/6931f02077d600a24db95382/a9e622626_image.png" subtitle={supervisor.image_subtitle_2} />
         </div>
 
         {/* Title */}
