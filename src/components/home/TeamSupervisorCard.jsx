@@ -11,7 +11,7 @@ export default function TeamSupervisorCard({ supervisor }) {
   const { language } = useLanguage();
 
   const description = language === 'pl' ? descriptionPL : descriptionEN;
-  const thankYouTitle = 'Acknowledgements';
+  const thankYouTitle = language === 'pl' ? 'Podziękowania' : 'Acknowledgements';
 
   return (
     <motion.div
@@ -23,7 +23,7 @@ export default function TeamSupervisorCard({ supervisor }) {
     >
       {/* Section label */}
       <p className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-cyan-400 to-blue-400 uppercase tracking-[0.3em] text-xs mb-10 font-bold text-center">
-        Team Supervisor
+        {language === 'pl' ? 'Opiekun drużyny' : 'Team Supervisor'}
       </p>
 
       <div className="flex flex-col md:flex-row gap-10 items-start max-w-4xl mx-auto">
@@ -44,7 +44,7 @@ export default function TeamSupervisorCard({ supervisor }) {
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
           </div>
           {/* Name below photo */}
-          <p className="text-white text-center mt-3 font-medium">dr inż. Dariusz Janiszewski</p>
+          <p className="text-white text-center mt-3 font-medium text-xl">dr inż. Dariusz Janiszewski</p>
         </div>
 
         {/* Right: text — same height as photo via aspect-[3/4] of w-64 = ~256*4/3 ≈ 341px */}
