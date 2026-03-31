@@ -11,6 +11,32 @@ const acronym = [
   { letter: 'S', word: 'econdaries' }
 ];
 
+function AcronymLetter({ item, index, layoutProgress, wordProgress }) {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const spacing = isMobile ? 50 : 90;
+  const offset = isMobile ? (index * spacing - 125) : (index * 90 - 225);
+  const xOffset = useTransform(layoutProgress, [0, 1], [offset, 0]);
+  const yOffset = useTransform(layoutProgress, [0, 1], [0, index * 90 - 225]);
+  const wordOpacity = useTransform(wordProgress, [0, 0.2, 1], [0, 0, 1]);
+  const wordWidth = useTransform(wordProgress, [0, 1], ['0%', '100%']);
+  const centerOffset = useTransform(wordProgress, [0, 1], [0, -100]);
+  const x = useTransform(() => xOffset.get() + centerOffset.get());
+
+  return (
+    <motion.div
+      className="absolute flex items-center whitespace-nowrap"
+      style={{ x, y: yOffset, left: '50%', top: '50%' }}
+    >
+      <motion.span className="text-6xl md:text-8xl font-extralight text-white">
+        {item.letter}
+      </motion.span>
+      <motion.div className="overflow-hidden" style={{ opacity: wordOpacity, width: wordWidth }}>
+        <span className="text-3xl md:text-5xl font-light text-white/90 ml-1">{item.word}</span>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 export default function HeroSection() {
   const { t } = useLanguage();
   const { scrollY } = useScroll();
@@ -107,73 +133,9 @@ export default function HeroSection() {
         {/* Sticky container for EYBERS animation */}
         <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
           <div className="relative w-full h-full flex items-center justify-center">
-            {acronym.map((item, index) => {
-              // Calculate position for horizontal to vertical transition
-              // Use smaller spacing on mobile (50px) vs desktop (90px)
-              const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-              const spacing = isMobile ? 50 : 90;
-              const offset = isMobile ? (index * spacing - 125) : (index * 90 - 225);
-              const xOffset = useTransform(
-                layoutProgress,
-                [0, 1],
-                [offset, 0]
-              );
-              const yOffset = useTransform(
-                layoutProgress,
-                [0, 1],
-                [0, index * 90 - 225]
-              );
-
-              // Word opacity and width
-              const wordOpacity = useTransform(
-                wordProgress,
-                [0, 0.2, 1],
-                [0, 0, 1]
-              );
-
-              const wordWidth = useTransform(
-                wordProgress,
-                [0, 1],
-                ['0%', '100%']
-              );
-
-              // Calculate horizontal offset to keep text centered as word reveals
-              const centerOffset = useTransform(
-                wordProgress,
-                [0, 1],
-                [0, -100]
-              );
-
-              return (
-                <motion.div
-                  key={index}
-                  className="absolute flex items-center whitespace-nowrap"
-                  style={{
-                    x: useTransform(() => xOffset.get() + centerOffset.get()),
-                    y: yOffset,
-                    left: '50%',
-                    top: '50%'
-                  }}
-                >
-                  <motion.span
-                    className="text-6xl md:text-8xl font-extralight text-white"
-                  >
-                    {item.letter}
-                  </motion.span>
-                  <motion.div
-                    className="overflow-hidden"
-                    style={{ 
-                      opacity: wordOpacity,
-                      width: wordWidth
-                    }}
-                  >
-                    <span className="text-3xl md:text-5xl font-light text-white/90 ml-1">
-                      {item.word}
-                    </span>
-                  </motion.div>
-                </motion.div>
-              );
-            })}
+            {acronym.map((item, index) => (
+              <AcronymLetter key={index} item={item} index={index} layoutProgress={layoutProgress} wordProgress={wordProgress} />
+            ))}
           </div>
         </div>
       </section>

@@ -96,7 +96,14 @@ export default function TeamSection() {
     queryFn: () => base44.entities.TeamSupervisor.list(),
   });
 
-  const supervisor = supervisors[0] || null;
+  const supervisor = supervisors[0] || {
+    title: 'Team Supervisor',
+    image_url_1: null,
+    image_subtitle_1: 'Photo 1',
+    image_url_2: null,
+    image_subtitle_2: 'Photo 2',
+    description: 'Supervisor description'
+  };
   const displayMembers = members.length > 0 ? members : defaultMembers(language);
 
   return (

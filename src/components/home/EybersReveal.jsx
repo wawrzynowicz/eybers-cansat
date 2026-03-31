@@ -10,6 +10,27 @@ const acronym = [
   { letter: 'S', word: 'econdaries', color: 'text-violet-400' }
 ];
 
+function RevealLetter({ item, index, layoutProgress, wordProgress }) {
+  const xOffset = useTransform(layoutProgress, [0, 1], [index * 80 - 200, 0]);
+  const yOffset = useTransform(layoutProgress, [0, 1], [0, index * 100 - 250]);
+  const wordOpacity = useTransform(wordProgress, [0, 0.3, 1], [0, 0, 1]);
+  const letterScale = useTransform(wordProgress, [0, 1], [1, 0.8]);
+
+  return (
+    <motion.div
+      className="absolute flex items-center"
+      style={{ x: xOffset, y: yOffset, left: '50%', top: '50%' }}
+    >
+      <motion.span className={`text-7xl md:text-8xl font-bold ${item.color}`} style={{ scale: letterScale }}>
+        {item.letter}
+      </motion.span>
+      <motion.span className={`text-4xl md:text-5xl font-light ${item.color} ml-1`} style={{ opacity: wordOpacity }}>
+        {item.word}
+      </motion.span>
+    </motion.div>
+  );
+}
+
 export default function EybersReveal() {
   const { scrollY } = useScroll();
   const [isComplete, setIsComplete] = useState(false);
@@ -34,59 +55,9 @@ export default function EybersReveal() {
     <>
       <div className="h-[100vh] flex items-center justify-center">
         <motion.div className="relative">
-          {acronym.map((item, index) => {
-            // Calculate position for horizontal to vertical transition
-            const xOffset = useTransform(
-              layoutProgress,
-              [0, 1],
-              [index * 80 - 200, 0]
-            );
-            const yOffset = useTransform(
-              layoutProgress,
-              [0, 1],
-              [0, index * 100 - 250]
-            );
-
-            // Word opacity
-            const wordOpacity = useTransform(
-              wordProgress,
-              [0, 0.3, 1],
-              [0, 0, 1]
-            );
-
-            // Letter size during word reveal
-            const letterScale = useTransform(
-              wordProgress,
-              [0, 1],
-              [1, 0.8]
-            );
-
-            return (
-              <motion.div
-                key={index}
-                className="absolute flex items-center"
-                style={{
-                  x: xOffset,
-                  y: yOffset,
-                  left: '50%',
-                  top: '50%'
-                }}
-              >
-                <motion.span
-                  className={`text-7xl md:text-8xl font-bold ${item.color}`}
-                  style={{ scale: letterScale }}
-                >
-                  {item.letter}
-                </motion.span>
-                <motion.span
-                  className={`text-4xl md:text-5xl font-light ${item.color} ml-1`}
-                  style={{ opacity: wordOpacity }}
-                >
-                  {item.word}
-                </motion.span>
-              </motion.div>
-            );
-          })}
+          {acronym.map((item, index) => (
+            <RevealLetter key={index} item={item} index={index} layoutProgress={layoutProgress} wordProgress={wordProgress} />
+          ))}
         </motion.div>
       </div>
 
