@@ -11,7 +11,7 @@ export default function TeamSupervisorCard({ supervisor }) {
   const { language } = useLanguage();
 
   const description = language === 'pl' ? descriptionPL : descriptionEN;
-  const thankYouTitle = 'Acknowledgements';
+  const thankYouTitle = language === 'pl' ? 'Podziękowania' : 'Acknowledgements';
 
   return (
     <motion.div
@@ -22,8 +22,8 @@ export default function TeamSupervisorCard({ supervisor }) {
       className="mt-24"
     >
       {/* Section label */}
-      <p className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-cyan-400 to-blue-400 uppercase tracking-[0.3em] text-xs mb-10 font-bold text-center">
-        Team Supervisor
+      <p className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-cyan-400 to-blue-400 uppercase tracking-[0.3em] text-sm mb-10 font-bold text-center">
+        {language === 'pl' ? 'Opiekun drużyny' : 'Team Supervisor'}
       </p>
 
       <div className="flex flex-col md:flex-row gap-10 items-start max-w-4xl mx-auto">
