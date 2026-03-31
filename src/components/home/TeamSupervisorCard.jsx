@@ -11,30 +11,6 @@ export default function TeamSupervisorCard({ supervisor }) {
     ? supervisor.description_pl
     : supervisor.description;
 
-  const PhotoSlot = ({ url, subtitle }) => (
-    <div className="flex flex-col items-center gap-2 flex-1">
-      <div className="aspect-[3/4] w-full relative overflow-hidden bg-white/[0.02]">
-        {url ? (
-          <motion.img
-            src={url}
-            alt={subtitle || supervisor.title}
-            className="w-full h-full object-cover md:grayscale md:group-hover:grayscale-0 transition-all duration-700"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.7 }}
-          />
-        ) : (
-          <div className="w-full h-full bg-white/[0.02] flex items-center justify-center">
-            <User className="w-12 h-12 text-white/10" />
-          </div>
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-      </div>
-      {subtitle && (
-        <p className="text-white/50 text-xs uppercase tracking-wider text-center">{subtitle}</p>
-      )}
-    </div>
-  );
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -49,14 +25,35 @@ export default function TeamSupervisorCard({ supervisor }) {
       </p>
 
       <div
-        className="group relative max-w-2xl mx-auto cursor-default"
+        className="group relative max-w-xs mx-auto cursor-default"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Photos row */}
-        <div className="flex gap-4">
-          <PhotoSlot url="https://media.base44.com/images/public/6931f02077d600a24db95382/b794813fe_5d54f6f4-77f5-4cfc-a019-6f58bf90d64b.jpeg" subtitle={supervisor.image_subtitle_1} />
-          <PhotoSlot url="https://media.base44.com/images/public/6931f02077d600a24db95382/a9e622626_image.png" subtitle={supervisor.image_subtitle_2} />
+        {/* Main photo */}
+        <div className="relative aspect-[3/4] w-full overflow-hidden rounded-lg">
+          {supervisor.image_url_1 ? (
+            <img
+              src={supervisor.image_url_1}
+              alt={supervisor.title}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="w-full h-full bg-white/[0.02] flex items-center justify-center">
+              <User className="w-12 h-12 text-white/10" />
+            </div>
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+
+          {/* Second photo — top right corner */}
+          {supervisor.image_url_2 && (
+            <div className="absolute top-3 right-3 w-1/3 aspect-square rounded-lg overflow-hidden border-2 border-white/30 shadow-lg">
+              <img
+                src={supervisor.image_url_2}
+                alt={supervisor.image_subtitle_2 || supervisor.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
         </div>
 
         {/* Title */}
