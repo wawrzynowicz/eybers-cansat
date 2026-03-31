@@ -1,0 +1,37 @@
+{
+  "name": "TeamSupervisor",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Supervisor full name / title"
+    },
+    "image_url_1": {
+      "type": "string",
+      "description": "First photo URL"
+    },
+    "image_subtitle_1": {
+      "type": "string",
+      "description": "Subtitle for first photo"
+    },
+    "image_url_2": {
+      "type": "string",
+      "description": "Second photo URL"
+    },
+    "image_subtitle_2": {
+      "type": "string",
+      "description": "Subtitle for second photo"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description shown on hover"
+    },
+    "description_pl": {
+      "type": "string",
+      "description": "Description shown on hover (Polish)"
+    }
+  },
+  "required": [
+    "title"
+  ]
+}

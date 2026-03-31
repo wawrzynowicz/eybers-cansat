@@ -1,4 +1,5 @@
 import React from 'react';
+import TeamSupervisorCard from '@/components/home/TeamSupervisorCard';
 import { base44 } from '@/api/base44Client';
 import { useQuery } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
@@ -90,6 +91,12 @@ export default function TeamSection() {
     queryFn: () => base44.entities.TeamMember.list('order'),
   });
 
+  const { data: supervisors = [] } = useQuery({
+    queryKey: ['teamSupervisor'],
+    queryFn: () => base44.entities.TeamSupervisor.list(),
+  });
+
+  const supervisor = supervisors[0] || null;
   const displayMembers = members.length > 0 ? members : defaultMembers(language);
 
   return (
@@ -128,9 +135,7 @@ export default function TeamSection() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-24 text-center max-w-3xl mx-auto"
         >
-          <div
-            className="w-8 h-px bg-white/20 mx-auto mb-8"
-          />
+          <div className="w-8 h-px bg-white/20 mx-auto mb-8" />
           <blockquote className="text-center">
             <p className="text-2xl md:text-3xl text-white font-light italic mb-3">
               {t.team.quote}
@@ -140,6 +145,9 @@ export default function TeamSection() {
             </p>
           </blockquote>
         </motion.div>
+
+        {/* Team Supervisor */}
+        {supervisor && <TeamSupervisorCard supervisor={supervisor} />}
       </div>
     </section>
   );
