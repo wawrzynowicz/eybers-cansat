@@ -97,12 +97,12 @@ export default function TeamSection() {
   });
 
   const supervisor = supervisors[0] || {
-    title: 'Team Supervisor',
-    image_url_1: null,
-    image_subtitle_1: 'Photo 1',
-    image_url_2: null,
-    image_subtitle_2: 'Photo 2',
-    description: 'Supervisor description'
+    title: 'dr inż. Dariusz Janiszewski',
+    image_url_1: 'https://media.base44.com/images/public/6931f02077d600a24db95382/b794813fe_5d54f6f4-77f5-4cfc-a019-6f58bf90d64b.jpeg',
+    image_subtitle_1: '',
+    image_url_2: 'https://media.base44.com/images/public/6931f02077d600a24db95382/a9e622626_image.png',
+    image_subtitle_2: '',
+    description: ''
   };
   const displayMembers = members.length > 0 ? members : defaultMembers(language);
 
