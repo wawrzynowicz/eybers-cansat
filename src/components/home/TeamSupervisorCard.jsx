@@ -3,15 +3,27 @@ import { motion } from 'framer-motion';
 import { User } from 'lucide-react';
 import { useLanguage } from '@/components/shared/LanguageContext';
 
-const descriptionEN = `We would like to thank Dr. Eng. Dariusz Janiszewski, our team supervisor and a representative of Poznań University of Technology, for his support during the project. He facilitated access to university facilities, assisted in securing funding for components, and provided technical guidance. We also thank Poznań University of Technology for providing the resources and environment necessary for the project.`;
+const descriptionEN = `We would like to sincerely thank our team supervisor, Dr. Eng. Dariusz Janiszewski, as well as Poznań University of Technology, which he represents, for all the support provided throughout the project. Without his help, our achievements would have been much more difficult to accomplish, and the entire development process would have been significantly more challenging.
 
-const descriptionPL = `Składamy podziękowania dr. inż. Dariuszowi Janiszewskiemu, opiekunowi naszej drużyny oraz przedstawicielowi Politechniki Poznańskiej, za wsparcie w trakcie realizacji projektu. Zapewnił dostęp do infrastruktury uczelni, pomógł w organizacji finansowania komponentów oraz wspierał nas merytorycznie w zakresie zagadnień technicznych. Dziękujemy również Politechnice Poznańskiej za udostępnienie zasobów i stworzenie warunków do realizacji projektu.`;
+Dr. Janiszewski enabled us to secure funding for components through the university, provided access to facilities and specialized equipment, and devoted a considerable amount of his private time to offer invaluable substantive support. He assisted us both with practical tasks, such as soldering components, and with solving the many technical problems we encountered along the way.
+
+We could always count on his support, and his extensive knowledge and experience played a crucial role during the key moments of the project. We are deeply grateful not only for his dedication but also for the opportunities provided by Poznań University of Technology — access to infrastructure, resources, and an inspiring environment for growth.
+
+We are very thankful for the opportunity to collaborate over the past months and hope to continue this cooperation—especially if we qualify for the finals, which we are optimistic about. We look forward to more shared projects and experiences in the future.`;
+
+const descriptionPL = `Serdecznie dziękujemy naszemu opiekunowi drużyny, dr. inż. Dariuszowi Janiszewskiemu, a także Politechnice Poznańskiej, której jest przedstawicielem, za wszelką pomoc udzieloną w trakcie realizacji projektu. Bez jego wsparcia nasze sukcesy byłyby znacznie trudniejsze do osiągnięcia, a sam proces tworzenia projektu o wiele bardziej skomplikowany.
+
+Pan Doktor umożliwił nam uzyskanie finansowania komponentów przez Politechnikę, zapewnił dostęp do pomieszczeń oraz specjalistycznego sprzętu, a także poświęcił nam wiele swojego prywatnego czasu, oferując nieocenioną pomoc merytoryczną. Wspierał nas zarówno w praktycznych zadaniach, takich jak lutowanie komponentów, jak i w rozwiązywaniu licznych problemów technicznych, z którymi się mierzyliśmy.
+
+Zawsze mogliśmy liczyć na jego pomoc, a jego ogromna wiedza i doświadczenie odegrały kluczową rolę w przełomowych momentach projektu. Jesteśmy niezwykle wdzięczni nie tylko za jego zaangażowanie, ale również za możliwości, jakie dała nam Politechnika Poznańska — dostęp do zaplecza, zasobów oraz inspirującego środowiska do rozwoju.
+
+Dziękujemy za możliwość współpracy w minionych miesiącach i mamy nadzieję, że będziemy mogli ją kontynuować — szczególnie jeśli uda nam się zakwalifikować do finału, na co liczymy z dużą nadzieją. Z niecierpliwością czekamy na kolejne wspólne projekty i doświadczenia w przyszłości.`;
 
 export default function TeamSupervisorCard({ supervisor }) {
   const { language } = useLanguage();
 
   const description = language === 'pl' ? descriptionPL : descriptionEN;
-  const thankYouTitle = 'Acknowledgements';
+  const thankYouTitle = language === 'pl' ? 'Szczególne podziękowania' : 'A special thank you';
 
   return (
     <motion.div
@@ -26,9 +38,9 @@ export default function TeamSupervisorCard({ supervisor }) {
         Team Supervisor
       </p>
 
-      <div className="flex flex-col md:flex-row gap-10 items-start max-w-4xl mx-auto">
+      <div className="flex flex-col md:flex-row gap-10 items-start">
         {/* Left: photo */}
-        <div className="w-full md:w-64 flex-shrink-0 mx-auto md:mx-0">
+        <div className="w-full md:w-72 flex-shrink-0 mx-auto md:mx-0">
           <div className="relative aspect-[3/4] w-full overflow-hidden rounded-lg">
             {supervisor.image_url_1 ? (
               <img
@@ -42,22 +54,25 @@ export default function TeamSupervisorCard({ supervisor }) {
               </div>
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+
+
           </div>
+
           {/* Name below photo */}
           <p className="text-white text-center mt-3 font-medium">dr inż. Dariusz Janiszewski</p>
         </div>
 
-        {/* Right: text — same height as photo via aspect-[3/4] of w-64 = ~256*4/3 ≈ 341px */}
-        <div className="flex-1 flex flex-col" style={{ minHeight: 'calc(256px * 4 / 3)' }}>
+        {/* Right: text */}
+        <div className="flex-1">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
             {thankYouTitle}
           </h3>
-          <div className="relative flex-1 overflow-hidden">
+          <div className="relative">
             {/* PUT logo floated top-right so text wraps around it */}
             <img
               src="https://media.base44.com/images/public/6931f02077d600a24db95382/9dc772ebd_putlogozw_Nero_AI_Background_Remover_transparent.png"
               alt="Politechnika Poznańska"
-              className="float-right ml-6 mb-4 w-44 h-44 object-contain"
+              className="float-right ml-6 mb-4 w-28 h-28 object-contain"
             />
             <div className="space-y-4">
               {description.split('\n\n').map((para, i) => (
