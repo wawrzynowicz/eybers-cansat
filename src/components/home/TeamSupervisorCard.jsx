@@ -44,16 +44,14 @@ export default function TeamSupervisorCard({ supervisor }) {
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
-          {/* Second photo — top right corner */}
-          {supervisor.image_url_2 && (
-            <div className="absolute top-3 right-3 w-1/3 aspect-square rounded-lg overflow-hidden border-2 border-white/30 shadow-lg">
-              <img
-                src={supervisor.image_url_2}
-                alt={supervisor.image_subtitle_2 || supervisor.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          )}
+          {/* PUT logo — top right corner */}
+          <div className="absolute top-3 right-3 w-1/5 aspect-square rounded-full overflow-hidden shadow-lg">
+            <img
+              src="https://media.base44.com/images/public/6931f02077d600a24db95382/9dc772ebd_putlogozw_Nero_AI_Background_Remover_transparent.png"
+              alt="Politechnika Poznańska"
+              className="w-full h-full object-contain"
+            />
+          </div>
         </div>
 
         {/* Title */}
