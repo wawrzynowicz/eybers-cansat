@@ -61,7 +61,7 @@ export default function TeamSupervisorCard({ supervisor }) {
 
         {/* Title */}
         <div className="mt-4 text-center">
-          <h3 className="text-xl font-medium text-white">{supervisor.title}</h3>
+          <h3 className="text-xl font-medium text-white">dr inż. Dariusz Janiszewski</h3>
         </div>
 
         {/* Description on hover */}
