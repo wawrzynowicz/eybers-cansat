@@ -1,0 +1,32 @@
+{
+  "name": "Update",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Update title"
+    },
+    "content": {
+      "type": "string",
+      "description": "Update content"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "announcement",
+        "progress",
+        "milestone",
+        "event"
+      ],
+      "default": "progress"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Optional image"
+    }
+  },
+  "required": [
+    "title",
+    "content"
+  ]
+}

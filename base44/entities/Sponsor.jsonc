@@ -1,0 +1,41 @@
+{
+  "name": "Sponsor",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Sponsor name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Company description (English)"
+    },
+    "description_pl": {
+      "type": "string",
+      "description": "Company description (Polish)"
+    },
+    "cooperation_scope": {
+      "type": "string",
+      "description": "Scope of cooperation (English)"
+    },
+    "cooperation_scope_pl": {
+      "type": "string",
+      "description": "Scope of cooperation (Polish)"
+    },
+    "logo_url": {
+      "type": "string",
+      "description": "Company logo URL"
+    },
+    "website": {
+      "type": "string",
+      "description": "Company website"
+    },
+    "order": {
+      "type": "number",
+      "description": "Display order"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

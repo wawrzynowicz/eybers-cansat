@@ -1,0 +1,27 @@
+{
+  "name": "MediaPartner",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Media partner name"
+    },
+    "url": {
+      "type": "string",
+      "description": "Partner website URL"
+    },
+    "logo_url": {
+      "type": "string",
+      "description": "Logo image URL"
+    },
+    "order": {
+      "type": "number",
+      "description": "Display order"
+    }
+  },
+  "required": [
+    "name",
+    "url",
+    "logo_url"
+  ]
+}

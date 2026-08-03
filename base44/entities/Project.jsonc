@@ -1,0 +1,46 @@
+{
+  "name": "Project",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Project title"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Short summary"
+    },
+    "description": {
+      "type": "string",
+      "description": "Full description"
+    },
+    "objectives": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Project objectives"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Project image"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planning",
+        "in_progress",
+        "completed"
+      ],
+      "default": "in_progress"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "title",
+    "summary"
+  ]
+}

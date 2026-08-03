@@ -1,0 +1,41 @@
+{
+  "name": "AboutCard",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Card title (English)"
+    },
+    "title_pl": {
+      "type": "string",
+      "description": "Card title (Polish)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Card description (English)"
+    },
+    "description_pl": {
+      "type": "string",
+      "description": "Card description (Polish)"
+    },
+    "icon": {
+      "type": "string",
+      "enum": [
+        "Users",
+        "Rocket",
+        "Trophy",
+        "Target"
+      ],
+      "description": "Icon name"
+    },
+    "order": {
+      "type": "number",
+      "description": "Display order"
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "icon"
+  ]
+}

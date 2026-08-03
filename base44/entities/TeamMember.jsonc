@@ -1,0 +1,34 @@
+{
+  "name": "TeamMember",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Full name of the team member"
+    },
+    "role": {
+      "type": "string",
+      "description": "Role in the team"
+    },
+    "bio": {
+      "type": "string",
+      "description": "Short biography (English)"
+    },
+    "bio_pl": {
+      "type": "string",
+      "description": "Short biography (Polish)"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Profile image URL"
+    },
+    "order": {
+      "type": "number",
+      "description": "Display order"
+    }
+  },
+  "required": [
+    "name",
+    "role"
+  ]
+}

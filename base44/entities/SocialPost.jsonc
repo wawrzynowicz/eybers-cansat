@@ -1,0 +1,51 @@
+{
+  "name": "SocialPost",
+  "type": "object",
+  "properties": {
+    "platform": {
+      "type": "string",
+      "enum": [
+        "facebook",
+        "instagram",
+        "linkedin",
+        "twitter"
+      ],
+      "description": "Social media platform"
+    },
+    "content": {
+      "type": "string",
+      "description": "Post content"
+    },
+    "content_pl": {
+      "type": "string",
+      "description": "Post content (Polish)"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Post image URL"
+    },
+    "post_url": {
+      "type": "string",
+      "description": "Link to original post"
+    },
+    "likes": {
+      "type": "number",
+      "description": "Number of likes"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Feature this post"
+    },
+    "post_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of post"
+    }
+  },
+  "required": [
+    "platform",
+    "content",
+    "post_url"
+  ]
+}
